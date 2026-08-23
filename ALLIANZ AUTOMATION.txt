@@ -1,0 +1,4744 @@
+ALLIANZ AUTOMATION
+
+1) automation kt day 1 
+
+Yeah.
+
+SPK_2
+0:01
+So you heard about the soap services and rest services, right?
+
+SPK_3
+0:11
+Yes, yes.
+
+SPK_3
+0:11
+Rest API services, right?
+
+SPK_2
+0:14
+Yeah.
+
+SPK_2
+0:14
+So may I know like what is the difference between soap and rest?
+
+SPK_3
+0:20
+Actually that wasn't covered yet.
+
+SPK_3
+0:23
+So pua is for your testing purposes like having the testing in automations and manual testing also can be done.
+
+SPK_3
+0:32
+Rest API is like calling the API like post post API how it's been called get API is it like that?
+
+SPK_2
+0:43
+And what about srijita?
+
+SPK_2
+0:44
+What is your opinion?
+
+SPK_2
+1:04
+Yeah, so let me correct you.
+
+SPK_2
+1:06
+So both the services are help to interact your UI pages to your code logic.
+
+SPK_2
+1:15
+So basically software mostly the most of the software depends on small small gems.
+
+SPK_2
+1:24
+So basically there are some gems are developer developed by own organization.
+
+SPK_2
+1:29
+Sums are from a global standards and some of from third party tools.
+
+SPK_2
+1:35
+So if we.
+
+SPK_2
+1:36
+If you are using any tool like ATM or Google Pay in that Google Pay is only developing the UI related things.
+
+SPK_2
+1:50
+Okay.
+
+SPK_2
+1:51
+So whatever the security related things are done by RBA and in between banking related things are done by intermediate bank.
+
+SPK_2
+2:01
+So whatever you see like when you see your paytm code or anything, so you see the bank name afterward.
+
+SPK_2
+2:11
+So basically this these things are managed the multiple or like third party tools.
+
+SPK_2
+2:19
+Right?
+
+SPK_2
+2:21
+So basically SOAP and REST both are help to interact between those small services.
+
+SPK_2
+2:30
+So basically whatever like when you like click on send money.
+
+SPK_2
+2:36
+So basically UI will receive the response and it will create a request for RBI services.
+
+SPK_2
+2:45
+Okay.
+
+SPK_2
+2:45
+RBI can validate whatever the information you send in one text.
+
+SPK_2
+2:51
+Okay.
+
+SPK_2
+2:52
+And it will read all those things if it's confirmed from RBI and then it will go into banking servers and then your transition will done.
+
+SPK_2
+3:06
+Okay, so these things are done with some message message things or we can say encrypted things.
+
+SPK_2
+3:14
+Those things are done by SOAP and REST services.
+
+SPK_2
+3:18
+The key difference is in REST services it's best on curd.
+
+SPK_2
+3:25
+So create, read, then delete and what I update.
+
+SPK_2
+3:32
+So these four things done with the help of REST services.
+
+SPK_2
+3:38
+So basically in the difference is that when you send some mash with the help of REST services it's only send in the format of this update, create, delete and read.
+
+SPK_2
+3:54
+And if you go with the SOAP services it will create similar like your mail.
+
+SPK_2
+4:03
+So when you send any mail to someone it will go into MSG file, right?
+
+SPK_2
+4:09
+So it should have the text.
+
+SPK_2
+4:11
+Then it should have the.
+
+SPK_2
+4:15
+We can say data information or title.
+
+SPK_2
+4:20
+All those things are there and in between that your your information is there like how much money you want to send, the name of the person, credentials and respective information.
+
+SPK_2
+4:35
+Okay.
+
+SPK_2
+4:36
+And then this postcard will send to next Microservices.
+
+SPK_2
+4:40
+This microservices will open this your postcard read those and work accordingly if after the validation.
+
+SPK_2
+4:53
+Okay, so that's the thing.
+
+SPK_2
+4:55
+So for the testing purposes let me correct you.
+
+SPK_2
+4:59
+You can use either soap or rest.
+
+SPK_2
+5:01
+It will be anything.
+
+SPK_2
+5:03
+So late 2015 all the organizations are using soap services.
+
+SPK_2
+5:10
+But now all the things are get shifted into REST services.
+
+SPK_2
+5:17
+Only some of the like organizations are are still depend on this SOAP services like Alliance.
+
+SPK_2
+5:25
+But the if you go with Android services or any latest application these all things are depends on SOAP service REST services.
+
+SPK_2
+5:34
+Sorry.
+
+SPK_2
+5:36
+So we not go into the REST part will focus on the SOAP part.
+
+SPK_2
+5:42
+But like you need to ensure that like so SOAP is useful for development purpose also.
+
+SPK_2
+5:51
+So we are just validating whatever the postcard is sending one microservices to another microservices.
+
+SPK_2
+5:59
+What is the data data type is it validate Valid data needs to read by microservices.
+
+SPK_2
+6:08
+All that kind of things we are here testing.
+
+SPK_2
+6:13
+So this is the.
+
+SPK_2
+6:14
+This is our intention throughout our project.
+
+SPK_2
+6:18
+Okay, got it.
+
+SPK_3
+6:21
+Ah yes.
+
+SPK_2
+6:24
+Yeah.
+
+SPK_2
+6:24
+So Silvi, did I miss something or like do you want to add anything here?
+
+SPK_1
+6:29
+Oh no Prashant, we are good.
+
+SPK_1
+6:31
+I think so we are pretty much into completely into soap.
+
+SPK_1
+6:36
+So I think we can focus on that ready API part, right?
+
+SPK_1
+6:40
+Yeah yeah.
+
+SPK_1
+6:41
+Okay.
+
+SPK_2
+6:42
+So basically here I. I didn't have any architectural diagram.
+
+SPK_2
+6:48
+I tried to find out do you have any architectural diagram as Adrian shared with us.
+
+SPK_1
+6:56
+I think on the day also he just shared only the.
+
+SPK_1
+7:02
+Let me cross check once.
+
+SPK_2
+7:04
+Yeah yeah yeah.
+
+SPK_2
+7:06
+So here what.
+
+SPK_2
+7:09
+What is the thing?
+
+SPK_2
+7:09
+Let me show you.
+
+SPK_2
+7:15
+What we are going to here and.
+
+SPK_3
+7:17
+Show you.
+
+SPK_2
+7:22
+Don't know how it's work.
+
+SPK_2
+7:23
+Let's.
+
+SPK_2
+8:04
+Okay.
+
+SPK_2
+8:17
+So this is the way these things are working here also in our alliance the like suppose like forget about the things written down it.
+
+SPK_2
+8:29
+Here we have the multiple services.
+
+SPK_2
+8:32
+Okay.
+
+SPK_2
+8:33
+And one services sending message to another like UI sending to backend architecture.
+
+SPK_2
+8:40
+So architecture or like we can say it's uh.
+
+SPK_2
+8:46
+The microservice which consumes the message uh converted into the respective format.
+
+SPK_2
+8:54
+So other microservices can understand the message.
+
+SPK_2
+8:57
+So from UI and it will receive some message.
+
+SPK_2
+9:02
+It's convert to acceptable format and then it send it out to next services.
+
+SPK_2
+9:07
+Okay.
+
+SPK_2
+9:08
+And whatever the operation after done on these services then again it's sent to this consumer part and then it's again go to UI part.
+
+SPK_2
+9:19
+So that kind of structure we have here I don't have a diagram.
+
+SPK_2
+9:24
+If I receive I'll show you or like adrenaline will show you.
+
+SPK_2
+9:28
+So Our end objectives, whatever the services is get created.
+
+SPK_2
+9:34
+We need to validate with the help of the SOAP services.
+
+SPK_2
+9:39
+Maybe you have idea.
+
+SPK_2
+9:41
+Maybe Shashank showed you like how these services are.
+
+SPK_3
+9:45
+Look.
+
+SPK_2
+9:47
+So can I have those things?
+
+SPK_1
+9:54
+Prashant, I got it.
+
+SPK_1
+9:55
+I think.
+
+SPK_2
+9:56
+Yeah.
+
+SPK_2
+9:57
+Can you.
+
+SPK_2
+9:57
+Can you if possible, can you share your screen.
+
+SPK_1
+10:00
+Yeah, just a second.
+
+SPK_2
+10:02
+Or like just share me the screenshot.
+
+SPK_1
+10:05
+Yeah, that's what.
+
+SPK_1
+10:06
+Wait, wait, wait.
+
+SPK_1
+10:07
+I am just sharing you the link itself.
+
+SPK_1
+10:12
+I have shared you.
+
+SPK_1
+10:12
+Okay, can just.
+
+SPK_2
+10:13
+Yeah, one second.
+
+SPK_2
+10:16
+Did you find this diagram?
+
+SPK_1
+10:18
+Yeah, yeah.
+
+SPK_1
+10:19
+Diagram only.
+
+SPK_1
+10:20
+I think we had a chat previously.
+
+SPK_1
+10:22
+So I just.
+
+SPK_1
+10:24
+From there I'm just sharing you the confluence page.
+
+SPK_1
+10:27
+Okay.
+
+SPK_1
+10:27
+I think pretty much we have all the diagrams there.
+
+SPK_1
+10:32
+Yeah, I shared there.
+
+SPK_1
+10:37
+Oh yeah, you received.
+
+SPK_1
+10:47
+Oh, sorry, one second.
+
+SPK_1
+10:50
+Prashant.
+
+SPK_2
+10:51
+Yeah.
+
+SPK_2
+10:52
+Did you share it on hexa network?
+
+SPK_1
+10:55
+No, no, no.
+
+SPK_1
+10:55
+Here only.
+
+SPK_1
+10:57
+Can you check once?
+
+SPK_3
+10:59
+Yeah.
+
+SPK_1
+11:04
+Ah, okay.
+
+SPK_1
+11:05
+I think you received.
+
+SPK_2
+11:08
+Yeah.
+
+SPK_2
+11:09
+So this is the architecture.
+
+SPK_2
+11:11
+So what is here?
+
+SPK_2
+11:14
+They already have the previous architecture, but they are updating those things with this MQS LEV motor adapter.
+
+SPK_2
+11:24
+So I just show you now.
+
+SPK_2
+11:26
+Whatever the UI services are get created or whatever the UI is get created data.
+
+SPK_2
+11:32
+It's send it to adaptator.
+
+SPK_2
+11:34
+So adaptator is what is done.
+
+SPK_2
+11:37
+So whatever the services means, your name, id, your mobile number, your credential, it will receive those data.
+
+SPK_2
+11:45
+Okay.
+
+SPK_2
+11:47
+And it converted this data so that other services can understand.
+
+SPK_2
+11:54
+So these are the services.
+
+SPK_2
+11:55
+If you check the LV radar life.
+
+SPK_2
+11:58
+Okay.
+
+SPK_2
+11:59
+So LV radar live rating, MQS message and MQS code catches.
+
+SPK_2
+12:05
+So these are the logical microservices.
+
+SPK_2
+12:09
+Whatever the data is received here, it will do some operations converted those things into code or whatever.
+
+SPK_2
+12:18
+The requested input by ui.
+
+SPK_2
+12:22
+Then it again send it to adaptator.
+
+SPK_2
+12:24
+Adaptator will converted those things.
+
+SPK_2
+12:26
+So can UI can understand those services.
+
+SPK_2
+12:30
+Okay.
+
+SPK_2
+12:30
+And you can see those things on UI pages.
+
+SPK_2
+12:33
+That's it.
+
+SPK_2
+12:35
+So all those things are done in.
+
+SPK_2
+12:40
+In a form of soap.
+
+SPK_2
+12:42
+So I'll show you how it's look like.
+
+SPK_2
+12:47
+Yeah.
+
+SPK_2
+12:47
+Did you see those things?
+
+SPK_2
+12:51
+Did anyone show those things like how the SOPA look like and how those things are work?
+
+SPK_2
+12:59
+Because these are basic things.
+
+SPK_2
+13:01
+Maybe they should explain those things.
+
+SPK_2
+13:04
+So if you see roughly I didn't go.
+
+SPK_2
+13:07
+I didn't want to go in deep.
+
+SPK_2
+13:08
+So if you check these things are identification things.
+
+SPK_2
+13:12
+Like if you send any mail whom send to whom, then mail ID and all those things related subject and all those things are coded here.
+
+SPK_2
+13:24
+Then you can say the main code data here.
+
+SPK_2
+13:29
+Other related information is there.
+
+SPK_2
+13:31
+Like your money transition Amount Okay.
+
+SPK_2
+13:36
+Message just.
+
+SPK_2
+13:38
+I'm just showing the example.
+
+SPK_2
+13:39
+Those things are written down it here.
+
+SPK_2
+13:44
+Okay.
+
+SPK_2
+13:44
+And the whole thing we are sending to next microservices.
+
+SPK_2
+13:49
+So our test objective is that when any microservices sending the message to other microservices we before we are validating to ui, we validate on their back end.
+
+SPK_2
+14:08
+Okay.
+
+SPK_2
+14:09
+So how we can do that?
+
+SPK_2
+14:10
+So basically we use this APIs.
+
+SPK_2
+14:14
+So it's application protocol data.
+
+SPK_2
+14:19
+So basically.
+
+SPK_3
+14:29
+Yeah,.
+
+SPK_2
+14:38
+If you check this is the rest request in that you, you, you can see the HTTP URL.
+
+SPK_2
+14:47
+Okay.
+
+SPK_2
+14:48
+So this is the URL and whatever the URI informations in this raw data or this request payload.
+
+SPK_2
+14:59
+Okay.
+
+SPK_2
+15:00
+So all the things are covered here.
+
+SPK_2
+15:03
+Then we send those requests send this data to other microservices and will receive the response it here.
+
+SPK_2
+15:12
+Okay.
+
+SPK_2
+15:13
+And this is the response format.
+
+SPK_2
+15:16
+So whatever the response we receive, we receive in that format where we check this parameter with mapping document.
+
+SPK_2
+15:27
+So mapping document is created by stakeholders.
+
+SPK_2
+15:32
+So how data should look like or what are whatever the required data for the particular next services that we got on this mapping document.
+
+SPK_2
+15:45
+I have one mapping document sheet, I'll show you.
+
+SPK_3
+15:56
+One second.
+
+SPK_2
+16:13
+So they send those things like column names and whatever the mandatory fields or what kind of data it's look like is mandatory or not.
+
+SPK_2
+16:24
+Date, date of creation version.
+
+SPK_2
+16:26
+So every time it get updated, the version is get updated.
+
+SPK_2
+16:31
+All those things we received from stakeholder, we verify those we using AI or manually or whatever the source we have.
+
+SPK_2
+16:42
+And after that as per that we create some test cases and we update whatever the test result on there and share with the stakeholder by using JIRA or directly to stakeholder.
+
+SPK_2
+16:59
+Okay, so that's the overall approach it here maybe Sylvie, can you show, can, can you show how this radio page work?
+
+SPK_2
+17:10
+Like because I. I just log in and I lost a lot of things here.
+
+SPK_2
+17:15
+Okay, so if you.
+
+SPK_2
+17:17
+Those things how the radio works.
+
+SPK_1
+17:19
+Okay.
+
+SPK_1
+17:20
+I think lately Josh has sent us.
+
+SPK_1
+17:24
+I mean he asked us to generate a response for uh, few things.
+
+SPK_1
+17:29
+Right, I can show them that because.
+
+SPK_1
+17:31
+Yeah, yeah, just you also got changed a lot.
+
+SPK_1
+17:35
+So let us show them.
+
+SPK_3
+17:37
+Yeah, yeah.
+
+SPK_1
+17:40
+Okay.
+
+SPK_2
+17:42
+Because I, I didn't have any working yesterday, so that's fine.
+
+SPK_1
+17:48
+No, now it should be working because on the day that environment was active.
+
+SPK_1
+17:52
+So I should.
+
+SPK_1
+17:53
+I should be checking if that works or not.
+
+SPK_2
+17:56
+Yeah.
+
+SPK_2
+17:57
+So guys, today we'll cover this radio I think and tomorrow we'll see for UI domination.
+
+SPK_1
+18:10
+Till now you have any doubt, you can just ask us.
+
+SPK_3
+18:19
+We don't have any doubts here.
+
+SPK_1
+18:22
+Okay.
+
+SPK_1
+18:59
+Okay.
+
+SPK_1
+19:05
+Okay, so.
+
+SPK_1
+19:10
+So Prashant, correct me if I'm wrong.
+
+SPK_1
+19:14
+So CRS is one of a kind of an engine here.
+
+SPK_1
+19:17
+We do have in that mapping document, right?
+
+SPK_1
+19:19
+He just showed you.
+
+SPK_1
+19:20
+Sorry, not the talk mapping document.
+
+SPK_1
+19:22
+What is it?
+
+SPK_1
+19:23
+The one diagram he shown.
+
+SPK_1
+19:26
+Right.
+
+SPK_1
+19:26
+So one among the engine is crs.
+
+SPK_1
+19:30
+So I think we do have a CRS ID here.
+
+SPK_1
+19:33
+So what we have to do is.
+
+SPK_1
+19:35
+Let me show you.
+
+SPK_1
+19:41
+Okay.
+
+SPK_1
+19:53
+I think the license I have to install.
+
+SPK_1
+19:55
+Yeah.
+
+SPK_3
+20:03
+Could you please explain what is.
+
+SPK_3
+20:05
+What's the Excel form of crs?
+
+SPK_1
+20:14
+Prashant, do you have any idea?
+
+SPK_1
+20:16
+Like we used to say it as.
+
+SPK_2
+20:17
+CRS Customer Rating Services 1.
+
+SPK_2
+20:21
+One of the micro services.
+
+SPK_2
+20:23
+Okay, as I just explained, we are sending some data to microservices and it's doing some operation and revert back to adaptator.
+
+SPK_2
+20:35
+So here the end to end integration is almost done.
+
+SPK_2
+20:39
+In upcoming thing we'll do end to end testing.
+
+SPK_2
+20:42
+So basically there is kind of some static and dynamic testing.
+
+SPK_2
+20:51
+I will see how we can do that.
+
+SPK_1
+20:55
+See, usually we will be given with the request.
+
+SPK_1
+20:59
+Okay, so according to the request there are few more.
+
+SPK_1
+21:07
+Once again I'll show you here only.
+
+SPK_1
+21:16
+This API is always a mess, Prashant.
+
+SPK_1
+21:57
+I think due to the license issue only it is saying it couldn't obtain this token thing.
+
+SPK_2
+22:05
+Yeah, sure.
+
+SPK_1
+22:06
+Yes, I think I have.
+
+SPK_1
+22:07
+I'll.
+
+SPK_2
+22:08
+I'll continue.
+
+SPK_2
+22:09
+Okay, not an issue.
+
+SPK_2
+22:10
+Just guide me.
+
+SPK_2
+22:11
+Where's the service?
+
+SPK_1
+22:13
+Yeah, yeah, yeah.
+
+SPK_1
+22:13
+Okay.
+
+SPK_3
+22:14
+Yeah.
+
+SPK_1
+22:15
+You want me to share those details?
+
+SPK_1
+22:17
+I think we have it in our group here.
+
+SPK_1
+22:20
+So can you share your screen?
+
+SPK_1
+22:22
+I'll tell you.
+
+SPK_1
+22:30
+So the one he has sent to know.
+
+SPK_1
+22:31
+You have imported that, right?
+
+SPK_1
+22:36
+I don't think so.
+
+SPK_1
+22:38
+This is not the one.
+
+SPK_1
+22:41
+So I'll send you.
+
+SPK_1
+22:42
+Can you download it?
+
+SPK_1
+23:01
+Prashant, I just sent you.
+
+SPK_1
+23:04
+You can download this project and you can import it.
+
+SPK_1
+23:10
+Hello, Am I aud?
+
+SPK_1
+23:14
+Hello?
+
+SPK_2
+23:16
+Yes, you are audible.
+
+SPK_1
+23:18
+Yeah, okay, okay.
+
+SPK_2
+23:19
+I. I'm just asking you.
+
+SPK_2
+23:21
+I have three project already imported.
+
+SPK_2
+23:23
+Was it?
+
+SPK_2
+23:24
+What is the project name?
+
+SPK_2
+23:25
+Yeah, you want me to open.
+
+SPK_2
+23:28
+I just want to name.
+
+SPK_2
+23:30
+What is the name?
+
+SPK_2
+23:31
+Actually I.
+
+SPK_1
+23:32
+Not here man, there in alliance.
+
+SPK_2
+23:35
+One second.
+
+SPK_2
+23:36
+Yeah, there's a lot of pages.
+
+SPK_2
+23:40
+Okay, okay, one second.
+
+SPK_2
+23:44
+I have this.
+
+SPK_1
+23:49
+Ah, okay.
+
+SPK_1
+23:50
+I think this pmc raw request.
+
+SPK_2
+23:53
+It is pmc not.
+
+SPK_2
+24:00
+API is right?
+
+SPK_1
+24:01
+API is not functional test.
+
+SPK_1
+24:03
+Yeah, it's APIs CRS working data.
+
+SPK_1
+24:08
+Second one.
+
+SPK_1
+24:10
+Yeah, working data.
+
+SPK_1
+24:12
+Just click on that.
+
+SPK_1
+24:15
+So you have this llgg, right?
+
+SPK_1
+24:19
+So this is what is called as in right hand side yellow color highlighted one.
+
+SPK_1
+24:23
+So that is where you have to Paste your CRS ids.
+
+SPK_1
+24:28
+So I think in that group we have a table.
+
+SPK_1
+24:30
+You want me to share that?
+
+SPK_1
+24:32
+I'll share it with.
+
+SPK_1
+24:37
+Yeah, this year I'll just share one crsid.
+
+SPK_1
+24:40
+Okay yeah.
+
+SPK_1
+24:48
+Yeah.
+
+SPK_2
+24:50
+Okay.
+
+SPK_2
+24:51
+So basically every time some data get created this CRS ID get generated.
+
+SPK_2
+24:57
+Basically UI team with manage those things maybe from UI and we'll get those CRS ids we need to insert it here.
+
+SPK_2
+25:06
+Okay.
+
+SPK_2
+25:07
+This is the endpoint we need to check the environment like at what environment they want to check.
+
+SPK_2
+25:13
+Okay so as per environment this HTTP request get changed.
+
+SPK_2
+25:19
+If you check it here here it written down it UAT So it's working in.
+
+SPK_1
+25:28
+Yeah yeah.
+
+SPK_2
+25:31
+Then after filling all this request we need to check the method request.
+
+SPK_2
+25:36
+As I say rest request depend on curd.
+
+SPK_2
+25:39
+So what is the code?
+
+SPK_2
+25:40
+Create, read, update, update and delete.
+
+SPK_1
+25:45
+Delete.
+
+SPK_3
+25:46
+Delete operation.
+
+SPK_3
+25:48
+Yeah so basically it is like post that post to put delete and like a get right.
+
+SPK_2
+25:57
+Post Post is great used for creating a data.
+
+SPK_3
+26:01
+So yeah, post is creating data.
+
+SPK_3
+26:03
+Put this for updating data.
+
+SPK_3
+26:05
+Delete will be deleting and get will be using for to fetch the data.
+
+SPK_3
+26:10
+Right?
+
+SPK_1
+26:10
+Fetching the data.
+
+SPK_2
+26:10
+Fetching the data.
+
+SPK_2
+26:12
+Yeah okay some additionals are there but for our for our validation purpose those four things are enough like post put delete.
+
+SPK_2
+26:24
+Okay then there is head and all those things I didn't use so far.
+
+SPK_2
+26:29
+Okay so now the.
+
+SPK_2
+26:31
+Yeah I'm able to hear you change.
+
+SPK_1
+26:33
+It to AWS UAT do and check whether we are getting response now I.
+
+SPK_2
+26:38
+Think I'm not able to change this URL Ah top.
+
+SPK_1
+26:42
+Yeah yeah that is where you select the environment.
+
+SPK_2
+26:45
+Yeah from here also but we can check it this environment is I to configured it with here.
+
+SPK_1
+26:52
+If you take it here endpoint will be disabled Prashant.
+
+SPK_1
+26:55
+So only in this particular service we have only the yeah to change the environment.
+
+SPK_2
+27:00
+I I'm just showing you when I change this environment automatically change it change here.
+
+SPK_2
+27:07
+Yeah so basically whatever the environment and all those things are related to your endpoint.
+
+SPK_2
+27:13
+So endpoint URL.
+
+SPK_2
+27:14
+Okay so when we send any rest request to other services all the things are incorporate with your endpoint and other RAW request.
+
+SPK_2
+27:26
+Okay.
+
+SPK_2
+27:28
+Do I need to send this not.
+
+SPK_1
+27:30
+There here you have I think that one about.
+
+SPK_2
+27:34
+Yeah yeah.
+
+SPK_1
+27:37
+Jason.
+
+SPK_1
+27:39
+Jason.
+
+SPK_1
+27:42
+Yeah yeah.
+
+SPK_2
+27:45
+So right now whatever we are seeing this now football.
+
+SPK_1
+28:28
+I think using the scroller at your right you can just go to top.
+
+SPK_2
+28:32
+I'm not.
+
+SPK_2
+28:34
+Okay.
+
+SPK_2
+28:34
+It's very.
+
+SPK_2
+28:36
+Yeah.
+
+SPK_2
+28:38
+It's XML data.
+
+SPK_2
+28:39
+Right.
+
+SPK_1
+28:41
+Right.
+
+SPK_2
+28:42
+Yeah if you check this this we received the data in XML format.
+
+SPK_2
+28:48
+Okay, so mostly whatever the services we received in alas now we received a data in form of XML only.
+
+SPK_2
+29:00
+So every data is in the agreed with this what you can say within these fields or loops.
+
+SPK_2
+29:12
+So this entry how we can validate those data so we receive this mapping document.
+
+SPK_2
+29:19
+I just show you one second.
+
+SPK_2
+29:23
+Suppose they give me this MQS related field data okay and within a control before or we need to find this banner identifier Then what is the type Type of data or the example data that thing we need to validate one by one it here.
+
+SPK_2
+29:47
+Okay, for now I think I We didn't have any mapping documents so far, but if we check the things are inter integrated within those services.
+
+
+
+2) automation kt day 2
+
+o if, even if you code in Java also it supports.
+
+SPK_1
+0:03
+So you can also convert your code to whatever the language you prefer.
+
+SPK_1
+0:09
+So that is.
+
+SPK_1
+0:10
+And it is also open source.
+
+SPK_1
+0:12
+And so while creating.
+
+SPK_1
+0:19
+So this is kind of our framework structure you can see here, right?
+
+SPK_1
+0:23
+It's a framework structure.
+
+SPK_1
+0:25
+So you know page object model, right?
+
+SPK_1
+0:28
+Form is nothing but page object model.
+
+SPK_1
+0:31
+You have any idea about it?
+
+SPK_2
+0:36
+Yeah, no idea about it.
+
+SPK_1
+0:39
+Okay.
+
+SPK_1
+0:41
+Okay.
+
+SPK_1
+0:41
+So why this page object model concept comes because you can have more of reusability property.
+
+SPK_1
+0:54
+So kind of.
+
+SPK_1
+0:56
+See, previously, before this page object model, right?
+
+SPK_1
+1:00
+They used to automate like in a single class.
+
+SPK_1
+1:03
+So in a single class, say suppose your application, your web application is having around five to six pages, okay.
+
+SPK_1
+1:10
+So they write in a single class, they automated.
+
+SPK_1
+1:12
+So what happens, you know, so whenever the page gets added or there are many frequent changes in that particular application, right?
+
+SPK_1
+1:21
+You'll have to go on, keep changing on a single class, right?
+
+SPK_1
+1:24
+You will have to put more effort.
+
+SPK_1
+1:27
+Okay, so this page object model is nothing but you are creating.
+
+SPK_1
+1:35
+I mean, for each page you will be creating, each class your application is having, say suppose six pages, you create six classes.
+
+SPK_1
+1:45
+So that, that particular class, right?
+
+SPK_1
+1:48
+So that particular class, whatever it has the locator that goes into that particular page.
+
+SPK_1
+1:54
+Okay, say suppose if I'm going to the login page, you have only the username, password and the click button, right?
+
+SPK_1
+2:01
+So in that particular page you will be having only three locators and the methods are the test methods, whatever you are going to perform, right?
+
+SPK_1
+2:08
+So only those will be there in that particular page.
+
+SPK_1
+2:12
+So maintainability comes easy here.
+
+SPK_1
+2:15
+Okay, so if there is any major change in that particular change, or if they are adding any element to the particular change, you just go to that particular page class, you just change it.
+
+SPK_1
+2:27
+And once you are changing the locator, it will get automatically changed in the test class as well.
+
+SPK_1
+2:34
+So it is way more easier to maintain your project.
+
+SPK_1
+2:37
+So whenever your application is getting like say suppose it is getting bigger, so your pages or your functionality is getting bigger this way it is more easier to maintain.
+
+SPK_1
+2:51
+You got it?
+
+SPK_2
+2:55
+Yes.
+
+SPK_1
+2:56
+Yeah.
+
+SPK_1
+2:56
+So page object model is like whatever number of pages you have, right?
+
+SPK_1
+3:01
+You create a page class for those pages.
+
+SPK_1
+3:04
+So that is what page object model, it is mainly for the reusability and maintainability of the project.
+
+SPK_1
+3:10
+Okay.
+
+SPK_1
+3:11
+And obviously playwright, one of the biggest advantages also like playwright itself gives you a right, like it can produce you a report.
+
+SPK_1
+3:25
+Once your test is run, you.
+
+SPK_1
+3:27
+You don't have to integrate any other.
+
+SPK_1
+3:32
+For example, if you take Selenium It Selenium or.
+
+SPK_1
+3:35
+I mean that automation tool itself does not give you any reports.
+
+SPK_1
+3:38
+You have to integrate with some other tool like testng or some other tool to integrate to produce the reports.
+
+SPK_1
+3:47
+But Playwright itself can give you the reports once your test is run, right?
+
+SPK_1
+3:52
+So whether it is pass or fail, that can.
+
+SPK_1
+3:54
+I mean it can give you the report clearly where it got failed, at which locator, which point it gives you a clear refined reports.
+
+SPK_1
+4:04
+So that is also one of the major advantages with the Playwright.
+
+SPK_1
+4:07
+And as you said, yes, for Selenium we have to give explicitly, we have to give the weights to make the web.
+
+SPK_1
+4:15
+I mean to make the tool or the.
+
+SPK_1
+4:18
+To make the tool to wait for a particular element like that.
+
+SPK_1
+4:22
+But Playwright has automate mechanism.
+
+SPK_1
+4:25
+That automate mechanism.
+
+SPK_1
+4:26
+Also you can configure here.
+
+SPK_1
+4:30
+So here you will have.
+
+SPK_1
+4:33
+You have, right?
+
+SPK_1
+4:34
+You.
+
+SPK_1
+4:34
+You can see the timeout how.
+
+SPK_1
+4:38
+I mean you can.
+
+SPK_1
+4:40
+You can give this.
+
+SPK_1
+4:42
+I mean how much ever time you want to wait, right?
+
+SPK_1
+4:44
+That you can configure here in Playwright so that it do.
+
+SPK_1
+4:47
+It does its job like automate mechanism, you don't have to write the weights explicitly.
+
+SPK_1
+4:53
+So test is something where you write your test class like the one you're going to execute, right?
+
+SPK_1
+5:04
+So in page object model, I forgot to tell you.
+
+SPK_1
+5:08
+So in this you will have your locator and the methods.
+
+SPK_1
+5:13
+So locator, it's nothing.
+
+SPK_1
+5:15
+But see, suppose this is.
+
+SPK_1
+5:18
+We are currently doing this.
+
+SPK_1
+5:25
+Just a second.
+
+SPK_2
+5:33
+So.
+
+SPK_1
+5:33
+Yeah, so say suppose if you want to perform, click on the you have to create account.
+
+SPK_1
+5:40
+Okay?
+
+SPK_1
+5:41
+You have to create your account.
+
+SPK_1
+5:43
+So just click on this and you can give search or create account.
+
+SPK_1
+5:46
+Right?
+
+SPK_1
+5:47
+So these are called as locators.
+
+SPK_1
+5:49
+So it's nothing but the element which is located on that page and you want to perform some action.
+
+SPK_1
+5:54
+So it is called as the locators.
+
+SPK_1
+5:56
+So you are giving.
+
+SPK_1
+5:58
+I mean, have you by any chance, have you started going through the JavaScript or TypeScript guys?
+
+SPK_2
+6:12
+Not in depth, but actually we have on a simple basis.
+
+SPK_1
+6:18
+Okay, not an issue because on the first site you will not be able to understand.
+
+SPK_1
+6:22
+So locator.
+
+SPK_1
+6:24
+So why you give the access modifiers?
+
+SPK_1
+6:26
+You know the reason, right?
+
+SPK_1
+6:29
+You have given.
+
+SPK_1
+6:31
+You know the access modifier is present, right?
+
+SPK_2
+6:33
+Yeah, yeah, yeah, yeah.
+
+SPK_1
+6:34
+Private, public.
+
+SPK_1
+6:35
+Yeah, yes, yes.
+
+SPK_1
+6:36
+So correct, correct.
+
+SPK_1
+6:38
+So here.
+
+SPK_1
+6:39
+So this is called as locator.
+
+SPK_1
+6:42
+So locator.
+
+SPK_1
+6:43
+Say suppose I'll tell you here this I think you can.
+
+SPK_1
+6:49
+Only when you get the hands on, you will come to know.
+
+SPK_1
+6:51
+So I think you can just go through the course I'll.
+
+SPK_1
+6:55
+I'll just show you.
+
+SPK_1
+6:56
+So once you want to inspect that element right before because while you automate, you have to inspect that element first and you have to identify the locator for that you just have to right click and click on inspect.
+
+SPK_1
+7:07
+So this is kind of a developer mode.
+
+SPK_1
+7:10
+Okay, so here you will see.
+
+SPK_1
+7:33
+So you can see here, right?
+
+SPK_1
+7:34
+One on one and it is getting highlighted, you see.
+
+SPK_1
+7:38
+So this is called as the locator we can also call the sex path.
+
+SPK_1
+7:45
+So I think you just have to go through those things.
+
+SPK_1
+7:50
+XPath means we, we do have multiple how to locate the element?
+
+SPK_1
+7:55
+No, we have multiple ways.
+
+SPK_1
+7:57
+So one among is like giving the X path.
+
+SPK_1
+8:00
+Okay, So I think for now let's not get into the detail.
+
+SPK_1
+8:04
+So this is how your locator will be.
+
+SPK_1
+8:07
+And you are just in Java, if you remember, you give the data types, right?
+
+SPK_1
+8:14
+If it is an integer, you give int like that.
+
+SPK_1
+8:17
+So same way we are just.
+
+SPK_1
+8:19
+This is how it is like if it is a string, you give it, you declare it as a string and you have just.
+
+SPK_1
+8:24
+You need to give the X path.
+
+SPK_1
+8:26
+So this is how the locator works and this is the method whatever you want to perform the action, right?
+
+SPK_1
+8:34
+Say suppose I want to navigate to this drop down button.
+
+SPK_1
+8:38
+Just click here, make a click action and select something.
+
+SPK_1
+8:41
+So those action methods will be also be given in that page object class itself.
+
+SPK_1
+8:49
+So, so this is what you will have it in the form class.
+
+SPK_1
+8:54
+Okay.
+
+SPK_1
+8:55
+Your page object class.
+
+SPK_1
+8:57
+Clear.
+
+SPK_1
+9:02
+Yeah.
+
+SPK_1
+9:02
+Okay.
+
+SPK_1
+9:04
+And as I said in the report, it will be generated in the HTML format.
+
+SPK_1
+9:08
+You can just.
+
+SPK_1
+9:08
+I think it will get opened whenever you are.
+
+SPK_1
+9:12
+Whatever.
+
+SPK_1
+9:13
+Like if it is failed, it is.
+
+SPK_1
+9:14
+It will get opened in the browser, seeing where it got failed and all.
+
+SPK_1
+9:18
+So those things will be there the reports.
+
+SPK_1
+9:23
+I think we can also integrate other frameworks like Cucumber and all.
+
+SPK_1
+9:28
+But we have not tried because our client has not asked for anything like that.
+
+SPK_1
+9:32
+So we have just created the basic framework structure and we have started automating it.
+
+SPK_1
+9:37
+And test is the folder where you will create your test class.
+
+SPK_1
+9:42
+So you will be calling your test from this particular test class.
+
+SPK_1
+9:47
+Okay, you will have to write the code and from here you will call the page object model class, right?
+
+SPK_1
+9:52
+So here you have your methods and all.
+
+SPK_1
+9:54
+So you call from the test class.
+
+SPK_1
+9:59
+And since we are using since this mainly playwright supports the both JavaScript as well as TypeScript.
+
+SPK_1
+10:07
+So recently I think Prashant we just told that JavaScript will be decrypted soon.
+
+SPK_1
+10:17
+So only TypeScript will be supported Maybe in the future.
+
+SPK_1
+10:21
+So we just thought of creating it in the typescript itself.
+
+SPK_1
+10:24
+So that's why.
+
+SPK_1
+10:25
+So the extension here will be.ts which is nothing but a typescript.
+
+SPK_1
+10:30
+Got it.
+
+SPK_1
+10:31
+So page object class, your class name.txt ts and the here the test folder, right?
+
+SPK_1
+10:38
+You will create.
+
+SPK_1
+10:39
+You give your test case.
+
+SPK_1
+10:41
+I mean test case name.spec.ts.
+
+SPK_1
+10:44
+Okay, this is how the format is.
+
+SPK_1
+10:47
+It is supposed to give it in this way.
+
+SPK_1
+10:53
+Clear?
+
+SPK_2
+10:56
+Yes.
+
+SPK_2
+10:56
+Could you.
+
+SPK_2
+10:58
+Should I have a request here?
+
+SPK_2
+10:59
+Could you please show us the demo of the test here too?
+
+SPK_1
+11:03
+Yeah, end of the session, I'll.
+
+SPK_1
+11:05
+I'll tell you, I'll give you the demo.
+
+SPK_1
+11:07
+Okay.
+
+SPK_1
+11:08
+I'll just click on the run button and you can see how it is running.
+
+SPK_1
+11:12
+Okay.
+
+SPK_1
+11:13
+And utils is nothing but when you want to, I mean you pass on the credential, right?
+
+SPK_1
+11:21
+So nothing can be hard coded, right?
+
+SPK_1
+11:23
+So you give it in the.
+
+SPK_1
+11:25
+I mean inside the code.
+
+SPK_1
+11:26
+You cannot hard code every time.
+
+SPK_1
+11:28
+So in the utils you can create your utils class and whatever it is, if you are passing, if you are doing a data driven so you will be passing your test data through an Excel sheet that you can handle it in the utils class.
+
+SPK_1
+11:41
+So whatever.
+
+SPK_1
+11:42
+So the information say suppose you are giving the.
+
+SPK_1
+11:45
+Say suppose you are testing your application in all the environments situated whatever.
+
+SPK_1
+11:50
+So those kind of environment details also you can give it in the utils class here, whatever the URL and the credentials, username, password.
+
+SPK_1
+11:58
+So everything will come under this utils class, the one which will be used across the project.
+
+SPK_1
+12:07
+So those can be given in the utils class.
+
+SPK_1
+12:12
+And as usual the environment is nothing.
+
+SPK_1
+12:15
+But here we are giving the URL which we will be navigating so the home URL, login URL so those kind of details will be given in the environment same way in a different project you have to say suppose you have to test your application across multiple environments like city, UAT or the production, right?
+
+SPK_1
+12:33
+So those kind of details also can be given in the environment.
+
+SPK_1
+12:35
+So that is how it works.
+
+SPK_1
+12:38
+And I think these are the dependencies while creating the project, only I think it will get created.
+
+SPK_1
+12:46
+So if you want to add extra dependencies, say suppose you want to add some other feature and it has some dependency, you can add it here.
+
+SPK_1
+12:56
+So that is where this package.JSON we had given and playwright config ts is nothing but I told you, right?
+
+SPK_1
+13:07
+You configure your so in which browser you want to automate your application.
+
+SPK_1
+13:12
+So those details and your how much time the application or Browser.
+
+SPK_1
+13:18
+I mean the tool should wait for the web element.
+
+SPK_1
+13:21
+So kind of weights and where you.
+
+SPK_1
+13:27
+And so those timeouts details and the browser details.
+
+SPK_1
+13:33
+We are running our browser in Chrome browser.
+
+SPK_1
+13:36
+We are running it in the Chrome browser.
+
+SPK_1
+13:37
+So we have configured our Chrome path here, you see here, wherever I have my Chrome browser, right?
+
+SPK_1
+13:44
+So those details and all will come under the playwright.
+
+SPK_1
+13:46
+Basically the configuration details for the project.
+
+SPK_1
+13:51
+So those things come here and TS config JSON.
+
+SPK_1
+13:56
+I think this is something you kind of a main library, like you are.
+
+SPK_1
+14:03
+I'll just show you here.
+
+SPK_1
+14:06
+Say, suppose you are taking the login page.
+
+SPK_1
+14:08
+So you are using those keywords, right?
+
+SPK_1
+14:11
+Promise.
+
+SPK_1
+14:12
+So these are all the inbuilt keywords, okay.
+
+SPK_1
+14:14
+For the.
+
+SPK_1
+14:17
+Like Java has some inbuilt keywords, right?
+
+SPK_1
+14:20
+Every language or the idea, the tool has its own keywords, right?
+
+SPK_1
+14:25
+The same way while you are.
+
+SPK_1
+14:26
+For the typescript, while you are doing it.
+
+SPK_1
+14:29
+So these are the keywords.
+
+SPK_1
+14:30
+So some library has to support it, right?
+
+SPK_1
+14:33
+So those kind of details comes into this TS config JSON.
+
+SPK_1
+14:38
+So the library details, okay.
+
+SPK_1
+14:44
+Clear till now.
+
+SPK_2
+14:48
+Yes.
+
+SPK_1
+14:49
+Okay, so this is the framework structure.
+
+SPK_1
+14:53
+Prashant, are we good?
+
+SPK_1
+14:54
+Did I miss something?
+
+SPK_2
+14:58
+Yeah, you got almost all the points, so you can go on.
+
+SPK_1
+15:03
+Okay, I'll just go ahead and show you the login one.
+
+SPK_1
+15:06
+Okay.
+
+SPK_1
+15:10
+Okay.
+
+SPK_1
+15:13
+So you have something called as a terminal here, okay.
+
+SPK_1
+15:18
+So when you click on this one, you will get ended up with this there you have something called as terminal.
+
+SPK_1
+15:25
+So you have to come here and automatically your.
+
+SPK_1
+15:30
+Whatever you.
+
+SPK_1
+15:32
+You have saved your project, right?
+
+SPK_1
+15:33
+That details will come here and you have to give the this kind of a code.
+
+SPK_1
+15:39
+So here I think.
+
+SPK_1
+15:42
+One second you need to change the.
+
+SPK_1
+15:44
+Yeah, yeah, yeah.
+
+SPK_1
+15:45
+That's what.
+
+SPK_1
+15:46
+One second, one second.
+
+SPK_1
+15:47
+That's what I was about to tell.
+
+SPK_1
+15:49
+So under test, we might have multiple tests, right?
+
+SPK_1
+15:53
+So if in general you are running every.
+
+SPK_1
+15:56
+I mean all the tests, it is fine, you just give on this NPX playwright test.
+
+SPK_1
+16:02
+And if you give hyphen, hyphen and header, it is nothing.
+
+SPK_1
+16:05
+But if you don't give this right, I'll show you.
+
+SPK_1
+16:08
+If you don't give this headed one, you just give on this comment NPX playwright test.
+
+SPK_1
+16:14
+What happens is when you click on that enter button, you can see it is running and it will give you only the.
+
+SPK_1
+16:25
+You cannot see anything in the browser, okay.
+
+SPK_1
+16:28
+Which means the browser, I mean it is running in the background.
+
+SPK_1
+16:32
+You cannot see by default in the configuration.
+
+SPK_1
+16:35
+It has been like headless mode.
+
+SPK_1
+16:37
+Headless mode means it will run in the background.
+
+SPK_1
+16:39
+You cannot see basically, but you want to see, right?
+
+SPK_1
+16:43
+Whether what it is doing or not.
+
+SPK_1
+16:45
+So what you have to do is just give this particular command space double hyphen and you give the headed.
+
+SPK_1
+16:53
+It runs in the headed mode which means it will show you the browser, it will open the application.
+
+SPK_1
+16:59
+So whatever action it is doing, it will be.
+
+SPK_1
+17:03
+You can, you can see that.
+
+SPK_1
+17:04
+So that is what it is headed mode by default in configuration it will be in the headless mode.
+
+SPK_1
+17:09
+So until unless you give this or make the changes in the configuration file here, this play rate config file, it will be running in the headless mode.
+
+SPK_1
+17:19
+So you have to give it explicitly either here or here.
+
+SPK_1
+17:22
+Understood?
+
+SPK_2
+17:27
+Yes, yes.
+
+SPK_2
+17:28
+Actually before giving header it is running in the terminal model.
+
+SPK_1
+17:33
+Yeah, right.
+
+SPK_1
+17:33
+You cannot see basically it's like it will run in the background.
+
+SPK_1
+17:37
+So whatever the terminal.
+
+SPK_1
+17:40
+So if you want to see it then you have to give it as headed mode here.
+
+SPK_1
+17:45
+And moreover, say suppose you also you are coding on your own in the same project.
+
+SPK_1
+17:51
+I'm saying Sajita is also coding on her own.
+
+SPK_1
+17:55
+So you are creating your own class and you want to test because it's not like every time you have to run all the tests, right?
+
+SPK_1
+18:00
+So you are creating one and you want to make sure your code is working fine or not.
+
+SPK_1
+18:05
+So you just have to run only your class, right?
+
+SPK_1
+18:08
+So in that case under test.
+
+SPK_1
+18:10
+So if I want to run only this login page, what I can do is so I have to tell explicitly to that BR inspect I mean this tool, right?
+
+SPK_1
+18:23
+So run only this.
+
+SPK_1
+18:24
+So how you will tell the same keyword NP explorate test under test you need this, right?
+
+SPK_1
+18:30
+So just give that class name else it will run whatever how many ever the test class is there under the test mode test folder everything will get run.
+
+SPK_1
+18:41
+You got it right?
+
+SPK_1
+18:43
+So I just want to run only this.
+
+SPK_1
+18:45
+So I am giving this and when I click on enter.
+
+SPK_1
+18:55
+Now you can see the browser is getting opened, right?
+
+SPK_1
+19:07
+So this is kind of an account creation.
+
+SPK_1
+19:09
+So that's what just happened.
+
+SPK_1
+19:12
+You saw, right?
+
+SPK_1
+19:12
+In a second it just opened and it created the account for a person.
+
+SPK_2
+19:19
+Have you seen an automation, right?
+
+SPK_1
+19:22
+Yeah.
+
+SPK_1
+19:22
+Right.
+
+SPK_2
+19:23
+So you given the details to run in background in automation.
+
+SPK_2
+19:28
+So it automatically runs and gives the credentials you website and it automatically creates the users, right?
+
+SPK_1
+19:34
+Exactly.
+
+SPK_1
+19:35
+That's what we do here.
+
+SPK_1
+19:37
+So the credentials as I mentioned, right?
+
+SPK_1
+19:40
+Every time you cannot either keep it at the runtime or you cannot hard code it in the inside the code, right?
+
+SPK_1
+19:47
+So you have it here in the credentials or so you just take.
+
+SPK_1
+19:52
+You have to configure everything so that it takes a particular data, it runs your code and once it is done.
+
+SPK_1
+20:00
+No.
+
+SPK_1
+20:00
+So I, I, I, I told you, right.
+
+SPK_1
+20:02
+So if you have any.
+
+SPK_1
+20:05
+If it is getting failed.
+
+SPK_1
+20:06
+So this is what the playwrights own report gives you.
+
+SPK_1
+20:12
+Playwright test report.
+
+SPK_1
+20:13
+And it tells you clearly which test case and where does it is getting failed.
+
+SPK_1
+20:19
+It is saying this particular.
+
+SPK_1
+20:23
+Because here for now we are just giving the data here.
+
+SPK_1
+20:28
+So maybe it is already the account is created.
+
+SPK_1
+20:32
+So wherever the issue here it.
+
+SPK_1
+20:36
+It will be showing you.
+
+SPK_1
+20:37
+So whether the locator we are giving we have given as a mismatching or whatever the error, you can see it.
+
+SPK_1
+20:50
+Got it.
+
+SPK_1
+20:50
+Right.
+
+SPK_1
+20:51
+And here also step by step you can check where it got failed.
+
+SPK_1
+20:55
+You can see whatever the action you have given, everything is passed.
+
+SPK_1
+21:00
+And wherever it failed, no, it has clearly given you which line number.
+
+SPK_1
+21:05
+So this is what is refined means, right?
+
+SPK_1
+21:07
+You don't have to search where it got failed.
+
+SPK_1
+21:11
+It will give you every.
+
+SPK_1
+21:13
+I mean whatever the detailing of if it is getting failed, the details will also be given here in this particular report.
+
+SPK_1
+21:20
+So you can just go to that particular step and you can just make a change.
+
+SPK_1
+21:25
+Clear?
+
+SPK_2
+21:30
+Yes, it's clear.
+
+SPK_1
+21:32
+Okay.
+
+SPK_1
+21:36
+So I think once you just, just start with.
+
+SPK_1
+21:41
+I think Prashant we can suggest them to go through that playwright.
+
+SPK_1
+21:45
+We have it in Udemy course.
+
+SPK_1
+21:47
+Right?
+
+SPK_2
+21:48
+Yeah.
+
+SPK_1
+21:52
+So once you start now, you will get to understand this as well.
+
+SPK_1
+21:56
+So once you come here, once you get the access to the VDA and this project.
+
+SPK_1
+22:00
+Right.
+
+SPK_1
+22:00
+I think it will be pretty much clear.
+
+SPK_1
+22:07
+Yeah.
+
+SPK_1
+22:07
+Prashant, you are about to tell something.
+
+SPK_2
+22:10
+Yeah.
+
+SPK_2
+22:11
+So like initial expectation from your.
+
+SPK_2
+22:13
+Your guys are.
+
+SPK_2
+22:14
+You need to know like what is the locator, the type of locator, how you can capture the locator.
+
+SPK_2
+22:23
+Then the simple playwright command debug.
+
+SPK_2
+22:28
+Okay.
+
+SPK_2
+22:28
+And investigate.
+
+SPK_2
+22:30
+So that thing you need to like investigate by your own.
+
+SPK_2
+22:36
+So we'll ask that kind of simple questions in reverse kt.
+
+SPK_2
+22:41
+Because as you don't have a background with the TypeScript or JavaScript, we don't want to go in much.
+
+SPK_2
+22:49
+Okay.
+
+SPK_2
+22:49
+So for that I will provide you some tutorials, links.
+
+SPK_2
+22:54
+Just follow those things.
+
+SPK_2
+22:57
+Okay?
+
+SPK_2
+22:58
+Yes, sure.
+
+SPK_2
+22:59
+Krishan.
+
+SPK_2
+23:00
+Yeah.
+
+SPK_1
+23:04
+Anything else?
+
+SPK_1
+23:04
+Prashant?
+
+SPK_1
+23:06
+Prashant.
+
+SPK_1
+23:07
+Actually while sending the status yesterday.
+
+SPK_1
+23:11
+Right.
+
+SPK_2
+23:12
+Yeah.
+
+SPK_1
+23:12
+So I just wanted to check with you one thing.
+
+SPK_2
+23:18
+Okay.
+
+SPK_1
+23:19
+One second Prashant than just.
+
+SPK_1
+23:25
+Okay.
+
+SPK_1
+23:26
+Have we covered yesterday about this?
+
+SPK_1
+23:28
+Valid code creation, valid input, valid invalid input validation, mandatory data dictionary.
+
+SPK_1
+23:35
+We haven't covered to them.
+
+SPK_1
+23:37
+Right.
+
+SPK_1
+23:37
+So I didn't mention those things.
+
+SPK_2
+23:40
+Those things.
+
+SPK_2
+23:41
+We can cover it today.
+
+SPK_2
+23:42
+So if possible, can you show them like what is data dictionary and all those things?
+
+SPK_1
+23:47
+One second.
+
+SPK_1
+23:52
+But all of a sudden if we tell them about the data dictionary, will they be able to.
+
+SPK_2
+24:02
+Just give the intro?
+
+SPK_2
+24:03
+Actually, actually, I don't know whether they have access or not.
+
+SPK_2
+24:08
+At least they need to know like what is data dictionary?
+
+SPK_2
+24:12
+Because the points are added in kt, Right?
+
+SPK_1
+24:15
+Yeah.
+
+SPK_1
+24:16
+That's what I didn't mention yesterday.
+
+SPK_1
+24:19
+Okay, guys, it's nothing.
+
+SPK_1
+24:20
+But what happened?
+
+SPK_1
+24:22
+So yesterday, you remember Prashant mentioned that we used to prepare the input data sheet, right?
+
+SPK_1
+24:31
+So.
+
+
+AI Chat
+AI Chat
+Ask anything about your transcription
+
+
+Ask me anything about this transcription. I can help summarize, find key points, or answer questions.
+
+Summarize
+Key topics
+Action items
+Speakers
+Ask a question...
+
+
+3) automation kt day 3
+
+Shared.
+
+SPK_1
+0:11
+I think this should be the one, Right?
+
+SPK_1
+0:30
+Okay.
+
+SPK_1
+0:33
+Okay.
+
+SPK_1
+0:33
+You see here, right?
+
+SPK_1
+0:34
+The one in the second row, right?
+
+SPK_1
+0:37
+So it we have been asked to do.
+
+SPK_1
+0:41
+So this will be the original value under every column, right?
+
+SPK_1
+0:44
+The only the first row, it contains the original value.
+
+SPK_1
+0:48
+So what you have to do is so for every column, right?
+
+SPK_1
+0:53
+You know so far testing, right?
+
+SPK_1
+0:58
+If you want to test particular field, you will have to test with both acceptable and unacceptable values, right?
+
+SPK_1
+1:05
+For testing.
+
+SPK_1
+1:07
+So whatever the positive and the negative values you can say so same way there will be for.
+
+SPK_1
+1:15
+We don't know what is meant by AB and.
+
+SPK_1
+1:17
+All right, so what kind of values are expected to test here, right?
+
+SPK_1
+1:20
+So one among value.
+
+SPK_1
+1:21
+The positive value they have given is one.
+
+SPK_1
+1:23
+Similarly we were being asked to find out the values.
+
+SPK_1
+1:27
+Acceptable values will be there.
+
+SPK_1
+1:29
+So randomly you can give the unacceptable values.
+
+SPK_1
+1:31
+That is how it works.
+
+SPK_1
+1:33
+So to know the acceptable values, right?
+
+SPK_1
+1:35
+There will be something called as a data dictionary.
+
+SPK_1
+1:39
+So there you will have like infinite or n number of data.
+
+SPK_1
+1:43
+So there you have to go and find this particular field and get the acceptable values.
+
+SPK_1
+1:49
+So unacceptable value is something you can give it on your own.
+
+SPK_1
+1:52
+So if it is acceptable values are like 1, 2, 3 or APC.
+
+SPK_1
+1:57
+And then acceptable values will be like something like XYZ like that, right?
+
+SPK_1
+2:01
+So I'm.
+
+SPK_1
+2:02
+I'm telling you for the example.
+
+SPK_1
+2:04
+So the one you are searching for the data, right?
+
+SPK_1
+2:06
+It is called as a data dictionary.
+
+SPK_1
+2:09
+So we have been given access to this data dictionary.
+
+SPK_1
+2:14
+You can see the all fields here.
+
+SPK_1
+2:16
+When you click on this link, it will get you opened with this data dictionary.
+
+SPK_1
+2:22
+Okay.
+
+SPK_1
+2:23
+So here.
+
+SPK_1
+2:31
+Say suppose I'm giving abi.
+
+SPK_1
+3:02
+So you can see the number of APIs available here, right?
+
+SPK_1
+3:06
+So you just have to scroll down to the particular data, not here.
+
+SPK_1
+3:16
+So I'm just saying if you're looking out for this lop abi so you have just have to go and search the data there and just fetch the values from that particular data dictionary.
+
+SPK_1
+3:32
+So that is where it is being used.
+
+SPK_1
+3:34
+I'll give you this one because here we this one we have already been provided with Excel sheet.
+
+SPK_1
+3:39
+So I'll give you one valid data which we have found it in here once again.
+
+SPK_1
+3:47
+Think.
+
+SPK_1
+5:51
+So I think you got it.
+
+SPK_1
+5:52
+What is data dictionary?
+
+SPK_1
+5:54
+Right, because I'm searching for that, but we have already have got it in a separate Excel sheet.
+
+SPK_1
+6:00
+So I don't remember the prashant.
+
+SPK_1
+6:02
+Do you remember the value?
+
+SPK_1
+6:04
+Okay, I think this one.
+
+SPK_2
+6:06
+Yeah, yeah.
+
+SPK_1
+6:07
+NCD type source.
+
+SPK_1
+6:09
+Yeah, right.
+
+SPK_1
+6:10
+I remember this.
+
+SPK_1
+6:20
+Source.
+
+SPK_1
+6:29
+It.
+
+SPK_2
+6:59
+Open any one of the NCD tab and we can check valid and on valid value.
+
+SPK_1
+7:16
+So here it was like NCD only I think I thought it was only source where I found it.
+
+SPK_1
+7:41
+Okay.
+
+SPK_1
+7:42
+Here.
+
+SPK_1
+7:45
+Okay.
+
+SPK_1
+7:50
+Okay.
+
+SPK_1
+7:50
+I think source type maybe.
+
+SPK_1
+8:10
+No.
+
+SPK_1
+8:15
+Prashant, can you be bit louder?
+
+SPK_1
+8:19
+You are telling something.
+
+SPK_2
+8:20
+Yeah, I'm saying.
+
+SPK_2
+8:21
+Yeah, it's fine.
+
+SPK_2
+8:23
+Like you can open any one of this.
+
+SPK_2
+8:24
+You can show them like how the fields are look like it's fine.
+
+SPK_2
+8:29
+So guys, it.
+
+SPK_2
+8:30
+It's kind of hunting like whatever the fields you need to find like need to show like positive data types.
+
+SPK_2
+8:37
+Now you need to find the related thing.
+
+SPK_2
+8:41
+Just open this source property or anything.
+
+SPK_1
+8:44
+I think this claim extension.
+
+SPK_2
+8:47
+Yeah, just open this.
+
+SPK_2
+8:49
+Yeah, click on these fields and all those things just open one table.
+
+SPK_1
+8:57
+This one like this.
+
+SPK_2
+9:00
+Yeah.
+
+SPK_2
+9:00
+So basically these are the labeling fields.
+
+SPK_2
+9:03
+If you.
+
+SPK_2
+9:03
+If you check in values fills now you.
+
+SPK_2
+9:06
+You can see like this many value and what kind of data IT concept.
+
+SPK_2
+9:12
+All those things are mentioned out in.
+
+SPK_2
+9:16
+In the table.
+
+SPK_2
+9:18
+By using that we can create the positive data fields.
+
+SPK_2
+9:22
+That's it.
+
+SPK_2
+9:24
+Rather than that all the fields are negative one, right.
+
+SPK_2
+9:28
+So we just randomly take some other fields as negative data field.
+
+SPK_2
+9:35
+So in end intention is that when we receive any other uh fields uh.
+
+SPK_2
+9:43
+Then it should failed.
+
+SPK_2
+9:45
+That's it.
+
+SPK_1
+9:47
+See I'll show you guys here you can see right.
+
+SPK_1
+9:50
+So if there is something related to some source here, right?
+
+SPK_1
+9:53
+So the climb type.
+
+SPK_1
+9:55
+So you have a code here, right?
+
+SPK_1
+9:57
+You see 1, 10, 11, 12.
+
+SPK_1
+9:58
+Right two and all.
+
+SPK_1
+10:00
+So these are the acceptable values.
+
+SPK_1
+10:04
+So you see it here under the code column.
+
+SPK_1
+10:08
+So if it is one, it means if you have accident, you hit somebody or something.
+
+SPK_1
+10:13
+So if it is 10, you have theft of keys or lost the key.
+
+SPK_1
+10:17
+So same way you will have this code.
+
+SPK_1
+10:20
+So these are the acceptable codes while preparing the data input data sheet.
+
+SPK_1
+10:25
+So you have to give the acceptable data in the green color.
+
+SPK_1
+10:29
+So whatever the number, right the code you have.
+
+SPK_1
+10:32
+So whatever number it is not there.
+
+SPK_1
+10:34
+Thousand was not there, right?
+
+SPK_1
+10:36
+So you can give the unacceptable value as thousand zero minus or the character whatever it is.
+
+SPK_1
+10:43
+So this is just for information that we do something called as a data dictionary where you go search for the datas to prepare your input data sheet and you fetch.
+
+SPK_1
+10:53
+You feed this input data sheet and then you have to run it.
+
+SPK_1
+10:56
+You will get the expected output result.
+
+SPK_1
+11:00
+So I'm.
+
+SPK_1
+11:01
+This is not.
+
+SPK_1
+11:01
+I mean we do have this.
+
+SPK_1
+11:03
+So it's.
+
+SPK_1
+11:04
+It's a part of a kt.
+
+SPK_1
+11:05
+It's not necessary that we are going to use it.
+
+SPK_1
+11:07
+But if.
+
+SPK_1
+11:08
+In case.
+
+SPK_1
+11:10
+If we are up to like you.
+
+SPK_1
+11:12
+You.
+
+SPK_1
+11:12
+You have to be used to it, right?
+
+SPK_1
+11:14
+Like, you have to know that there is something called as a data dictionary in case we get the same kind of work in the future.
+
+SPK_1
+11:21
+So that's why we were just explaining it.
+
+SPK_1
+11:25
+You got it right.
+
+SPK_1
+11:26
+What is this?
+
+SPK_1
+11:27
+Data dictionary?
+
+SPK_1
+11:29
+Yes, I think that's it, pretty much.
+
+SPK_1
+11:33
+We have covered everything.
+
+
+4) automation day 4 kt
+
+Hey, good afternoon, Tim.
+
+SPK_2
+0:02
+Good afternoon.
+
+SPK_1
+0:04
+Yeah, don't have much, so I'll just show you like alliance is using the GPT similar like Hexa and how we can create one port and we'll play around those things.
+
+SPK_1
+0:25
+Yeah, so I'm sharing my screen.
+
+SPK_1
+0:42
+So is it my screen is visible to you guys?
+
+SPK_1
+0:48
+Hello.
+
+SPK_2
+0:50
+Yes, Krishna.
+
+SPK_2
+0:51
+It's visible.
+
+SPK_1
+0:52
+Yeah, yeah.
+
+SPK_1
+0:54
+So basically to get the extension for GPT related to versus code it's you know, quite, we can say difficult because they need to get subscription and it's related to, you know, total overall costing.
+
+SPK_1
+1:17
+So.
+
+SPK_1
+1:17
+So I think they didn't easily approve those things.
+
+SPK_1
+1:21
+But some of our team have those things rather than like pricing.
+
+SPK_1
+1:29
+There are other teams, they are using those versus extension.
+
+SPK_1
+1:33
+But right now we won't have.
+
+SPK_1
+1:35
+So for now we are using this chart GPT extension where we can create some custom bots to work around those things.
+
+SPK_1
+1:49
+Okay, so here if you check here we have option agent chat.
+
+SPK_1
+1:55
+If you click on this link, you'll land upon this page.
+
+SPK_1
+2:01
+Okay.
+
+SPK_1
+2:01
+Where you can send the prompt, attach the files and whatever the output it will get received.
+
+SPK_1
+2:08
+Okay, that's it.
+
+SPK_1
+2:10
+Now we'll see how how to create a custom bot.
+
+SPK_1
+2:15
+So there is.
+
+SPK_1
+2:24
+And agent marketplace.
+
+SPK_1
+2:26
+So in the agent marketplace, if you click on this.
+
+SPK_1
+2:33
+Bot they already created by other team or like they alliance has a separate team to manage all those activity.
+
+SPK_1
+2:44
+Okay, so they already created those kind of things here if we check it's around 46, 86 pages.
+
+SPK_1
+2:53
+So around 300 to 400 bots they already created.
+
+SPK_1
+2:59
+But if your requirement is unique and you want to like reduce the repetitive tasks, you want to create some AI agent you can create by using this configure AI agent option.
+
+SPK_1
+3:12
+Okay, so once you click on here you.
+
+SPK_1
+3:16
+You land upon this page.
+
+SPK_1
+3:19
+Okay.
+
+SPK_1
+3:20
+And here you see already created bot by you or like yourself.
+
+SPK_1
+3:26
+So I created those things this data in liner and I clone one bot, this data analysis agent.
+
+SPK_1
+3:35
+So it's showing your history, you can publish those things.
+
+SPK_1
+3:38
+And here I publish one bot, this data in liner.
+
+SPK_1
+3:42
+Yeah, you can see the history.
+
+SPK_1
+3:44
+Okay, now we'll focus on how to create those AI agent.
+
+SPK_1
+3:51
+So once you click on here, so you know like the prompting technique, what is the ticket, what is the temperature, how you can restrict or how you can set a boundaries related to your AI agent, right?
+
+SPK_2
+4:10
+Yeah.
+
+SPK_2
+4:10
+Actually you're saying like guardrails, right?
+
+SPK_1
+4:14
+Yeah, guardrails.
+
+SPK_1
+4:15
+Then you need to define the rules, acceptance criteria.
+
+SPK_2
+4:21
+Not much about it.
+
+SPK_1
+4:23
+Okay, so Steven said like you already created like you already have certification on AI agents.
+
+SPK_1
+4:32
+That's why.
+
+SPK_2
+4:33
+Yeah, yeah, yeah.
+
+SPK_2
+4:33
+But they haven't thought about these temperatures like that.
+
+SPK_2
+4:38
+We know about God Rails.
+
+SPK_2
+4:39
+Actually we have created a agent.
+
+SPK_2
+4:44
+A agent where Stepen gave us a task to do.
+
+SPK_2
+4:48
+So we have made it simple but not this much about temperatures and other stuffs.
+
+SPK_1
+4:55
+Basically I think if you cover any of the AI agent certification the things are same.
+
+SPK_1
+5:03
+You either you use the charge apt, either you use Gemini or any tool whatever in the market.
+
+SPK_1
+5:12
+So there are certain, certain things are the same.
+
+SPK_1
+5:16
+First things, the guardrails.
+
+SPK_1
+5:19
+Second thing is acceptance criteria.
+
+SPK_1
+5:23
+Third thing is the rules.
+
+SPK_1
+5:26
+Then the fourth thing is that you need to like set a temperature to avoid hallucination.
+
+SPK_1
+5:35
+Right.
+
+SPK_1
+5:37
+So whatever.
+
+SPK_1
+5:39
+Yeah, whatever the input you.
+
+SPK_2
+5:43
+Yeah,.
+
+SPK_1
+5:45
+Yeah.
+
+SPK_1
+5:46
+So I'm saying that all the things are same.
+
+SPK_1
+5:50
+It's just a tool difference.
+
+SPK_1
+5:53
+Either you can like see see like I'm using the UI directly or you are using this versus code extension.
+
+SPK_1
+6:01
+The things are same.
+
+SPK_1
+6:02
+Whatever the prompt system prompt you are delivering now it should, you know consume your data, use minimize token, get the accuracy what you expected in a result feed.
+
+SPK_1
+6:20
+So these are the three like end intention related to the system prom.
+
+SPK_1
+6:27
+Okay, so make sure in everywhere where you are using those things they you need to like consider those things while creating.
+
+SPK_1
+6:35
+Because if you created any AI agent and every word or every single word maybe there is two tokens or three tokens.
+
+SPK_1
+6:47
+It's depend upon how the things are working.
+
+SPK_1
+6:50
+But if.
+
+SPK_1
+6:51
+If your prompt is taking too much tokens then the cost part of things like it's difficult, right?
+
+SPK_1
+7:00
+If it's costing is more than what you are doing.
+
+SPK_1
+7:04
+So you need to make sure those things while you creating the system prompt.
+
+SPK_1
+7:08
+So here we are giving the same like we are giving the name like just a title.
+
+SPK_1
+7:15
+Then we are giving the short description and we are giving the system prompt.
+
+SPK_1
+7:21
+So in the system prompt as I explain you, it should have the entry criteria, exit criteria, guardrails and boundary values regarding to your input and output.
+
+SPK_1
+7:35
+Then there is one option like two legends.
+
+SPK_1
+7:40
+So while working this AI injured or like while taking the reference information it will use like web search code Inspector image generator build PowerPoint presentation, SharePoint MCP confluence pages, Jira master platform.
+
+SPK_1
+7:59
+So these are the extensions we need to mention it our system prompt.
+
+SPK_1
+8:05
+So maybe if you have access with Jira if you simply give the link over here system prompt it will automatically go there like read your test cases or like tickets and get it, get, get it the required information to get your output.
+
+SPK_1
+8:27
+Okay, so that's why this extension they intentionally put it here Then they.
+
+SPK_1
+8:34
+They give us a knowledge base.
+
+SPK_1
+8:36
+So there's some organizations policy like data should not be displayed outside the organization or like there are some restrictions guard rails so that things also they can put it in this knowledge base and all knowledge base and their documentations.
+
+SPK_1
+8:57
+Okay then if you check it here.
+
+SPK_1
+9:00
+Yeah you can see this temperatures right Then here the token limits and all those things.
+
+SPK_1
+9:08
+So basically the temperature is help to reduce your hallucination.
+
+SPK_1
+9:14
+So if the temperature is more the your agent will you know explore or like more creative.
+
+SPK_1
+9:26
+So it will find the more relative solutions.
+
+SPK_1
+9:29
+Maybe that time it may hallucinate.
+
+SPK_1
+9:32
+So it should be minimum while you are using the temperature.
+
+SPK_1
+9:37
+And if the temperature is minimum so whatever the result is within the parameter.
+
+SPK_1
+9:44
+So that's it.
+
+SPK_1
+9:45
+Then we have the agents files.
+
+SPK_1
+9:47
+So basically here we can set up a reference from system prompt to agents files.
+
+SPK_1
+9:54
+So basically if you are working with some confluence pages so you can attach the necessary document here every time you share some every time when you run those things it will read all the agent information or agent files from here.
+
+SPK_1
+10:11
+And as for that you will get the output.
+
+SPK_1
+10:16
+So that's why they created this agent file.
+
+SPK_1
+10:19
+Okay, so if you know those things or like for your reverse KT purpose you just noted down those things.
+
+SPK_1
+10:28
+What the necessary things like name description, process, impront then agent tools.
+
+SPK_1
+10:35
+Okay.
+
+SPK_1
+10:37
+Knowledge base and then AI agents.
+
+SPK_1
+10:40
+And here you can select the module means like while searching your out.
+
+SPK_1
+10:46
+What should it.
+
+SPK_1
+10:48
+What should agent should use?
+
+SPK_1
+10:50
+Like why either it's char GPT Cloud, Sonet, opus, GPT Mini.
+
+SPK_1
+10:57
+There are multiple tools are here.
+
+SPK_1
+10:59
+So by using those you can get the output.
+
+SPK_1
+11:03
+That's it.
+
+SPK_1
+11:04
+Once you set up all those things you just need to save and close your agent is guilt built here similar to like a similar like this.
+
+SPK_1
+11:13
+And you need to click on there.
+
+SPK_1
+11:16
+Okay, sorry.
+
+SPK_1
+11:20
+So for using use purpose you need to go here you need to select your AI agent.
+
+SPK_1
+11:26
+Okay.
+
+SPK_1
+11:32
+And you need to put the required information in the output.
+
+SPK_1
+11:36
+That's it.
+
+SPK_1
+11:37
+Okay, now we'll see the agent created by me.
+
+SPK_1
+11:43
+It's simple one.
+
+SPK_1
+11:44
+So basically as I said I show you like we have the mapping documents, right?
+
+SPK_1
+11:49
+Second.
+
+SPK_2
+11:54
+It.
+
+SPK_1
+12:25
+Once again I'm checking those.
+
+SPK_1
+12:48
+Okay, so I converted this in dot CSV format because the size of file is More so should below 2 MB.
+
+SPK_1
+13:02
+That's why I converted this CSV so agent can accept those things.
+
+SPK_1
+13:10
+So basically that kind of Excel will receive from stakeholder.
+
+SPK_1
+13:14
+Now we can call this the mapping document where we can got this quote code request data types and mandatory fields as we See in earlier lecture.
+
+SPK_1
+13:26
+And we need to validate those things by whatever the output we receive from Ready API.
+
+SPK_1
+13:31
+Right?
+
+SPK_1
+13:32
+So suppose this is the output field, okay.
+
+SPK_1
+13:37
+Actually shared by Adrian.
+
+SPK_1
+13:40
+Okay, so we need to identify each field, right?
+
+SPK_1
+13:45
+Either it's a band identifier is under the control.
+
+SPK_1
+13:49
+Okay.
+
+SPK_1
+13:49
+So whether it's the flow is correct, control load band and identifier.
+
+SPK_1
+13:55
+And then the value is a Z.
+
+SPK_1
+13:57
+So that thing we need to check, check it manually, right?
+
+SPK_1
+14:01
+So for that I created one bot, okay?
+
+SPK_1
+14:05
+So it will read all the information, will read this, your XML document and it automatically compares these fields and you will get a result.
+
+SPK_1
+14:20
+So I'll show you the result.
+
+SPK_1
+14:22
+Okay, So you will get this Excel sheet where all the fields are already there.
+
+SPK_1
+14:39
+These are the fields we received from stakeholder and this is the data type they they give us for a sample.
+
+SPK_1
+14:47
+And here the board is created those JSON data found.
+
+SPK_1
+14:54
+Then JSON values.
+
+SPK_1
+14:56
+Okay?
+
+SPK_1
+14:56
+Then field present status.
+
+SPK_1
+15:00
+Okay, value comparison.
+
+SPK_1
+15:01
+If you check it's showing like yeah, the flow is correct.
+
+SPK_1
+15:05
+Whatever the values get matched.
+
+SPK_1
+15:07
+Okay?
+
+SPK_1
+15:08
+The value is also similar to whatever the sample value.
+
+SPK_1
+15:12
+And there we get the end result.
+
+SPK_1
+15:15
+If it's not, it's showing like the value the path is presentment value is not there.
+
+SPK_1
+15:20
+Or like it's similar but not exact.
+
+SPK_1
+15:24
+So we'll get the result within a second.
+
+SPK_1
+15:27
+Okay, Then we.
+
+SPK_1
+15:29
+We get a summary report here.
+
+SPK_1
+15:31
+It's showing like total fields, how many match, how many not matches.
+
+SPK_1
+15:37
+So that kind of information we will get in a summary dashboard.
+
+SPK_1
+15:42
+Then here like after running those fields, the field, some of the fields are not in the mapping document, but they are present in in the XML sheet.
+
+SPK_1
+15:54
+So that fields are covered out here.
+
+SPK_1
+15:57
+So in future if we the we need to check like whatever the fields is not present in mapping document.
+
+SPK_1
+16:05
+But yeah, it's necessary to run particular upcoming requests so we can find it out here.
+
+SPK_1
+16:11
+So that's why I created those things and those prompt information.
+
+SPK_2
+16:22
+Like.
+
+SPK_1
+16:24
+So it's simple like if you check it here I added this MQS code CSV file.
+
+SPK_1
+16:34
+Basically it's Excel file.
+
+SPK_1
+16:35
+Then this is the txt file, means it's the XML output file which I converted into Txt.
+
+SPK_1
+16:46
+If you directly share with XML it will be fine because I already added those extension and we just need to give command like read.
+
+SPK_1
+17:03
+File.
+
+SPK_1
+17:18
+And it will read all the attached file and it will give you the output link you just need to download and that's it.
+
+SPK_1
+17:41
+Till here.
+
+SPK_1
+17:41
+Do you have any questions?
+
+SPK_2
+17:45
+No pr.
+
+SPK_1
+17:48
+It's simple, only not so difficult.
+
+SPK_1
+17:51
+Actually we don't play around any code and anything else.
+
+SPK_1
+17:56
+So just we need to know like simple prompting techniques like every tool in a market use like guardrails in input output criteria and tickets and all those things.
+
+SPK_1
+18:12
+If you check it's all the information is get created and here if you check this download link is there we just need to click it here.
+
+SPK_1
+18:25
+Yeah once you open this you can see the output result.
+
+SPK_1
+18:30
+That's it.
+
+SPK_1
+18:37
+Similar way you if in the future if you face a similar kind of issue like the repetitive work you can convert this in a AI agent so it will reduce your and your team efforts.
+
+SPK_1
+18:50
+Right now we'll check the system promote yeah but yes yes yes Once you publish or share to other demand they can access those things.
+
+SPK_1
+19:06
+Okay but before that you need to yeah yeah yeah yeah go.
+
+SPK_1
+19:18
+Yes within a alliance environment only we don't you should don't like share those info outside the alliance network make sure okay whatever the.
+
+SPK_2
+19:41
+Yeah.
+
+SPK_1
+19:58
+Are they already like while giving the already data should hide this they they they are already that's why they give us and they are the that's it sure you don't have to.
+
+SPK_1
+20:31
+Sure like.
+
+SPK_1
+20:37
+Equal important password.
+
+SPK_1
+20:53
+It should outside the organization that thing you need rather than that.
+
+SPK_2
+21:04
+That.
+
+SPK_1
+21:08
+Potential and should not kind of thing.
+
+SPK_1
+21:30
+It.
+
+SPK_1
+21:56
+Check the system prompt here.
+
+SPK_1
+21:58
+If you check like I set up all the guardrails and all those things like there are rules and objective like what is the objective behind this prompt Then what kind of input it will accept okay if data size is more then it will accept CSV file and all those things I wrote it down it here it's just simple lemon language so you can create by using charge apt as well.
+
+SPK_1
+22:32
+You need to create the rough data then you need to put it on chat GPT then the iteration wise it will enhance at the end whatever the info you get it will get created by chargebit itself.
+
+SPK_1
+22:51
+But you should have this object and all those things in your mind.
+
+SPK_1
+22:57
+Okay then the validation logics here the what validation we need to perform what card rails you need to put it out here all those things are put it out here.
+
+SPK_1
+23:13
+The response format should be how it's look like okay and how errors will hand handles means like if you put invalid files it's not related to each other.
+
+SPK_1
+23:27
+So at that time how it's behave okay then the guidelines so all those things I put it down it here so as per those you I will get output that's it.
+
+SPK_1
+23:45
+It's simple like you created only the I I put it the info in brief so it will Hallucinate less every time I.
+
+SPK_1
+23:56
+Whatever the result we got, it's similar like previous.
+
+SPK_1
+24:01
+Okay.
+
+SPK_2
+24:14
+Yes.
+
+SPK_2
+24:14
+Prashant, I think she has any mic issues.
+
+SPK_2
+24:18
+I don't think so.
+
+SPK_1
+24:20
+Okay.
+
+SPK_1
+24:21
+Okay.
+
+SPK_1
+24:21
+Not an issue.
+
+SPK_1
+24:22
+So that's it.
+
+SPK_1
+24:23
+Actually we have only this much for this AI agent creation.
+
+SPK_1
+24:29
+Because for myself and Selby we won't have any additional access related to Charge GPT or AI agents.
+
+SPK_1
+24:37
+So for now we are using only this kind of things here.
+
+SPK_2
+24:43
+So then how did you create the this agent here without any.
+
+SPK_2
+24:50
+You completely did it on your manual by manually or did you seek any AA agent self, a model self here?
+
+SPK_1
+25:00
+No, like I done donated manually only.
+
+SPK_1
+25:05
+So basically what I done, I. I roughly created the guardrail objective input and output criteria again.
+
+SPK_1
+25:14
+Then by using chat GPT only, I propose the chart.
+
+SPK_1
+25:20
+GPT means it work like iteration.
+
+SPK_1
+25:22
+Like I. I ask like I want to create that that kind of agent.
+
+SPK_1
+25:26
+This is the information.
+
+SPK_1
+25:29
+Read it out.
+
+SPK_1
+25:30
+If you find any enhancement, give it to me.
+
+SPK_1
+25:36
+Okay.
+
+SPK_1
+25:37
+So that way charge please get created one iteration.
+
+SPK_1
+25:41
+Then I'll add it the second point.
+
+SPK_1
+25:43
+Like I need a color and all those things.
+
+SPK_1
+25:45
+Then again Charge APD updated those things and at the end I'll get the system prompt.
+
+SPK_1
+25:51
+That's it.
+
+SPK_2
+25:55
+So you have the access to use the chat GPT here?
+
+SPK_2
+26:00
+Yeah, inside the vda.
+
+SPK_1
+26:05
+Inside the vda.
+
+SPK_1
+26:06
+If you check.
+
+SPK_1
+26:07
+Oh, not on the bot.
+
+SPK_2
+26:08
+Okay, okay.
+
+SPK_2
+26:09
+Okay.
+
+SPK_2
+26:09
+Okay.
+
+SPK_2
+26:10
+The.
+
+SPK_2
+26:10
+I mean the model, right?
+
+SPK_2
+26:11
+GPT model.
+
+SPK_1
+26:12
+Yeah.
+
+SPK_2
+26:13
+Okay.
+
+SPK_2
+26:14
+Okay.
+
+SPK_2
+26:15
+You.
+
+SPK_1
+26:16
+I just show you like the models.
+
+SPK_1
+26:18
+You can change it out here.
+
+SPK_2
+26:20
+Yeah, yeah.
+
+SPK_2
+26:21
+So it cl.
+
+SPK_2
+26:22
+So yeah.
+
+SPK_1
+26:24
+So these are the models.
+
+SPK_1
+26:26
+Okay.
+
+SPK_2
+26:27
+Yeah, yeah, yeah.
+
+SPK_2
+26:29
+Okay.
+
+SPK_1
+26:30
+Okay.
+
+SPK_1
+26:32
+Here.
+
+SPK_1
+26:33
+If you go in agent chat there is one default geni chat.
+
+SPK_1
+26:39
+Okay.
+
+SPK_1
+26:40
+So it automatically switch over whatever the info.
+
+SPK_1
+26:43
+You put it down here.
+
+SPK_1
+26:45
+Okay.
+
+SPK_1
+26:46
+So it's.
+
+SPK_1
+26:47
+It's.
+
+SPK_1
+26:48
+We can set a default agent.
+
+SPK_1
+26:50
+You can ask whatever you want.
+
+SPK_2
+26:54
+Okay, then how is the token here?
+
+SPK_2
+26:57
+How much token is available for model here?
+
+SPK_2
+27:00
+For this?
+
+SPK_1
+27:03
+Yeah.
+
+SPK_1
+27:03
+Here they restricted those things up to 5,000 token.
+
+SPK_1
+27:07
+I think.
+
+SPK_2
+27:13
+You.
+
+SPK_1
+27:14
+You heard about how the tokens get consumed, right?
+
+SPK_2
+27:20
+Yes, yes, yes.
+
+SPK_1
+27:22
+Yeah.
+
+SPK_1
+27:24
+So you your bought within that token, right?
+
+SPK_1
+27:29
+Whatever you prompt.
+
+SPK_1
+27:29
+If the size of your prompt is more than consumes more tokens so the like starting information it get vanish.
+
+SPK_1
+27:42
+And only the token size after means like what we can say like if you start it from create new agent and you end it out from central skills.
+
+SPK_1
+27:54
+Okay.
+
+SPK_1
+27:54
+And if your token size is up to 1, 2, 3, 4 then it will accept only knowledge base, advanced option and agent files and central skills.
+
+SPK_1
+28:05
+Right.
+
+SPK_1
+28:06
+So if the previous information is important to run your bot, then it will not work that way and it get hallucinate.
+
+SPK_1
+28:14
+Right.
+
+SPK_1
+28:16
+So that's whatever the info of your prompt should be within a.
+
+SPK_2
+28:28
+Yes, yes.
+
+SPK_1
+28:31
+Yeah, I think here.
+
+SPK_2
+28:45
+Yeah.
+
+SPK_1
+28:45
+So this is the token, I think 5,000 token here.
+
+SPK_1
+28:54
+Yeah, that's it.
+
+SPK_1
+29:02
+Yeah, I think nothing much here from my end.
+
+SPK_1
+29:05
+We can conclude this call if you have any questions other than that.
+
+SPK_1
+29:22
+Yeah, if these things are necessary, you need to ask a train.
+
+SPK_1
+29:28
+So basically behalf of you, they need to like create or raise a ticket or like, they need to do some process.
+
+SPK_1
+29:39
+And afterward you got this access.
+
+SPK_1
+29:42
+But mostly if the things are working this AI agent lab now, then.
+
+SPK_2
+29:50
+No.
+
+SPK_1
+29:50
+Need to ask them for other agent, because it.
+
+SPK_1
+29:53
+It will take cost.
+
+SPK_1
+29:55
+Right.
+
+SPK_1
+29:56
+So.
+

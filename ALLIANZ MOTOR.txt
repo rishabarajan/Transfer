@@ -1,0 +1,2740 @@
+ALLIANZ MOTOR
+
+1) allianz motor kt day 1
+
+Will register later.
+
+SPK_1
+0:03
+So this is the same page, right?
+
+SPK_1
+0:04
+So this is for Alan home and this is for Alan car.
+
+SPK_1
+0:12
+So you have gone through this portal, right?
+
+SPK_1
+0:13
+For whom?
+
+SPK_1
+0:16
+Yes.
+
+SPK_1
+0:18
+Yeah.
+
+SPK_1
+0:18
+Okay, so for car.
+
+SPK_1
+0:20
+So you need to create car code.
+
+SPK_1
+0:22
+Okay, so first of all there are three type of transaction.
+
+SPK_1
+0:29
+Maybe Sasha Priya have explained to you.
+
+SPK_1
+0:31
+One is new business, second is mta.
+
+SPK_1
+0:33
+The third is renewable.
+
+SPK_1
+0:36
+MTA stands for midterm assessment.
+
+SPK_1
+0:38
+So new business is like when you are.
+
+SPK_1
+0:40
+When you are a fresh user and purchasing the policy for the first time.
+
+SPK_1
+0:45
+Okay.
+
+SPK_1
+0:46
+Whether it is home or car, MTA is like.
+
+SPK_1
+0:50
+Suppose you have purchased the policy and during the policy period you want to change some details of the driver or there is some change of address or there is a change of vehicle.
+
+SPK_1
+1:05
+So if any change is there, okay, whatever change is allowed as per the portal that is known as mta.
+
+SPK_1
+1:11
+And the third one is renewal when your policy is going to expire.
+
+SPK_1
+1:15
+So if you want to continue with the same policy with the same complete is termed as renewal.
+
+SPK_1
+1:21
+Okay, so yes, so this is the first page for motor.
+
+SPK_1
+1:28
+Okay.
+
+SPK_1
+1:29
+So it will ask you for the registration number.
+
+SPK_1
+1:32
+Okay, so for if you give no.
+
+SPK_1
+1:36
+Okay, so then you have to give the every card detail.
+
+SPK_1
+1:40
+Like which make is there?
+
+SPK_1
+2:10
+So you have to give make detail.
+
+SPK_1
+2:12
+Okay, then car model, anything you have to select hero, manufacture, Date of purchase.
+
+SPK_1
+2:33
+So it will be either same year or year after that.
+
+SPK_1
+2:40
+Automatic or manual, whatever transmission type, fuel type, number of doors, Description.
+
+SPK_1
+2:54
+Then you have to click on all date done.
+
+SPK_1
+2:55
+Okay so this way you have to fill the details or else when you know the car ratiation number then you have to click yes and give the car registration number.
+
+SPK_1
+3:08
+So car registration Number comprise of 7 digit length.
+
+SPK_1
+3:13
+Okay.
+
+SPK_1
+3:14
+It's alphanumeric 1, 2, 3, 4, 5, 6, 7 without any space.
+
+SPK_1
+3:19
+Okay, So once you click on the find my car it fetches all those detail automatically.
+
+SPK_1
+3:33
+Okay.
+
+SPK_1
+3:33
+Manufactured, purchased date, transmission type, petrol or diesel.
+
+SPK_1
+3:38
+All this car name description name.
+
+SPK_1
+3:44
+Okay, so in this as home there is UW model for car.
+
+SPK_1
+3:51
+Also underwriting underwriting means the underwriting guys were there when we.
+
+SPK_1
+3:55
+When we used to purchase any health insurance or any of the insurance they used to validate auditors.
+
+SPK_1
+4:01
+Right?
+
+SPK_1
+4:01
+So those person are known as underwrite underwriters.
+
+SPK_1
+4:05
+So in this suppose if you give incorrect details, okay.
+
+SPK_1
+4:10
+Like are the above car details are correct when you give no or if you have done any modification.
+
+SPK_1
+4:17
+So for normal car insurance when we do any kind of external modification, our insurance get lapsed, right?
+
+SPK_1
+4:25
+So insurance company will not claim with that case.
+
+SPK_1
+4:30
+So when, when you select Nona so.
+
+SPK_1
+4:33
+So you will not be able to purchase the code and it will decline with some decline code whatever the reason you have selected.
+
+SPK_1
+4:40
+So in order to test positive scenario we have to answer positive option like are they over equal to it?
+
+SPK_1
+4:47
+So we need to click on yes.
+
+SPK_1
+4:50
+Does this have any modification?
+
+SPK_1
+4:52
+No.
+
+SPK_1
+4:53
+If you select yes then it will decline.
+
+SPK_1
+4:59
+Do you have a driver license handy?
+
+SPK_1
+5:01
+If you select no or if you select yes.
+
+SPK_1
+5:04
+Okay then once client gave us the test data now so you have to give the driver license numbers.
+
+SPK_1
+5:15
+Once you give the driver license number, all the detail will automatically fill.
+
+SPK_1
+5:19
+So generally we don't give the license number we select no and you have to select title, any name, Date of birth, anything.
+
+SPK_1
+5:47
+Date of birth.
+
+SPK_1
+5:48
+Also there is some validation if you give date of birth which.
+
+SPK_1
+5:53
+Which is approximately less than or.
+
+SPK_1
+5:57
+Or you can say one day less than 18 years.
+
+SPK_1
+5:59
+Okay?
+
+SPK_1
+6:00
+In that case also it will decline.
+
+SPK_1
+6:02
+So driver license age should be minimum 18 years.
+
+SPK_1
+6:07
+Exactly 18 years.
+
+SPK_1
+6:09
+And and postcode Based on the test data there are several postcode which is of six digit.
+
+SPK_1
+6:17
+Okay.
+
+SPK_1
+6:18
+And there is a space after three digit.
+
+SPK_1
+6:20
+So this is the format of giving the postcode.
+
+SPK_1
+6:24
+So once you give the postcode and find address you have to select address from the drop down.
+
+SPK_1
+6:32
+So this address detail will be filled automatically.
+
+SPK_1
+6:38
+Driver license types I will select UK full how many years you have held the license?
+
+SPK_1
+6:45
+So based on any of the option you can select.
+
+SPK_1
+6:51
+Okay?
+
+SPK_1
+6:51
+So has the first, first, last had any motoring conviction of fixed penalty?
+
+SPK_1
+6:56
+So this is like any crime you have done.
+
+SPK_1
+6:59
+Okay?
+
+SPK_1
+6:59
+Any penalty you have there is imposed in your last five years.
+
+SPK_1
+7:04
+So once you select yes again you will not be able to purchase the code it will decline.
+
+SPK_1
+7:07
+So we have to select no employment status anything you can give.
+
+SPK_1
+7:22
+Option no status anything you can give Email address you need to give.
+
+SPK_1
+7:39
+There is a specific mobile number.
+
+SPK_1
+7:41
+Okay?
+
+SPK_1
+7:42
+Any mobile number will not work.
+
+SPK_1
+7:44
+So we have get the mobile number from the client.
+
+SPK_1
+7:48
+Okay?
+
+SPK_1
+7:53
+Do you own your own?
+
+SPK_1
+7:54
+Yes yes.
+
+SPK_1
+8:00
+Have you had any claim or accident in the last five year?
+
+SPK_1
+8:03
+You can select no.
+
+SPK_1
+8:08
+Against criminal activity you have to select no.
+
+SPK_1
+8:15
+This agency no name discount you can select none.
+
+SPK_1
+8:20
+Next if you want if there is some another driver like in case of husband or wife.
+
+SPK_1
+8:28
+Okay.
+
+SPK_1
+8:29
+And both the driver is relation with the same car.
+
+SPK_1
+8:32
+So in that case you can give the you want you can add another driver.
+
+SPK_1
+8:36
+Okay?
+
+SPK_1
+8:37
+In that case you need to click yes else you will select no next.
+
+SPK_1
+8:48
+So now who is registered your the details will come where we have filled the driver details.
+
+SPK_1
+8:54
+First name, last name for all this you have to select the the same name only.
+
+SPK_1
+9:00
+This is mileage.
+
+SPK_1
+9:05
+Is this car kept at your home address?
+
+SPK_1
+9:07
+Yes.
+
+SPK_1
+9:08
+Is this car kept overnight?
+
+SPK_1
+9:09
+Yes no.
+
+SPK_1
+9:11
+Where where it is used it is kept how many cars one used for anything you can select.
+
+SPK_1
+9:23
+So policy cover start date will always start from the current date or the future date.
+
+SPK_1
+9:28
+Select today's date and then you have to click on get a code.
+
+SPK_1
+9:41
+Yeah, so this reference number.
+
+SPK_1
+9:43
+Now this is quote id.
+
+SPK_1
+9:44
+Okay, using this quote ID we used to fetch logs logs means request response or else you can get the quote ID from the URL.
+
+SPK_1
+9:52
+Also this last character is the quote ID at the end of the URL.
+
+SPK_1
+9:59
+So copy it.
+
+SPK_1
+10:02
+So now you are able to see this premium per year.
+
+SPK_1
+10:05
+Okay, so there are three category here.
+
+SPK_1
+10:10
+Aliance, Bronze, Silver and gold.
+
+SPK_1
+10:13
+So aliance bronze is the least feature category.
+
+SPK_1
+10:18
+Okay, which has the less premium.
+
+SPK_1
+10:20
+Then silver comes between bronze and gold and some more additional feature it is gold tier.
+
+SPK_1
+10:27
+So these known as tier also.
+
+SPK_1
+10:29
+So gold is tier one, silver tier two, bronze tier three.
+
+SPK_1
+10:34
+So gold is always the always highest premium.
+
+SPK_1
+10:39
+Okay so okay so what is next?
+
+SPK_1
+10:43
+Now if you want to purchase the code you will select either of these three tier.
+
+SPK_1
+10:49
+Okay then you have to click on one second and go paper.
+
+SPK_1
+11:09
+Select alien Silver.
+
+SPK_1
+11:15
+Scroll down.
+
+SPK_1
+11:16
+These are some add on.
+
+SPK_1
+11:17
+Okay, if you want to add add or else click on no thanks.
+
+SPK_1
+11:56
+Then you have to click on next.
+
+SPK_1
+11:58
+This is summary page with all the premium per year for silver.
+
+SPK_1
+12:04
+All those car detail.
+
+SPK_1
+12:11
+You need to check on terms and condition click on next.
+
+SPK_1
+12:16
+Okay so here I will not be able to proceed.
+
+SPK_1
+12:19
+Okay so what it it will say like you have to use your email ID to purchase the code.
+
+SPK_1
+12:25
+Okay so every time you have to give your authentic email ID okay then it will send the authentication code.
+
+SPK_1
+12:34
+So once you give the authentic authentication code you have to proceed with the payment.
+
+SPK_1
+12:40
+So for the payment we have a test card.
+
+SPK_1
+12:42
+So where we have to give the card number, card details, CVB detail and purchase the code.
+
+SPK_1
+12:48
+So after purchasing the code you will get an email like okay this policy has been issued and please find all those details.
+
+SPK_1
+12:56
+Okay, any doubt till now it's clear session.
+
+SPK_1
+13:05
+Okay, so what I will do now.
+
+SPK_1
+13:13
+So this I have purchased.
+
+SPK_1
+13:14
+Suppose I purchase the code for from the front end.
+
+SPK_1
+13:17
+And this is new business mode because I'm purchasing it first time.
+
+SPK_1
+13:20
+So I need to as a middleware tester or API tester we need to validate the response.
+
+SPK_1
+13:28
+Also whether we are getting the response request response at the back end or not.
+
+SPK_1
+13:32
+So we have the logs portal.
+
+SPK_1
+13:36
+So this is Known as either elastic logs or Kibana logs.
+
+SPK_1
+13:39
+Whatever it is.
+
+SPK_1
+13:40
+So from here we have to fetch the logs.
+
+SPK_1
+13:44
+So.
+
+SPK_1
+13:46
+So whatever the quote ID we got, we have to search it here.
+
+SPK_1
+13:55
+Okay.
+
+SPK_1
+13:58
+And one more thing.
+
+SPK_1
+14:04
+So there is a query.
+
+SPK_1
+14:05
+Okay.
+
+SPK_1
+14:06
+So if you give this along with the quote ID and outbound message.
+
+SPK_1
+14:15
+So outbound means request it will give the request logs only.
+
+SPK_1
+14:21
+Okay.
+
+SPK_1
+14:22
+When you give inbound, it will give the response logs only.
+
+SPK_1
+14:27
+So I've given this and you have to give filter to today's date.
+
+SPK_1
+14:35
+It has fetched the record.
+
+SPK_1
+14:36
+Okay.
+
+SPK_1
+14:44
+So I will take the latest one default top one.
+
+SPK_1
+14:47
+Expand it.
+
+SPK_1
+14:54
+All.
+
+SPK_1
+14:54
+The request and response, it will be present in this log section.
+
+SPK_1
+14:57
+Okay.
+
+SPK_1
+14:58
+So you have to expand it.
+
+SPK_1
+15:14
+And for the payload.
+
+SPK_1
+15:16
+So in payload section we have the body.
+
+SPK_1
+15:18
+Okay.
+
+SPK_1
+15:19
+Either request or response.
+
+SPK_1
+15:21
+So you have to copy this entire equation response.
+
+SPK_1
+15:27
+So I will not copy it.
+
+SPK_1
+15:29
+I will just show you.
+
+SPK_1
+15:32
+So this is something else.
+
+SPK_1
+15:35
+Something else request we don't require.
+
+SPK_1
+15:37
+So what I will do, I will go to next page.
+
+SPK_1
+15:42
+So Sabri must have told you we generally worked on basically three different model or three different API.
+
+SPK_1
+15:49
+You can say one is precom.
+
+SPK_1
+15:52
+Precom is used for pre computation.
+
+SPK_1
+15:54
+Okay.
+
+SPK_1
+15:55
+Calculation purpose.
+
+SPK_1
+15:57
+The second one is UW model where we get some decline code with different decline messages.
+
+SPK_1
+16:05
+And the third one is radar main model.
+
+SPK_1
+16:07
+Okay.
+
+SPK_1
+16:07
+That is also known as rating request.
+
+SPK_1
+16:09
+So there it shows all the different premium for all those three different tiers.
+
+SPK_1
+16:16
+Silver, gold and bronze.
+
+SPK_1
+16:18
+Okay.
+
+SPK_1
+16:22
+And this one payload, This is also we don't require.
+
+SPK_1
+17:24
+Okay, It.
+
+SPK_1
+18:26
+Okay.
+
+SPK_1
+18:26
+Not sure why I'm not getting request.
+
+SPK_1
+18:28
+Let me check for response.
+
+SPK_1
+20:20
+Let me fetch this log.
+
+SPK_1
+20:32
+It.
+
+SPK_1
+21:02
+Okay.
+
+SPK_1
+21:03
+Not an issue.
+
+SPK_1
+21:04
+So okay, so in this way you.
+
+SPK_1
+21:06
+You can fetch logs from here.
+
+SPK_1
+21:08
+Okay, you are if you are able to see all this premium detail is present.
+
+SPK_1
+21:16
+Okay, Premium detail is there.
+
+SPK_1
+21:22
+Okay, Add on premium, whatever premium is there.
+
+SPK_1
+21:25
+So in generally motor.
+
+SPK_1
+21:26
+Now what we do is.
+
+SPK_1
+21:28
+So this is kind of lengthy process.
+
+SPK_1
+21:30
+Okay, so we.
+
+SPK_1
+21:31
+They have developer, they have developed one audit tool where it fetches the entire logs.
+
+SPK_1
+21:36
+Okay.
+
+SPK_1
+21:37
+Full working data.
+
+SPK_1
+21:38
+So what in that case what we do we just.
+
+SPK_1
+21:43
+We just have to give quote ID here.
+
+SPK_1
+21:55
+Okay.
+
+SPK_1
+21:57
+I have to expand it and we have to search for respore in with this keyword.
+
+SPK_1
+22:07
+Okay, so where this row is there resp in we have to expand this particular row.
+
+SPK_1
+22:19
+And from this log section.
+
+SPK_1
+22:29
+In this payload under payload we have to copy this MQS quote ID second this MPS quote id so we'll copy this.
+
+SPK_1
+22:45
+And so this is the tool that developer has developed.
+
+SPK_1
+22:49
+Okay, so name of the Team tool is audit tool.
+
+SPK_1
+22:52
+So once you refresh.
+
+SPK_1
+22:57
+So at the end you have to give the MQ code ID whatever you have copied from the elastic log.
+
+SPK_1
+23:02
+Okay.
+
+SPK_1
+23:05
+So here you have to give.
+
+SPK_1
+23:13
+Press enter, you will get the entire logs.
+
+SPK_1
+23:16
+Then you have to click on pretty print checkbox so it will format it copy.
+
+SPK_1
+23:49
+Okay.
+
+SPK_1
+23:49
+Not sure why browser is getting close.
+
+SPK_1
+23:51
+Okay.
+
+SPK_1
+23:52
+Okay, so I will give you an example.
+
+SPK_1
+23:54
+So once you have copied that format it will be like this.
+
+SPK_1
+24:07
+So is it.
+
+SPK_1
+24:08
+So it is exactly like this.
+
+SPK_1
+24:10
+If you I will show you.
+
+SPK_1
+24:18
+So it start from cash code data cache code data is there.
+
+SPK_1
+24:23
+Okay, so there are multiple blocks.
+
+SPK_1
+24:26
+So based on our testing scope we just focus here on precom request response and rating request response.
+
+SPK_1
+24:35
+Okay so I will show you.
+
+SPK_1
+24:40
+This is not required.
+
+SPK_1
+24:41
+Again this core code result is not required for us.
+
+SPK_1
+24:48
+Core request is also not required.
+
+SPK_1
+24:57
+Or request is also not required.
+
+SPK_1
+25:03
+MQ score request not required.
+
+SPK_1
+25:10
+Yeah, so we mainly focus on this precom request.
+
+SPK_1
+25:27
+Then click on response.
+
+SPK_1
+25:43
+This codecast response is not required.
+
+SPK_1
+25:50
+Then again this editing request.
+
+SPK_1
+26:02
+And the last one is editing response.
+
+SPK_1
+26:27
+So this is pre request.
+
+SPK_1
+26:28
+If you see this is for motor quote.
+
+SPK_1
+26:32
+Okay.
+
+SPK_1
+26:33
+And say for example I I've shown you this previous example.
+
+SPK_1
+26:37
+So today's date will be there.
+
+SPK_1
+26:39
+Okay.
+
+SPK_1
+26:40
+Transaction type 02 is for new business.
+
+SPK_1
+26:42
+Okay.
+
+SPK_1
+26:42
+And similarly different code for NT and renewable.
+
+SPK_1
+26:46
+So all those detail will be there.
+
+SPK_1
+26:48
+Driver detail and other detail it fetches from other APIs.
+
+SPK_1
+26:53
+Okay.
+
+SPK_1
+26:55
+And this is precom response.
+
+SPK_1
+27:00
+Precom response where we need to validate the status success whatever the latest version is there all these different model we need to verify motor PE motor MP motor risk.
+
+SPK_1
+27:09
+These are known as ML model machine learning models.
+
+SPK_1
+27:16
+Then motor poq fraud.
+
+SPK_1
+27:18
+Okay and if I show you this.
+
+SPK_1
+27:22
+So this is rating request same.
+
+SPK_1
+27:26
+All those detail will be there Alance then motor date, transaction type, driver details, vehicle detail.
+
+SPK_1
+27:36
+All those detail will be there.
+
+SPK_1
+27:50
+So tomorrow I will show you this area file and vehicle file.
+
+SPK_1
+27:53
+So this is area file section.
+
+SPK_1
+27:55
+Okay.
+
+SPK_1
+27:55
+All the detail comes from database.
+
+SPK_1
+28:04
+And this is vehicle file block.
+
+SPK_1
+28:06
+So this is separate testing vehicle file testing.
+
+SPK_1
+28:12
+And this last one is rating response where all those premium details will be present.
+
+SPK_1
+28:18
+So we need to verify the status success.
+
+SPK_1
+28:20
+Okay.
+
+SPK_1
+28:26
+And we need to verify all those different three tier alias essentially known as bronze.
+
+SPK_1
+28:32
+Okay.
+
+SPK_1
+28:32
+Or tier three.
+
+SPK_1
+28:35
+Here you can see the premium details is there.
+
+SPK_1
+28:38
+Okay.
+
+SPK_1
+28:38
+Total premium is there.
+
+SPK_1
+28:43
+So next one is.
+
+SPK_1
+28:53
+The next one is alliance.
+
+SPK_1
+28:55
+So this is Alliance Gold Tier 1.
+
+SPK_1
+29:00
+And the next one is.
+
+SPK_1
+29:06
+Alien silver.
+
+SPK_1
+29:08
+Okay so if I compare the premium alien silver.
+
+SPK_1
+29:36
+This IS alliance essential 723.3 it all are same only.
+
+
+
+2)allianz motor day 2 kt
+
+Vehicle file you will receive CSV file.
+
+SPK_1
+0:04
+Okay, so this is the CSV file.
+
+SPK_1
+0:07
+Okay, for area file and vehicle file will also be CSB file.
+
+SPK_1
+0:14
+Okay, so I opened both the file.
+
+SPK_1
+0:18
+So this is area file.
+
+SPK_1
+0:21
+So area file is having huge data.
+
+SPK_1
+0:23
+Okay, more than 10 lakh data is there.
+
+SPK_1
+0:28
+Okay, it's a huge file.
+
+SPK_1
+0:30
+So area file basically means.
+
+SPK_1
+0:32
+So it is for motor project.
+
+SPK_1
+0:33
+Okay, so area file basically means this is related to address field.
+
+SPK_1
+0:39
+Like see postcode is there.
+
+SPK_1
+0:41
+Okay, Some latitude, longitude, region, distance, all those other details are there.
+
+SPK_1
+0:47
+So basically this is related to communication address.
+
+SPK_1
+0:50
+Okay, and the second one is vehicle file.
+
+SPK_1
+0:55
+So vehicle file contain the details of all the vehicle details like what is the make of of the vehicle.
+
+SPK_1
+1:05
+Okay, then manufacturer, model number, all those start year, end year, body style.
+
+SPK_1
+1:13
+Okay, Fuel type, everything cylinder capacity, cubic capacity.
+
+SPK_1
+1:20
+All those details related to vehicle will be present here in this file.
+
+SPK_1
+1:25
+Okay, so the.
+
+SPK_1
+1:27
+Okay, so before starting of this area file and vehicle file we have to load this both the file in Cosmos database.
+
+SPK_1
+1:38
+Okay, they term as cosmos.
+
+SPK_1
+1:42
+So how we load.
+
+SPK_1
+1:43
+So so in order to load we have to run the pipeline.
+
+SPK_1
+1:48
+Okay, so you will get this pipeline access if you are testing in this vehicle file in the area file scenario.
+
+SPK_1
+1:56
+So you will get the access of the Azure DevOps pipeline.
+
+SPK_1
+1:59
+So you have to run the pipeline.
+
+SPK_1
+2:01
+Right now I can't show it because it will upload all the data.
+
+SPK_1
+2:05
+Okay, so it has some steps.
+
+SPK_1
+2:07
+Okay, so but basically before starting with the testing, we have to upload both the file into the cosmos database.
+
+SPK_1
+2:15
+So now what we have to do again the second step will be there is some shared drive.
+
+SPK_1
+2:22
+Okay, in this shared drive we have to load this file data quality check files.
+
+SPK_1
+2:32
+This it will be provided by the developer.
+
+SPK_1
+2:36
+Then next file is load definition.
+
+SPK_1
+2:42
+So in this load definition we have to make few changes.
+
+SPK_1
+2:50
+So we have to basically three thing we have to change.
+
+SPK_1
+2:54
+Okay, suppose they have given DQC file name.
+
+SPK_1
+2:59
+So we have to mention that file name.
+
+SPK_1
+3:03
+Then this area file name.
+
+SPK_1
+3:07
+Then only these two thing.
+
+SPK_1
+3:10
+Okay, for vehicle file again same thing.
+
+SPK_1
+3:15
+DQC file name we have to change then the vehicle file name we have to change.
+
+SPK_1
+3:21
+That's it.
+
+SPK_1
+3:26
+After this log is to after running the pipeline to check whether it has ran correctly or not.
+
+SPK_1
+3:35
+Okay, and next is raw.
+
+SPK_1
+3:39
+So here we have to upload both the file area file and vehicle file copy.
+
+SPK_1
+3:43
+Paste both the CHV file in this folder and schema.
+
+SPK_1
+3:50
+If the developer provide any schema file then we have to upload here paste it here in this folder.
+
+SPK_1
+3:56
+So after pasting all the file.
+
+SPK_1
+4:00
+Okay, you have To So the first step will be paste all the file in this folder location.
+
+SPK_1
+4:09
+Then second step will be you have to run the pipeline and third step will be.
+
+SPK_1
+4:17
+So these are the two services.
+
+SPK_1
+4:21
+One is for LRT area file request and second one is for LRT vehicle file request.
+
+SPK_1
+4:27
+If I open this area file.
+
+SPK_1
+4:36
+So it is a get request.
+
+SPK_1
+4:38
+Okay, so only thing you have to change maybe in the endpoint and in the resource.
+
+SPK_1
+4:43
+For example, this is area file.
+
+SPK_1
+4:58
+So if I consider this example AB10 Space1 Ah.
+
+SPK_1
+5:03
+Okay, so I've told you how what is the format of postcode?
+
+SPK_1
+5:07
+So generally seven digit, okay, With a space after four digit.
+
+SPK_1
+5:12
+So how we have to give this the same thing we have to give your postcode in the resource parameter.
+
+SPK_1
+5:17
+So how we are giving this first four letter.
+
+SPK_1
+5:20
+Okay, then space will be represented by percentage 2 0.
+
+SPK_1
+5:27
+So this is space and the last three letter.
+
+SPK_1
+5:31
+Okay, so this is last three letter 6nd.
+
+SPK_1
+5:36
+After entering this detail you have to send it and you will get this detail.
+
+SPK_1
+5:43
+Okay, let me try with this one.
+
+SPK_1
+6:09
+Yeah, so we got this detail.
+
+SPK_1
+6:11
+Okay, so what you have to validate here manually you have to able to see first of all all the field name.
+
+SPK_1
+6:21
+Okay, so whatever the column name mentioned here in this particular excel sheet, the same column name should be your postcode.
+
+SPK_1
+6:30
+And if you see exactly same thing all those cases, it should be exact match vehicle area file version.
+
+SPK_1
+6:37
+Vehicle area file version.
+
+SPK_1
+6:39
+Then postcode underscore type.
+
+SPK_1
+6:41
+Next is postcode underscore.
+
+SPK_1
+6:43
+So these column name are the field name and these are the values.
+
+SPK_1
+6:47
+Again you have to verify all those value.
+
+SPK_1
+6:49
+So if I have given this one one.
+
+SPK_1
+6:52
+Ah, so I have to validate this one.
+
+SPK_1
+6:58
+This postcode should be present then version Name to notify/V5E5 string value 3942039420 so same you have to validate for all this field.
+
+SPK_1
+7:16
+So there are around 58 fields.
+
+SPK_1
+7:20
+So 58 field value you have to verify.
+
+SPK_1
+7:23
+Okay, so they will not ask you to verify all this 10 lakh data.
+
+SPK_1
+7:28
+So randomly you have to verify Suppose for this two digit push code, then four digit maybe 10 to 20 data you need to verify.
+
+SPK_1
+7:38
+Same goes with the vehicle file testing.
+
+SPK_1
+7:41
+Also if I open vehicle file, So again this is a get service.
+
+SPK_1
+7:52
+So you at the end of the resource you have to give the vehicle data.
+
+SPK_1
+7:57
+Vehicle data you have to give make model code.
+
+SPK_1
+8:00
+Okay, so make model code.
+
+SPK_1
+8:02
+All the make model can it is 8 digital length.
+
+SPK_1
+8:08
+Yeah, 8 digit in length.
+
+SPK_1
+8:10
+Suppose if it is a 7 digit or 6 digit we have to prefix with 0 accordingly.
+
+SPK_1
+8:17
+So you have to make it to 8 digit.
+
+SPK_1
+8:23
+Again same thing.
+
+SPK_1
+8:24
+All this column name are the field name, make model code, vehicle file version invalid indicator.
+
+SPK_1
+8:37
+Make model, vehicle file version invalid indicator.
+
+SPK_1
+8:40
+All this column name or field name and code respectively.
+
+SPK_1
+8:44
+All all these are values.
+
+SPK_1
+8:47
+So for take.
+
+SPK_1
+9:04
+So I got this value.
+
+SPK_1
+9:07
+So you have to verify all these details.
+
+SPK_1
+9:09
+So currently the latest file is v4.
+
+SPK_1
+9:11
+But here you are getting as v3.
+
+SPK_1
+9:13
+Because this is pointing to older database.
+
+SPK_1
+9:16
+So again same thing.
+
+SPK_1
+9:17
+N car alert.
+
+SPK_1
+9:21
+All this detail is the Palm beach two one G Palm beach to one.
+
+SPK_1
+9:25
+So all this detail you need to verify.
+
+SPK_1
+9:28
+So it is having.
+
+SPK_1
+9:34
+122 Fields you need to verify.
+
+SPK_1
+9:38
+So again randomly you need to verify 10 to 15 data.
+
+SPK_1
+9:44
+Okay, so this is done for area file, vehicle file.
+
+SPK_1
+9:47
+Any.
+
+SPK_1
+9:49
+Any doubt?
+
+SPK_2
+9:52
+Yeah, I do have a doubt here.
+
+SPK_2
+9:55
+Like this these tests can be done should be done only in manual.
+
+SPK_2
+10:00
+Or it can be automated.
+
+SPK_1
+10:03
+This is auto.
+
+SPK_1
+10:05
+This has been done through automation.
+
+SPK_2
+10:10
+It can be also done in automation.
+
+SPK_2
+10:12
+Right?
+
+SPK_1
+10:13
+It can be done in automation.
+
+SPK_2
+10:16
+There are so many fields and data.
+
+SPK_1
+10:19
+It can be done in automation.
+
+SPK_1
+10:21
+But I haven't run this automation.
+
+SPK_1
+10:23
+But they have prepared the pack.
+
+SPK_1
+10:25
+Okay.
+
+SPK_1
+10:25
+Vehicle file.
+
+SPK_1
+10:28
+But I haven't run this pack.
+
+SPK_1
+10:30
+Okay.
+
+SPK_1
+10:30
+So I'm not sure like what field they are verifying.
+
+SPK_1
+10:35
+But whatever testing I have done was manually only.
+
+SPK_2
+10:38
+Okay, Till now you have tested this entire data manually, right?
+
+SPK_1
+10:44
+Yes, but not entire data.
+
+SPK_1
+10:47
+Suppose 10 data for area file.
+
+SPK_2
+10:52
+Okay.
+
+SPK_2
+10:52
+Random data.
+
+SPK_1
+10:53
+Yes, random data.
+
+SPK_1
+10:58
+Okay, Any other doubt?
+
+SPK_1
+11:06
+Okay, so for example if I show you.
+
+SPK_1
+11:09
+So last changes was there.
+
+SPK_1
+11:10
+Now suppose if you see this, I violated this field.
+
+SPK_1
+11:17
+So this is with version 22.
+
+SPK_1
+11:19
+Okay.
+
+SPK_1
+11:19
+Same field name will be present with version 24 also.
+
+SPK_1
+11:23
+And same field name will be present with version 25 also.
+
+SPK_1
+11:27
+Okay, so last change was there like they have added with version 25.
+
+SPK_1
+11:33
+So these many field they have added with version 25.
+
+SPK_1
+11:37
+So what I have done testing.
+
+SPK_1
+11:39
+Like I have checked for 10 test data randomly.
+
+SPK_1
+11:42
+And I have verified only this field that all this version 25 field should be present along with the its value.
+
+SPK_1
+11:51
+That's it.
+
+SPK_1
+11:53
+Okay.
+
+SPK_1
+11:53
+Again maybe some changes will occur.
+
+SPK_1
+11:55
+The same field name will come with version 26.
+
+SPK_1
+11:58
+Okay.
+
+SPK_1
+11:58
+So this way you have to verify for both the thing area file and vehicle file.
+
+SPK_1
+12:06
+Again see if you see version 25 is there.
+
+SPK_1
+12:09
+That's it.
+
+SPK_1
+12:12
+Okay, so moving to the next is migration automation pack.
+
+SPK_1
+12:25
+So one of the example I will give you.
+
+SPK_1
+12:27
+Okay, so most of the pack are in the same format.
+
+SPK_1
+12:31
+Okay.
+
+SPK_1
+12:33
+So for this one data source.
+
+SPK_1
+12:36
+So in data source we have to upload the test data.
+
+SPK_1
+12:40
+So how test data looks like?
+
+SPK_1
+12:56
+If you see this is the test data.
+
+SPK_1
+12:58
+Okay, so the column name.
+
+SPK_1
+13:02
+These are the field name.
+
+SPK_1
+13:03
+Okay?
+
+SPK_1
+13:04
+For for the request and these are the value that we are passing it.
+
+SPK_1
+13:08
+So how we prepare this test data as per the explanation from the client or as per this automation ready API structure Understand, it is like for example, for first row, okay, for first row I am changing the field value in the first field.
+
+SPK_1
+13:28
+So I have given aj.
+
+SPK_1
+13:29
+Okay, and I have highlighted with yellow color and remaining all the field.
+
+SPK_1
+13:33
+I haven't highlighted, but I have just filled the positive value whatever it accept.
+
+SPK_1
+13:38
+Okay, then for the second row, if you have to fill the second field, then you will highlight here and goes on.
+
+SPK_1
+13:50
+And for the third row again the third field value.
+
+SPK_1
+13:54
+So it goes on like this.
+
+SPK_1
+13:55
+Okay?
+
+SPK_1
+13:57
+And if you see here, these many field are highlighted with.
+
+SPK_1
+14:02
+So these are the acceptable field value if there are multiple field values.
+
+SPK_1
+14:06
+So you have to give like this all this field value.
+
+SPK_1
+14:13
+So this is the format of input test data.
+
+SPK_1
+14:17
+Okay, so once you upload this test data, if I upload it here, you have to upload.
+
+SPK_1
+14:30
+Will ask you to.
+
+SPK_1
+14:32
+So suppose first time you are importing this test data.
+
+SPK_1
+14:36
+Okay, so you have to click on yes.
+
+SPK_1
+14:38
+So once you click on yes, so all this column name, this column name are the request field name will present here in the property file property column.
+
+SPK_1
+14:50
+So this is same field.
+
+SPK_1
+14:52
+Okay, this worksheet name worksheet name is sheet one.
+
+SPK_1
+15:00
+Sheet one start at cell A2.
+
+SPK_1
+15:03
+It start as A2.
+
+SPK_1
+15:05
+Okay, Then next step is rest request.
+
+SPK_1
+15:13
+So in rest request they have set the property in order to set the property.
+
+SPK_1
+15:18
+This is the syntax okay, for all those field name.
+
+SPK_1
+15:21
+So in this way they have make it dynamic.
+
+SPK_1
+15:25
+Okay, Dynamic request.
+
+SPK_1
+15:29
+So whatever you see in the curly brass dollar sign it means that's this particular field value.
+
+SPK_1
+15:37
+It will take from the the property, okay, which it reads through the Excel file.
+
+SPK_1
+15:45
+Next is movie script they have written to generate some reports.
+
+SPK_1
+15:48
+So we just only change here the output file where we want to save the output file.
+
+SPK_1
+15:54
+Okay, that's it.
+
+SPK_1
+15:56
+Once you load it.
+
+SPK_1
+15:57
+So after loading the input file you have to click on this test step and go to this transaction log and click on play button.
+
+SPK_1
+16:22
+So it start running, okay?
+
+SPK_1
+16:26
+Will it stop in between?
+
+SPK_1
+16:29
+Suppose if any test case fail, so what you have to do, it will highlight with the status as fail.
+
+SPK_1
+16:35
+You have to open it and see the description why it is failed.
+
+SPK_1
+16:40
+Okay?
+
+SPK_1
+16:42
+And okay.
+
+SPK_1
+16:43
+So after running it, the output file is generated here, whichever location you will give.
+
+SPK_1
+16:59
+So that this is the output file.
+
+SPK_1
+17:01
+Okay.
+
+SPK_1
+17:02
+These are the column name, represent the field name that is present in the response and its values.
+
+SPK_1
+17:11
+These are the values.
+
+SPK_1
+17:15
+So through automation, as I have said, said you yesterday, in yesterday's kt, I have shown you quote ID and mqsid.
+
+SPK_1
+17:26
+Right?
+
+SPK_1
+17:32
+So see external id.
+
+SPK_1
+17:35
+This is quote id.
+
+SPK_1
+17:36
+Okay, Whatever we have purchased through front end.
+
+SPK_1
+17:41
+And this is the MQS code ID we have extracted from the logs.
+
+SPK_1
+17:46
+And I have shown you the three tires.
+
+SPK_1
+17:48
+Yes, Alias essentially is there.
+
+SPK_1
+17:50
+Then its price is there.
+
+SPK_1
+17:51
+So all those response field will be present.
+
+SPK_1
+17:54
+And accordingly we have to verify the response field based on the requirement.
+
+SPK_1
+17:59
+Okay.
+
+SPK_1
+18:00
+Generally we used to verify like premium detail for all the three tier.
+
+SPK_1
+18:06
+And if any error will occur, it will come as a data not found or with some error it will.
+
+SPK_1
+18:13
+So it will start with word error.
+
+SPK_1
+18:15
+Okay.
+
+SPK_1
+18:16
+So there should not be any error.
+
+SPK_1
+18:18
+And this thing we need to verify like MQS code and should be generated for all the data.
+
+SPK_1
+18:26
+Code that it should be generated for all the data.
+
+SPK_1
+18:28
+So all these things we need to verify.
+
+SPK_1
+18:33
+Let's see if we are able to.
+
+SPK_1
+19:19
+Okay, not anything.
+
+SPK_1
+19:20
+So whatever if it points to correct endpoint.
+
+SPK_1
+19:23
+Okay, Correct environment.
+
+SPK_1
+19:25
+So you have to directly get the MQ quote ID and you will get the entire logs.
+
+SPK_1
+19:30
+Okay, so whatever we did through front end, so same thing is happening through automation.
+
+SPK_1
+19:40
+Any doubt in this?
+
+SPK_2
+19:43
+Why are you hiding those particular fields there.
+
+SPK_1
+19:48
+In the input data?
+
+SPK_1
+19:49
+Right?
+
+SPK_2
+19:50
+Yes.
+
+SPK_1
+19:52
+So this is the data that we need to fetch.
+
+SPK_1
+19:55
+Okay, like see, just consider this.
+
+SPK_1
+20:01
+Suppose this is a request.
+
+SPK_1
+20:03
+Okay, consider this request.
+
+SPK_1
+20:06
+This particular brand identifier is a field name of the request and its value will be AJ.
+
+SPK_1
+20:13
+Okay, suppose this is AJ.
+
+SPK_1
+20:17
+The second will be 001.
+
+SPK_1
+20:18
+So second field name will be 001 and third and goes on.
+
+SPK_1
+20:22
+Okay, so this is the first request.
+
+SPK_1
+20:25
+The first row term termed as first request.
+
+SPK_1
+20:28
+Okay.
+
+SPK_1
+20:29
+For the second row we are very we are checking all the field.
+
+SPK_1
+20:34
+We are creating all the request for entire different field name.
+
+SPK_1
+20:38
+For the second request, we are not going to change in the first field, we are going to change in the second field.
+
+SPK_1
+20:45
+Right?
+
+SPK_1
+20:47
+Okay.
+
+SPK_1
+20:48
+And all this other data we will keep it keep same.
+
+SPK_1
+20:53
+Okay.
+
+SPK_1
+20:53
+And for the third field, third request will change in the third field, remaining field we will keep the same.
+
+SPK_1
+21:00
+For the fourth request, we will keep the fourth field as different and remaining field as same.
+
+SPK_1
+21:07
+Exactly same.
+
+SPK_1
+21:10
+So totally there are suppose 293 rows.
+
+SPK_1
+21:13
+So it means that you are creating 293 request.
+
+SPK_1
+21:19
+If I give you where is this input sheet?
+
+SPK_1
+21:21
+Yeah, this is input so first row I will give.
+
+SPK_1
+21:24
+I will show you how.
+
+SPK_1
+21:25
+So in order to see the request now.
+
+SPK_1
+21:31
+What values it is coming.
+
+SPK_1
+21:33
+So what you have to do, you have to open this.
+
+SPK_1
+21:39
+See this is the exact request.
+
+SPK_1
+21:40
+Okay.
+
+SPK_1
+21:43
+So in the first A is there.
+
+SPK_1
+21:46
+So AJ is there.
+
+SPK_1
+21:47
+001 Is there.
+
+SPK_1
+21:49
+Current time C 912 28.
+
+SPK_1
+21:52
+91228 Is there.
+
+SPK_1
+21:55
+Okay.
+
+SPK_1
+21:56
+External ID.
+
+SPK_1
+21:57
+This is random ID generator motor.
+
+SPK_1
+21:59
+Today's date is 1609-2025-1609-2025.
+
+SPK_1
+22:04
+Okay.
+
+SPK_1
+22:04
+So this way data gets filled for the entire row.
+
+SPK_1
+22:08
+So this is for the first row.
+
+SPK_1
+22:09
+If you go to the.
+
+SPK_1
+22:17
+This is 2nd, 3rd, 4th, 5th, 6th.
+
+SPK_2
+22:23
+7.
+
+SPK_1
+22:24
+7 Is cancelled.
+
+SPK_1
+22:38
+3, 4, 5, 6.
+
+SPK_1
+22:44
+So this is this 6 again the same thing is there.
+
+SPK_1
+22:47
+Okay.
+
+SPK_1
+22:47
+No, nothing is changed.
+
+SPK_1
+22:52
+I will show you this one.
+
+SPK_1
+22:53
+Okay.
+
+SPK_1
+22:53
+I will learn again.
+
+SPK_2
+22:59
+It.
+
+SPK_1
+23:26
+I need data of this one.
+
+SPK_1
+23:29
+1, 2, 3, 4, 6, 7, 8, 9 Micro.
+
+SPK_1
+23:54
+My.
+
+SPK_1
+24:05
+Transaction type is 08.
+
+SPK_1
+24:07
+Transaction type C. Transaction type is 08.
+
+SPK_1
+24:11
+You mentioned here transaction type 08.
+
+SPK_1
+24:14
+Okay.
+
+SPK_1
+24:18
+So all this different row represent different request.
+
+SPK_1
+24:28
+So have you understood this?
+
+SPK_2
+24:32
+Yes, understood.
+
+SPK_1
+24:34
+Okay.
+
+SPK_1
+24:36
+Okay.
+
+SPK_1
+24:37
+So yeah.
+
+SPK_1
+24:39
+Okay.
+
+SPK_1
+24:39
+So that's all for Alliance Motor.
+
+SPK_1
+24:42
+Any other doubt with the from yesterday's KT says today.
+
+SPK_2
+24:49
+No, it's clear.
+
+SPK_2
+24:52
+Okay.
+
+SPK_1
+24:54
+Okay.
+
+SPK_1
+24:55
+So next is on 18th.
+
+SPK_2
+25:04
+Yeah.
+
+SPK_1
+25:05
+So next is on Tuesday.
+
+SPK_1
+25:06
+Okay.
+
+SPK_1
+25:07
+So from Tuesday either Pandis or Prashant will give you the kt.
+
+SPK_1
+25:11
+Okay.
+
+SPK_1
+25:11
+On this AI and automation part.
+
+SPK_1
+25:16
+Okay.
+
+SPK_1
+25:17
+So he will give you more detail.
+
+SPK_1
+25:18
+Okay.
+
+SPK_1
+25:19
+If.
+
+SPK_1
+25:19
+If you have any doubt you can ask in any of the framework.
+
+SPK_1
+25:25
+Okay.
+
+SPK_1
+25:25
+In detail?
+
+SPK_1
+25:31
+Yeah.
+
+SPK_1
+25:31
+Okay then yeah, that's all from my side.
+
+SPK_1
+25:33
+Yeah.
+
+SPK_2
+25:33
+Okay.
+
+SPK_1
+25:34
+Yes.
+
+SPK_1
+25:40
+Yes.
+
+SPK_1
+25:40
+We all should join that call.
+
+SPK_1
+25:42
+Yeah.
+
+SPK_1
+25:43
+Reverse KT for how many days?
+
+SPK_1
+25:45
+Only one day.
+
+SPK_1
+25:48
+Yeah.
+
+SPK_1
+25:48
+So we all should so join.
+
+SPK_1
+25:49
+Okay.
+
+SPK_1
+25:50
+So you just have to give a brief kind of thing.
+
+SPK_1
+25:53
+Okay.
+
+SPK_1
+25:54
+Whatever you have.
+
+SPK_1
+25:55
+Understood.
+
+SPK_2
+25:58
+Yeah.
+
+SPK_2
+25:58
+Okay.
+
+SPK_1
+25:59
+Yeah.
+
+SPK_1
+25:59
+Mainly your focus will be I think in automation side.
+
+SPK_1
+26:04
+Okay?
+
+SPK_1
+26:05
+So whatever Prasad and Pandaslavi will give you, so have a clear understanding.
+
+SPK_1
+26:11
+Okay.
+
+SPK_1
+26:12
+And till that time if you get action, then practice it.
+
+SPK_1
+26:17
+And whatever doubt you have, you can ask with the Prasad and Pandasalvi.
+
+SPK_1
+26:22
+And for this manual part you just need to have this theoretical knowledge, okay?
+
+SPK_1
+26:27
+Just a brief, brief thing.
+
+SPK_2
+26:30
+Just the theoretic.
+
+SPK_2
+26:31
+It's just a theoretical knowledge is in it.
+
+SPK_2
+26:33
+Right?
+
+SPK_1
+26:37
+For reverse kt.
+
+SPK_2
+26:40
+Okay.
+
+SPK_2
+26:40
+Okay.
+
+SPK_1
+26:41
+For reverse KT only that theoretical knowledge is enough, okay?
+
+SPK_1
+26:45
+No, I don't think so.
+
+SPK_1
+26:46
+They will ask you to show some demo or whatever.
+
+SPK_1
+26:49
+But if you get some action then start practicing it.
+
+SPK_1
+26:52
+And generally you have to focus on this automation and AI.
+
+SPK_1
+26:55
+But only.
+
+SPK_1
+26:55
+That's all.
+
+SPK_2
+26:57
+Yes.
+
+SPK_2
+26:57
+Sure.
+
+SPK_1
+26:59
+Yeah.
+
+SPK_1
+27:01
+Okay, then.
+
+SPK_1
+27:01
+Yeah.
+
+SPK_1
+27:01
+Okay.
+
+SPK_1
+27:03
+Okay, then.
+
+SPK_1
+27:04
+Yeah.
+
+SPK_1
+27:04
+Thank you so much.
+
+SPK_1
+27:05
+Yeah.
+
+SPK_1
+27:05
+Thank you.
+
+SPK_2
+27:06
+Thank you so much.
+
+SPK_1
+27:07
+Bye.
+

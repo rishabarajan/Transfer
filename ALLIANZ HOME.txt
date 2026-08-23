@@ -1,0 +1,2248 @@
+ALLIANZ HOME 
+ 
+
+1) allianz home kt 1 day 1
+
+Home there are three models for the basic things you should need to be known as like.
+
+SPK_1
+0:05
+There will be three models.
+
+SPK_1
+0:06
+One is pricing model and then another is UW model and the other one is precom model.
+
+SPK_1
+0:16
+Three models will be there.
+
+SPK_1
+0:17
+I will explain you one by one.
+
+SPK_1
+0:19
+Pricing model is nothing.
+
+SPK_1
+0:20
+But you you're.
+
+SPK_1
+0:22
+We will be creating a code right in Athena front end.
+
+SPK_1
+0:27
+So all fields will be extracted in API.
+
+SPK_1
+0:29
+So these are all the fields.
+
+SPK_1
+0:31
+Okay.
+
+SPK_1
+0:33
+For example, if you need to create on quote from API what you'll be doing is like as per the requirement.
+
+SPK_1
+0:39
+For example in the requirement sheet you want to validate these fields.
+
+SPK_1
+0:45
+For example EOW score 1.
+
+SPK_1
+0:48
+You.
+
+SPK_1
+0:48
+You need to test whether it is allowing numeric or whether it is like both positive and negative testing.
+
+SPK_1
+0:52
+You'll be doing alphanumeric or only the numeric it is allowed.
+
+SPK_1
+0:57
+So all those kind of things you will you can be validating.
+
+SPK_1
+1:01
+Okay, so this can be done in manual.
+
+SPK_1
+1:03
+Usually we'll be doing it in manual testing only.
+
+SPK_1
+1:07
+But now what they did is using the help of AI.
+
+SPK_1
+1:13
+So I will just open that one.
+
+SPK_1
+1:34
+So Jenny, a lab is there.
+
+SPK_1
+1:36
+This one will be using for the alliance project.
+
+SPK_1
+2:27
+So for this user story what we done is like we have got a prompt from our clients.
+
+SPK_1
+2:33
+Okay, so they have just gave us the prompt.
+
+SPK_1
+2:36
+We just need to upload the mapping document and and then the request which I have showed you.
+
+SPK_1
+2:43
+Right?
+
+SPK_1
+2:43
+This is the request.
+
+SPK_1
+2:45
+Okay, so the request and the mapping document I will be uploading in the J.
+
+SPK_1
+2:54
+So I'll just add this button and then I will just add the files you can see mapping document.
+
+SPK_1
+3:01
+And then this is the requost.
+
+SPK_1
+3:03
+So so after attaching these two I will just click like execute the execute for building or contents.
+
+SPK_1
+3:18
+So I'll just.
+
+SPK_1
+3:19
+Now the A lab is very slow.
+
+SPK_1
+3:21
+I will just show you the result.
+
+SPK_1
+3:22
+Okay, we just getting validated.
+
+SPK_1
+3:25
+So this is the result comparison.
+
+SPK_1
+3:27
+I will be getting the result as next.
+
+SPK_1
+3:35
+So this is the prompt.
+
+SPK_1
+3:42
+So this is the prompt.
+
+SPK_1
+3:43
+Okay, so I'll just give you the prompt once your video is ready.
+
+SPK_1
+3:48
+So you can just go through this prompt.
+
+SPK_1
+3:50
+How they have been this.
+
+SPK_1
+3:51
+Okay, so once the prompt is ready.
+
+SPK_1
+4:00
+The prompt is nothing but it is a com.
+
+SPK_1
+4:02
+It is comparing the Excel sheet, the request sheet and the mapping document.
+
+SPK_1
+4:12
+So comparing both the things the output Excel sheet and this is the XML key.
+
+SPK_1
+4:22
+XML key is nothing but from the request.
+
+SPK_1
+4:25
+And this is the status status.
+
+SPK_1
+4:27
+We have kept like 3, 3 status missing from XML near match and match for example.
+
+SPK_1
+4:33
+So you can see the difference.
+
+SPK_1
+4:34
+Right?
+
+SPK_1
+4:35
+So in the mapping document this field is mentioned as CT proxy, whereas in XML key it is mentioned as CT underscore proxy.
+
+SPK_1
+4:42
+So almost it is symbols in XML key, it will be always like underscore will be mentioned.
+
+SPK_1
+4:47
+So it is almost near match.
+
+SPK_1
+4:49
+So the status is near match.
+
+SPK_1
+4:51
+For example, these two fields is not in XML key.
+
+SPK_1
+4:54
+So it is mentioning like missing from XML and all the other fields, whichever is same, it will be shown as match.
+
+SPK_1
+5:04
+So you got it, right?
+
+SPK_2
+5:09
+Yes.
+
+SPK_2
+5:09
+Could you please explain one more self?
+
+SPK_2
+5:11
+Because in between your voice was struck and lagging new Internet, you just let.
+
+SPK_1
+5:18
+Me know whenever you are not able to hear it, right?
+
+SPK_2
+5:22
+Okay.
+
+SPK_1
+5:23
+Okay.
+
+SPK_1
+5:24
+So I have showed you two Excel sheets.
+
+SPK_1
+5:27
+One is mapping document and the other is request.
+
+SPK_1
+5:32
+So this request is nothing.
+
+SPK_1
+5:33
+But I will show you tomorrow how you are getting this request.
+
+SPK_1
+5:35
+Okay, so in front end Athena you will be creating one home code.
+
+SPK_1
+5:41
+For that you will be extracting one request.
+
+SPK_1
+5:44
+So this is the request format.
+
+SPK_1
+5:46
+So what you will do is like in Jenny Lab, you will just upload these two files.
+
+SPK_1
+5:51
+One is mapping document which will be in the user story.
+
+SPK_1
+5:55
+Okay?
+
+SPK_1
+5:55
+So the mapping document will be in the user story.
+
+SPK_1
+5:57
+And this is the request which you have extracted from Athena front end, which is a front end tool.
+
+SPK_1
+6:04
+Okay.
+
+SPK_1
+6:04
+So from that you will be extracting this request.
+
+SPK_1
+6:07
+So what you will be doing in A is you just upload both the documents.
+
+SPK_1
+6:11
+One is mapping document, okay?
+
+SPK_1
+6:13
+And the other is the request which you extracted from front end tool.
+
+SPK_1
+6:17
+So you have uploaded these two documents and just give the prompt and tell AI to execute execute this user test case or scenario.
+
+SPK_1
+6:27
+So after executing the result which we got is this one.
+
+SPK_1
+6:32
+So how it is comparing is the field comparison.
+
+SPK_1
+6:35
+So first is mapping document.
+
+SPK_1
+6:37
+So this is the mapping document, right?
+
+SPK_1
+6:39
+So these fields, this column name it has taken in output sheet.
+
+SPK_1
+6:44
+And then this XML key is this thing CT proxy.
+
+SPK_1
+6:49
+All the fields with the all the fields in the XML is there.
+
+SPK_1
+6:54
+All will be extracted here.
+
+SPK_1
+6:55
+So that is the XML key and the status status is almost 3, 3 status are there match, near match and missing from XML match means almost everything is right?
+
+SPK_1
+7:08
+Okay.
+
+SPK_1
+7:09
+For example, if you take this column 9 Evo EOW is one of the coverage.
+
+SPK_1
+7:13
+So this coverage is same.
+
+SPK_1
+7:15
+The coverage name is same in mapping document.
+
+SPK_1
+7:18
+The coverage name is same in XML key.
+
+SPK_1
+7:20
+So it has given the status as match.
+
+SPK_1
+7:23
+Whereas if you see this field CT proxy CT underscore proxy in XML key.
+
+SPK_1
+7:27
+So it is given as near match.
+
+SPK_1
+7:31
+And for some of the fields not mentioned in XML means it is it is mentioned as missing from xml.
+
+SPK_1
+7:37
+For example, if some of the field is not mentioned in the mapping document.
+
+SPK_1
+7:41
+It will give like missing from a mapping document.
+
+SPK_1
+7:44
+Okay.
+
+SPK_1
+7:44
+So there will be totally 4, 4 status will be there.
+
+SPK_1
+7:50
+So this is how we will be getting the output.
+
+SPK_1
+7:52
+So what you need to do is you.
+
+SPK_1
+7:54
+You need to check the mapping document.
+
+SPK_1
+7:56
+What are all the matches are there, what are the near matches over there and what are the fields missing from xml?
+
+SPK_1
+8:01
+You need to verify this alone and.
+
+SPK_1
+8:03
+And then you can execute the test case.
+
+SPK_1
+8:07
+Any doubt in this?
+
+SPK_2
+8:10
+Yeah.
+
+SPK_2
+8:11
+Good.
+
+SPK_1
+8:15
+You can understand, right?
+
+SPK_1
+8:16
+It's very simple.
+
+SPK_1
+8:16
+Just in user story where there will be mapping document and this request alone.
+
+SPK_1
+8:22
+I will tell you tomorrow how to create a code, how to extract this request and response everything.
+
+SPK_1
+8:26
+Okay.
+
+SPK_1
+8:27
+Then it will be easy for you guys to go through this.
+
+SPK_1
+8:31
+So this is the basic execution.
+
+SPK_1
+8:34
+Because we are also starting from now only before that before using the C, we will be doing it manually or through automation.
+
+SPK_1
+8:43
+Automation is nothing.
+
+SPK_1
+8:43
+But actually I will show you that.
+
+SPK_1
+8:51
+I will just show you any one of the user story.
+
+SPK_1
+9:30
+So in this user story what what they are telling is like the scope is 12% load on six bedroom properties.
+
+SPK_1
+9:39
+So this is the requirement only single line requirement.
+
+SPK_1
+9:43
+They have given us the like documents.
+
+SPK_1
+9:47
+I'll show you the documents.
+
+SPK_1
+9:49
+So generally in pricing home what they will say is like the main thing will be rate book.
+
+SPK_1
+9:56
+You guys have any idea on red book?
+
+SPK_1
+10:02
+Okay, okay, okay.
+
+SPK_1
+10:04
+I'll tell you.
+
+SPK_1
+10:26
+So red book is nothing.
+
+SPK_1
+10:27
+But for example you.
+
+SPK_1
+10:29
+You are going to cover your car, okay.
+
+SPK_1
+10:31
+In your insurance company, you are going to cover your motor by a motorcycle or something car or for your home, anything.
+
+SPK_1
+10:38
+Okay.
+
+SPK_1
+10:39
+So before that what we will be doing, you will be taking the coverages, right?
+
+SPK_1
+10:43
+There will be like n number of coverages.
+
+SPK_1
+10:45
+If it is a home coverage, there will be coverage for your buildings and there will be coverage for your contents.
+
+SPK_1
+10:50
+Contents means nothing.
+
+SPK_1
+10:51
+But what presence inside the building.
+
+SPK_1
+10:53
+For example, inside your building you'll be having on luxury sofas and then fire alarms will be there.
+
+SPK_1
+11:00
+So in alliance home how they will be kept as like they can cover the building and as well as the contents.
+
+SPK_1
+11:07
+So what are all the things inside the building that also will be covered?
+
+SPK_1
+11:11
+So for all the coverage, for example, if you are covering for your sofa, then for that luxury sofa, the coverage will be for example 500.
+
+SPK_1
+11:20
+Okay.
+
+SPK_1
+11:21
+So all the calculations for that each and every coverages and present inside the model will be presented in the red book.
+
+SPK_1
+11:30
+So as of now you can you just keep it in mind.
+
+SPK_1
+11:33
+What is red book means?
+
+SPK_1
+11:34
+All the calculations related to premiums and Coverages will be mentioned in the red book.
+
+SPK_1
+11:39
+Okay.
+
+SPK_1
+11:40
+As soon if you get user stories, you keep on working, you'll be getting to know it much.
+
+SPK_1
+11:45
+Okay, so.
+
+SPK_1
+11:47
+So all the calculations for example, so all these calculations will be running in the back end, right?
+
+SPK_1
+11:52
+So we doesn't know in front end.
+
+SPK_1
+11:54
+We will be just getting.
+
+SPK_1
+11:55
+If you, if you check this coverage, you'll be getting as premium this much.
+
+SPK_1
+12:00
+If you are adding your bicycle or if you are adding your car in your home, then the coverage will be like thousand two hundred dollars.
+
+SPK_1
+12:06
+We.
+
+SPK_1
+12:07
+We just don't know how the calculations are happening at the back end.
+
+SPK_1
+12:10
+Okay, so all the back end calculations and the formulas, everything will be there in this red book.
+
+SPK_1
+12:18
+Okay.
+
+SPK_1
+12:18
+You don't need to worry that there will be like more calculations and everything.
+
+SPK_1
+12:21
+So there will be.
+
+SPK_1
+12:23
+We no need to worry about the formulas and everything.
+
+SPK_1
+12:26
+What we will be doing is like what all the changes is there.
+
+SPK_1
+12:28
+We will be just checking for example if peril is added then how much the premium should be.
+
+SPK_1
+12:34
+Only that thing will be verifying.
+
+SPK_1
+12:37
+Okay, so this is the user story date book.
+
+SPK_1
+12:41
+Here you need to come to the change log.
+
+SPK_1
+12:44
+Change log is nothing but the version.
+
+SPK_1
+12:47
+This is the 3.13 version.
+
+SPK_1
+12:50
+So in this version what they have done is like they have added the.
+
+SPK_1
+12:54
+If.
+
+SPK_1
+12:54
+If the person is taking for the six bedroom as coverage then there should be like 12% load to that.
+
+SPK_1
+13:04
+Okay, so table 405, this is the description.
+
+SPK_1
+13:07
+So here the calculations will be in the table format.
+
+SPK_1
+13:10
+So I'm just going to this table 405.
+
+SPK_1
+13:21
+Okay, so what the.
+
+SPK_1
+13:22
+In XML there will be one field called do three bedrooms.
+
+SPK_1
+13:27
+So what you need to.
+
+SPK_1
+13:28
+If I for all the other.
+
+SPK_1
+13:31
+For all the bedrooms they have given this much should be the value.
+
+SPK_1
+13:34
+Okay, in this user story what the change they have told.
+
+SPK_1
+13:37
+They have told like if it is.
+
+SPK_1
+13:41
+If it is six bedroom property then 12% should be the load load is nothing but the amount.
+
+SPK_1
+13:48
+For example other.
+
+SPK_1
+13:50
+For all the other things it is 1.00.
+
+SPK_1
+13:52
+Whereas for if it is a 6 bedroom, if the user selects its bedroom then it should be 1.1, 112.
+
+SPK_1
+13:58
+Okay, so for this user story how we will be running it in ready API is there will be three work three files will be there.
+
+SPK_1
+14:07
+Okay.
+
+SPK_1
+14:08
+One is radar main package and the other one is XML Data sync and other thing is C Data C Data sync.
+
+SPK_1
+14:20
+Okay, first I will show Radar main pricing pack is nothing but input sheet.
+
+SPK_1
+14:27
+I'll just open that input sheet.
+
+SPK_1
+14:29
+So this is the input sheet.
+
+SPK_1
+14:30
+Input sheet is nothing but I Have showed you here, right?
+
+SPK_1
+14:34
+All the fields transaction day, transaction status.
+
+SPK_1
+14:37
+All the XML fields.
+
+SPK_1
+14:39
+Right, all will be here.
+
+SPK_1
+14:41
+Transaction day, transaction status, transaction type.
+
+SPK_1
+14:45
+Everything will be mentioned here.
+
+SPK_1
+14:48
+Okay, so these are all the input fields.
+
+SPK_1
+14:54
+For example, what is our user story is we need to change the bedroom.
+
+SPK_1
+14:59
+Well, There they have mentioned like d o o 3 so this field only they have mentioned, right.
+
+SPK_1
+15:14
+In user story do three bedrooms.
+
+SPK_1
+15:18
+So this thing alone you need to Change it to 6 and then see the value.
+
+SPK_1
+15:27
+So this is nothing but the input sheet.
+
+SPK_1
+15:30
+So as per the user story requirement, you need to modify this.
+
+SPK_1
+15:33
+For example, if the transaction is for new business, it will be in B.
+
+SPK_1
+15:36
+And if the transaction for the user story is change in requirement, then it will be empty.
+
+SPK_1
+15:50
+Okay, so these are all the regions for what regions you need to do it for this user story, Something like that all will be mentioned here.
+
+SPK_1
+15:58
+So the input sheet you need to give as per the requirement.
+
+SPK_1
+16:02
+And then the other will be.
+
+SPK_1
+16:05
+The other sheet will be XML Data C Data sync.
+
+SPK_1
+16:10
+C Data sync is nothing.
+
+SPK_1
+16:11
+But once you run the run it in ready API there will be a response.
+
+SPK_1
+16:15
+So all the response will be stored in the C Data sync C Data sync file.
+
+SPK_1
+16:22
+And then the Last 1 is XML data sync.
+
+SPK_1
+16:27
+XML data sync is nothing.
+
+SPK_1
+16:28
+But this is the output sheet.
+
+SPK_1
+16:33
+So this is the output sheet.
+
+SPK_1
+16:35
+So these are all the predefined responses.
+
+SPK_1
+16:39
+Tire 1, Tire 1, Tire 2 tier 3.
+
+SPK_1
+16:41
+All the values will be calculated here.
+
+SPK_1
+16:45
+Oh, so there are three things.
+
+SPK_1
+16:48
+First is input sheet.
+
+SPK_1
+16:50
+Second second one is C data C Data sync and the third one is XML Data sync.
+
+SPK_1
+16:56
+Okay, so input sheet is nothing but there will be a predefined columns will be there.
+
+SPK_1
+17:02
+You need to change some values accordingly.
+
+SPK_1
+17:04
+For example, if the bedroom.
+
+SPK_1
+17:06
+If the bedroom value is 5, then the value should be this.
+
+SPK_1
+17:10
+So you need to give the input alone.
+
+SPK_1
+17:11
+You need to change.
+
+SPK_1
+17:13
+Okay and see Data sync.
+
+SPK_1
+17:15
+The all the stored responses will be.
+
+SPK_1
+17:18
+All the responses will be stored in the C data sync.
+
+SPK_1
+17:22
+Whereas in XML data sync you will be seeing the output.
+
+SPK_1
+17:26
+Okay, I'll just open the ready AP so it will be easy for you to understand.
+
+SPK_1
+17:35
+As of now, any doubt calculation?
+
+SPK_1
+17:36
+Sajita?
+
+SPK_1
+17:40
+Hello.
+
+SPK_2
+17:41
+Yeah, you're able to.
+
+SPK_1
+17:44
+Okay, if any doubt, please let me know.
+
+SPK_1
+17:46
+Okay.
+
+SPK_2
+17:47
+Yeah, I doubt here.
+
+SPK_2
+17:49
+Yeah, you said like for in separate rooms read books.
+
+SPK_2
+17:55
+Like for each bedroom each furniture would be have a separate insurance or they will be giving the insurance policies or we need to take it.
+
+SPK_1
+18:08
+We need to take it because there are like three coverages are there?
+
+SPK_1
+18:11
+Basically there will be like only buildings building some contents and then contents.
+
+SPK_1
+18:17
+So it's our choice whether we need to combine both the buildings and contents or only the buildings or only the contents.
+
+SPK_1
+18:24
+Tomorrow I'll show you that front end application, how it looks, how the customization is there, everything.
+
+SPK_2
+18:30
+Yeah.
+
+SPK_2
+18:31
+Okay.
+
+SPK_2
+18:31
+Okay.
+
+SPK_1
+18:31
+Okay.
+
+SPK_1
+18:32
+Yeah.
+
+SPK_1
+18:32
+So this is the Ready API tool here we will be importing the project.
+
+SPK_1
+18:43
+So for Alliance Home I showed you right?
+
+SPK_1
+18:47
+So this is the data source.
+
+SPK_1
+18:50
+Data source is nothing but data sources.
+
+SPK_1
+18:54
+Nothing but the input sheet.
+
+SPK_1
+18:56
+Here you browse the input sheet.
+
+SPK_1
+19:00
+I have showed you right?
+
+SPK_1
+19:02
+The this one Radar main pricing.
+
+SPK_1
+19:04
+This is the input sheet.
+
+SPK_1
+19:08
+So after you are uploading all the things, all the requirements here you need to upload the.
+
+SPK_1
+19:17
+You need to browse the.
+
+SPK_1
+19:19
+You need to browse the input sheet here.
+
+SPK_1
+19:22
+So where you kept that and you need to just click and open it.
+
+SPK_1
+19:26
+Okay.
+
+SPK_1
+19:27
+And rest request is nothing.
+
+SPK_1
+19:28
+But every.
+
+SPK_1
+19:29
+Every request will be here.
+
+SPK_1
+19:32
+You need to just change the date alone.
+
+SPK_1
+19:34
+For example, there will be deployment right after each and every changes there will be deployment.
+
+SPK_1
+19:39
+So the successful deployment date you should give here.
+
+SPK_1
+19:42
+For example, if the deployment is done today, you need to give today's date and time.
+
+SPK_1
+19:47
+So it is like 2026 the day, the month is 8 and the date is 10.
+
+SPK_1
+19:52
+You need to change everything.
+
+SPK_1
+19:54
+We will be getting deployment mail.
+
+SPK_1
+19:56
+So as per the deployment mail you can give the date and time.
+
+SPK_1
+20:02
+And then the C data property transfer is nothing but it is transferring the input sheet.
+
+SPK_1
+20:08
+So here you need no, no need to change anything.
+
+SPK_1
+20:11
+Again this C data data sync.
+
+SPK_1
+20:13
+This also you need to browse.
+
+SPK_1
+20:14
+I showed you right?
+
+SPK_1
+20:15
+So it will be like an empty sheet.
+
+SPK_1
+20:18
+Just empty sheet will be there.
+
+SPK_1
+20:19
+You need to upload that.
+
+SPK_1
+20:20
+Because once we run only all the response will be stored, right.
+
+SPK_1
+20:23
+So first it will be like an empty sheet.
+
+SPK_1
+20:28
+The data sync will be.
+
+SPK_1
+20:35
+So you need to select all and then you need to delete and then you need to upload a empty sheet for the C data sync.
+
+SPK_1
+20:45
+Okay.
+
+SPK_1
+20:46
+And then third is same similarly for output sheet you need to.
+
+SPK_1
+20:51
+You need to keep only the first column.
+
+SPK_1
+20:53
+You need to delete all the other things.
+
+SPK_1
+20:54
+Okay.
+
+SPK_1
+20:55
+And then you need to upload the XML data sync.
+
+SPK_1
+21:01
+You just browse the sheet after doing all the things just come here and then you can click this.
+
+SPK_1
+21:10
+So this is how we will be doing it.
+
+SPK_1
+21:19
+Main is data source, C data data sync and then XML data sync.
+
+SPK_1
+21:25
+So these are all the three Excel sheets.
+
+SPK_1
+21:26
+We will be doing it in Man Automation.
+
+SPK_1
+21:29
+If it is manual means what we'll be doing is if it is in manual, you need to.
+
+SPK_1
+21:39
+Your XML files Will be there.
+
+SPK_1
+21:41
+You here you can for example Price.
+
+SPK_1
+21:46
+I'll show you.
+
+SPK_1
+22:05
+Similarly, all the requests will be same.
+
+SPK_1
+22:07
+You, you, you see, you have seen this fields, right?
+
+SPK_1
+22:10
+Do you remember transaction date, transaction status?
+
+SPK_1
+22:16
+You have seen here, right?
+
+SPK_1
+22:18
+This, this fields.
+
+SPK_2
+22:22
+Yes.
+
+SPK_1
+22:23
+Yeah, yeah.
+
+SPK_1
+22:24
+Okay.
+
+SPK_1
+22:24
+Input sheet, right?
+
+SPK_1
+22:26
+So.
+
+SPK_1
+22:26
+So all the input data, this, this, all the columns, There are totally 619 column columns.
+
+SPK_1
+22:32
+619 Rows, right?
+
+SPK_1
+22:34
+So all the column names will be present in the here in the request.
+
+SPK_1
+22:40
+For example, in your user story you need to check for all the five channels.
+
+SPK_1
+22:46
+There are like totally five channels.
+
+SPK_1
+22:48
+Web, moc, goc.
+
+SPK_1
+22:51
+So there are like five channels.
+
+SPK_1
+22:53
+So if you need to check for all the five channels you can do it through automation, which is nothing.
+
+SPK_1
+22:58
+But just go to the input sheet.
+
+SPK_1
+23:04
+Channel here, there, right?
+
+SPK_1
+23:06
+Web, these are all the five channels.
+
+SPK_1
+23:09
+So what you can do is like you can keep all the remaining all the other data similar.
+
+SPK_1
+23:15
+Just change this alone to all the five channels.
+
+SPK_1
+23:18
+For example msm, ctm, goc, CNF and web.
+
+SPK_1
+23:22
+This is one for example, I'm saying.
+
+SPK_1
+23:25
+So that is the change in the channel means you can do it through automation.
+
+SPK_1
+23:29
+Because for five channels you need to execute it through manually.
+
+SPK_1
+23:33
+Means it will take time, right?
+
+SPK_1
+23:35
+For example, if the user story they are say they are telling us to check it only for web means that is only for one channel means you can just come here.
+
+SPK_1
+23:43
+For example, you can change this to web or what is their MSM ctm.
+
+SPK_1
+23:51
+So you can just change the name and then you can run it.
+
+SPK_1
+23:54
+Okay, you can run it and get.
+
+SPK_1
+23:57
+Because now no deployment is there.
+
+SPK_1
+23:58
+So I'm getting this error.
+
+SPK_1
+23:59
+If deployed, if it is successful, you will be getting the response.
+
+SPK_1
+24:04
+Okay, so this is how you'll be doing it manually.
+
+SPK_1
+24:08
+And if the requirement is more then you will be doing it through automation.
+
+SPK_1
+24:13
+If the requirement is simple, you can do it through through manually from this flow SOAPUA project.
+
+SPK_1
+24:20
+And then for automation you'll be doing it through pricing model.
+
+SPK_1
+24:30
+Any doubts as of now?
+
+SPK_2
+24:34
+Yeah, it's good.
+
+SPK_1
+24:37
+Okay, so usually there are three tires.
+
+SPK_1
+24:44
+Bronze, silver and then gold.
+
+SPK_1
+24:46
+Bronze is nothing.
+
+SPK_1
+24:47
+But for example, yeah, you asked right?
+
+SPK_1
+24:50
+So all the like all the things will be covered.
+
+SPK_1
+24:53
+Then how much the premium will be paying?
+
+SPK_1
+24:55
+You asked, right?
+
+SPK_1
+24:56
+So for example, if you are taking gold, premium means old tire means all the things will be covered in your home.
+
+SPK_1
+25:03
+Okay.
+
+SPK_1
+25:04
+All the products in your home will be covered.
+
+SPK_1
+25:06
+If you are taking like.
+
+SPK_1
+25:09
+So if you're taking bronze level means the premium will be less.
+
+SPK_1
+25:12
+First is bronze, silver and then gold.
+
+SPK_1
+25:15
+So if you are taking A gold gold tire premiums Then you will be almost all the coverages will be covered in that quote.
+
+SPK_1
+25:27
+So this is how we will be verifying.
+
+SPK_1
+25:29
+We need to verify for all the three tires through this data source C Data Sync and XML Data sync.
+
+SPK_1
+25:42
+Any doubt?
+
+SPK_2
+25:45
+No.
+
+SPK_1
+25:47
+Okay.
+
+SPK_1
+25:48
+Okay.
+
+SPK_1
+25:55
+So automation I have showed you this is the automation framework these are all the three files I told right?
+
+SPK_1
+26:00
+Input file, C data file and output file these are all the three files I think majorly we'll be working in the Z gen lab only so just for just to know what all the other projects team doing.
+
+SPK_1
+26:17
+So this is the old method we are following here.
+
+SPK_1
+26:23
+So this is mainly the automation framework.
+
+SPK_1
+26:26
+These are all the three files we will be do uploading in ready API tool and we'll be getting the response.
+
+SPK_1
+26:34
+Okay,.
+
+SPK_2
+26:38
+So.
+
+SPK_2
+26:38
+So you're actually in automation on a world face Automations right?
+
+SPK_1
+26:45
+Sorry, I could not get you.
+
+SPK_2
+26:47
+Yeah, you said like it's a legacy automations like you're using the not like.
+
+SPK_1
+26:53
+Legacy it is like new only but now most of the things we are doing it in AI right.
+
+SPK_1
+26:59
+So so for that I told it is hold pretty much not legacy and all Till now we are following this only through rad only we are uploading the files and then we are getting the execution.
+
+SPK_1
+27:11
+But for few user stories I showed you right?
+
+SPK_1
+27:13
+This field validations, this mapping document.
+
+SPK_2
+27:17
+Yeah, yes, yes.
+
+SPK_1
+27:18
+So for these for some kind of user stories we are using gen and for some user stories we are using the ready API tool.
+
+SPK_1
+27:25
+It mostly depends upon the user story how you get.
+
+SPK_1
+27:29
+For example some user story will be like very straightforward like this very simple and thing Then we can just go straight away and then we can execute it right?
+
+SPK_1
+27:38
+So some user story it will be like very complicated Even doing it in manual may take long time.
+
+SPK_1
+27:43
+So at that point of time we are using this gen lab we are just uploading the user story requirement and for creating a test scripts everything we are using a gen.
+
+SPK_1
+27:58
+So it's depends upon the user story only.
+
+SPK_1
+28:00
+Aklesh.
+
+SPK_2
+28:03
+Okay, okay.
+
+SPK_1
+28:04
+It's not like fully we moved to Jenny because we.
+
+SPK_1
+28:07
+We are also just starting starting stage Actually we are not that much familiar in prompt and all because we are also just starting the phase so client gave us the prompt Using that we validated this user story.
+
+SPK_1
+28:22
+Maybe going forward we need to learn more on that how to do on ourselves.
+
+SPK_1
+28:28
+So for that only you guys came I think.
+
+SPK_2
+28:31
+Yeah, yeah, yeah.
+
+SPK_2
+28:35
+We'll be helping you a lot.
+
+SPK_1
+28:37
+Yeah, yeah sure, sure.
+
+SPK_2
+28:38
+So actually you are in the team of pandasali and Prashant, right?
+
+SPK_1
+28:42
+No, no, they are.
+
+SPK_1
+28:44
+They are pricing automation I am for pricing.
+
+SPK_2
+28:50
+Okay Pricing home is different from.
+
+SPK_1
+28:52
+The pricing automation actually in pricing automation they will be doing it for motor they will be doing for home also so automation is not there won't be like I I will be only testing for warm whereas automation team they.
+
+SPK_1
+29:05
+They will do for motor they will do for home everything so that is.
+
+SPK_2
+29:09
+What pricing for multiple pricings.
+
+SPK_1
+29:11
+Yeah, yeah Pricing automation team will work for pricing all the products all the other products also for example even if Niveda needs some automation then she can go the go on del for Pandicelvi or Prashant team so something like that Got it right.
+
+SPK_1
+29:28
+Whereas we are manual testers we will be only particularly testing for that product Whereas automation team means they can support everyone if it is needed in automation.
+
+SPK_2
+29:40
+Yeah okay.
+
+SPK_2
+29:41
+Could you please also explain about the pricing once again so I could not it down.
+
+SPK_1
+29:50
+Which one you need pricing.
+
+SPK_2
+29:52
+Just what's pricing what exactly we'll do.
+
+SPK_1
+29:55
+In pricing okay so I told.
+
+
+AI Chat
+AI Chat
+Ask anything about your transcription
+
+
+Ask me anything about this transcription. I can help summarize, find key points, or answer questions.
+
+Summarize
+Key topics
+Action items
+Speakers
+Ask a question...
+
+Break the 30-Min Barrier
+
+
+2) Allianz Kt day 2 
+
+இதை போட்டீங்கன்னா உங்களுக்கு நரிய சர்ச்சிகள் வரும் அதுல வந்துட்டு நம்ம மூட மோடலுக்கு இப்ப நம்ம request எடுக்கப் போறோம் பர்ஸ்டு வந்து இப்ப நாம எப்படி சர்ச்சு பண்ணுவோனா இங்க போய்ட்டு logsன்னு சொல்லிட்டு இருக்கோம்.
+
+SPK_2
+0:14
+இங்க logs குள்ள போய்ட்டு just வந்.
+
+SPK_1
+0:34
+இந்த end வரிக்கு copy பண்ணீங்கன்னா உங்களுக்கு வந்து இந்த.
+
+SPK_2
+0:36
+Quote உடன் request கடைச்சு இதை வந்து நீங்க notepad plusல போய்ட்டு அப்படியே paste பண்ணிட்டு just pluginsல போய்ட்டு pretty printன் கொடுத்துட்டீங்கன்னா உங்களுக்கு வந்து xml formatக்கு வந்தும் so இதுதான் வந்த நமக்கு.
+
+SPK_1
+1:00
+வந்து precom model உட நாம் கொடுத்தோம் பார்த்தீங்களா number of occupants, அவர்கள் age என்ன சல்லதெல்லாம் நமக்கு தெரியும் நம்ம என்ன type கொடுத்தோம், home என்ன type கொடுத்தோம், home mortgage கொடுத்தோம் அதற்குப் பிறகு வந்து சல்ல, சல்ல நம்ம என்ன சொல்வது அந்த toolல கொடுக்கத்தான் நம்ம questions எல்லாம் நமக்க web என்றால் இப்ப நம்ம online ல create பண்ணோம் இல்லையா so அதனால channel வந்து web இந்த மாதிரி வந்து 5 channels இருக்கு web, mtm, ctm அந்த மாதிரி சொல்லுட்டு 5 channels இருக்கு நம்ம வந்து athena frontend ல பண்ட்டரது.
+
+SPK_2
+1:44
+எல்லாமே நமக்கு web எ்ன்தான் வரும் channel அதுக்கப்ப.
+
+SPK_1
+2:01
+இதுதான் request.
+
+SPK_1
+2:01
+For example, இப்போது சல user story ல நமக்கு request and response attach பண்ணி கொடுங்கன்னு சொல்லி developers கேப்பாங்க அந்த மாதிரி time ல நமக்கு request and response தேவைப்படும் இப்போ நான் அன்று ஒரு mapping document காம்பிச்சேன் பாத்தீங்கலாம் உங்களுக்கு.
+
+SPK_2
+2:13
+நேற்று so in the coverages எல்லாருந்து பாத்தீங்கலாம்.
+
+SPK_1
+2:20
+Eow score 1 score 2 இது எல்ல இங்க இருக்கு பாத்தீங்களா eow eow நான் escape of water என்ன ஒரு coverage அப்புறம் fire கு ஒரு coverage, flood கு ஒரு coverage அந்த மாதிரி ஒரு ஒரு coverage கு நம்ம வந்து for example இப்ப நம்ம address கொடுக்கிறோம் நினைச்சுக்கொள்ளுங்களேன் so அந்த address வந்து அது calculate பண்ணி அந்த address கு எவ்வளவு score கொடுப்போம் அது வந் அந்த மாதிரி அது வந்து ஒரு ஒரு address கு change ஆகும் ஒரு ஒரு location கு இந்த values எல்லாமே change ஆகும் நமக்கு கொடுக்குற address அதை எல்லாம் பொறுத்து இந்த values எல்லாம் change ஆகுங்கலாம் so அதை எல்லாம் back endல நமக்கு work ஆகி நமக்கு front endல  ம்மக்கு requestல வந்துரோம் so இந்த மாதிரி நீங்கள் எடுப்பதற்கு முன்னால் கீணேமை பார்த்து எடுத்தீங்கன்னா கருக்கா.
+
+SPK_2
+3:34
+இருக்கும் கீணேம் வந்து pricing என்று இருக்கு பார்த்தீங்கலாம் இது கீணேம் pricing இந்த log அதே மாதிரி எடுத்துக்கொண்டு இருக்கும் அப்படியென்றால் அவர்களுக்கு வேண்டும் என்ன செய்வீர்கள்.
+
+SPK_1
+4:13
+இல்லையென்றால் அவர்களுக்கு வேண்டும் என்ன செய்வீர்கள் ேல்லையென்றால்.
+
+SPK_2
+4:22
+அவர்களுக்கு.
+
+SPK_1
+4:24
+வேண்டும் என்ன.
+
+SPK_2
+4:34
+செய்வீர்களுக்கு வேண்டும் அவர்களுக.
+
+SPK_1
+4:46
+இது வந்து underwriting, UW model என்று சொன்னேன் இல்லையா?
+
+SPK_2
+4:49
+UW model என்றா underwriting model இப்போ நீங்க.
+
+SPK_1
+4:52
+ஒரு policy எடுக்கிறீங்க அப்படின்னா underwriter என்ற ஒருவன் இருப்பாங்க அப்படி இருக்கும்போது உங்களுக்கு ரிஸ்க அதிகமாக இருக்கும் அதற்கு வருவதற்கு வந்து ரிஷ்க அதிகமாக இருப்பதனால நமக்கு லோகேஷனை பேஸ் பண்ணிதான் எப்போமே நமக்பு வந்து பாலிசிகள் கொடுப்பாங்க அந்த மாதிரி அந்த ரிஹ்டர் வந்து நமக்கு கம்பனிக்கு லாபமா இருக்குமா இல்லையா அப்படின்னு வந்து அண்டரையிடர் வந்து ஒரு ரோல் பிள்ளை பண்வாங்க யா அப்படியென்றா அவர்கள் அந்தக் கோட்டை அனுப்ப மாட்டாங்க அதே மாதிரி வந்து லைக் ரொம்ப இடம்ஸ் இருக்கு அந்த பிள்ளிங்ஸ்ல அப்படின்னா அதுக்கான பிரிமியம் வந்து எவ்வளவு கொடுக்கலாம் எல்லாமே இந்த decided authority என்ன சொல்லுவாங்க whether to take the policy or not அந்த role தான் underwriter இது வந்து UW model கான நமக்கு user stories எப்படி வரும்னா நீங்க இந்த values குடுத்து கோட்டு பண்ணுங்க அப்படி இருக்கும்மோது இந்த values எவ்வளோ இருக்கு நமக்கு user stories எப்படி வரும்னா, address points from score வந்து, இந்த particular address கொடுத்தா, அதோட value 18.57 ஆ இருக்கணும் அதாவது numerical allow பண்ணணும, for example, செல்ல fieldsலா numerical values ஆ இருக்கும்.
+
+SPK_2
+6:43
+இது எல்லாமே numerical values, 284, அப்புறம் வந்த,.
+
+SPK_1
+6:46
+Address point, line building, theft score, இதெல்லா வந்த நமக்று numerical இருக்கும் addressலாம் பார்த்துக்கொண்டீங்கன்னா, addressலா மேப்பிங் டோக்க்மெண்ட்ல எப்படி இருக்கோனா நம்முடைய வேலை இன்னும் ஒரு கோட்டை வந்து அத்தினால் கிடைக்கும் கோட்டை ஏன் கிடைக்குகிறோம் ெப்பதான் நம்முக்கு இந்த காலம் நேம் இருக்கிறது We can't see it in the front end, Athena.
+
+SPK_1
+7:34
+புரிகிறதா?
+
+SPK_1
+7:34
+நேற்றி நம்மை create பண்ணும்போதே நீங்கள் பார்த்திருப்பீங்கள்.
+
+SPK_1
+7:37
+இந்த values எல்லாம் உங்களால் பார்க்க முடியாது.
+
+SPK_1
+7:39
+AD score 1, AD score 2.
+
+SPK_1
+7:41
+இந்த coverages எல்லாம் உங்களால் பார்த்திருக்க வே முடியாது, கரிக்டா.
+
+SPK_1
+7:44
+நேற்றி நம்மை create பண்ணும்போது நம்மை major questions தான் கொடுத வெறாஸ் இந்த கவரைஜஸ் எல்லாமே வந்து நமக்கு லாக்ஸ்ல தான் அதோட.
+
+SPK_2
+8:01
+வலியோஸ் இருக்கும் புரியுதுங்களா?
+
+SPK_2
+8:04
+ஆமாம் ஆமாம் புரியுது.
+
+SPK_2
+8:07
+அதனால்தான்.
+
+SPK_3
+8:08
+நீங்கள் நினைக்கலாம் இத்து நாம் லாக்ஸ் எடுக்கலாம் என்னப்பா?
+
+SPK_3
+8:11
+ஒரே ஒரு டவுட்டு மட்டும் லாக்ஸ் என்றால் ப .
+
+SPK_1
+8:16
+Logs தான் பார்க்கும் இப்ப நான் show பண்ணா இல்லையா இது தான் logs என்று so இப்ப நமக்கு வந்து எல்லா fields மேல் நமக்கு வந்து front-end அத்தினால application front-end tools இ்ருக்கு இல்லையா நமக்கு code create பண்ணுங்க அதுல நம்மலால பார்க்க முடியாது எல்லா fields மேல் மேப்பிங்.
+
+SPK_3
+8:53
+டாக்குமெண்ட்டுக்கோட மேப் பானது எல்லாமே லாக்ஸ்ல கிடைக்கும் கருட்டுங்க?
+
+SPK_3
+8:56
+கருட்டுங்.
+
+SPK_1
+8:57
+கருட்டுங் இப்போ சல ஆயில் ஸ்கோர்னு உங்களால போய் பாக்க முடியாது இது எல்லாமே பாக்க முடியாது அதற்குத்தான் நம்ம logs போனோம்னா logsல நமக்கு எல்லாமே date to date நம்ம எந்த timeல இந்த policyயை start பண்ணோம் என்ன transactionக்கு எடுத்திருக்கோம் எப்படி எடுத்தோம் channelல எடுத्தோம் web மூலமா எடுதிருக்கோம் பிறகு ஒரு ஒரு coverage இந்த cityக்கு எடுத்திருக்கோம் South England அந்த மாதிரி எல்லாமே each and every details இது எல்லாமே ஒரு ஒரு field eo46, eo47 இது எல்லாமே வந்து உங்கள் mapping.
+
+SPK_2
+9:49
+Documentல இருக்கும் இங்க இருக்கப் பாருங்க eo46, eo47.
+
+SPK_1
+9:56
+So நம்மளோட job வந்து என்ன இப்போ manual testing அப்படி என்ன மோது நம்ம என்ன பண்ணும்னா whole number number decimal 1 to 100 so இது வந்து 1 to 100 allow பண்ணதா அப்படி நீங்க check பண்ணோ எப்படி check பண்வீங்க இப்ப இந்த log எடுத்துட்டுப் போய் மேன்வுலா.
+
+SPK_2
+10:15
+எப்படி check பண்வீங்கன்னா இங்க.
+
+SPK_1
+10:25
+இது என்ன log.
+
+SPK_2
+10:26
+ஒரே நிமிடம் so key name வந்த underwriting so நம்ம என்ன பண்வோனா இங்க UW modelன.
+
+SPK_1
+10:35
+இருக்கா UW modelல போயிட்டு இங்க already ஒரு.
+
+SPK_2
+10:38
+Request இருக்கும் இது தான் request இப்ப.
+
+SPK_1
+10:59
+நான் date மட்டும் இது பழைய data இருக்கு நான்.
+
+SPK_2
+11:01
+வந்து month வந்து 8 கொடுத்துட்டு இங்க வந்து just one end கொடுத்துக்கிறேன் one end கொடுத்துட்டு ரெண்ட் பணிக்காங்க ஒரு response வந்திருக்கும் இப்போ இப்ப.
+
+SPK_1
+11:16
+நமக்கு வந்து mapping documentaryல என்ன இருக்கிறது ஏதாவது.
+
+SPK_2
+11:18
+ஒரு field எடுத்துப்போம் EO68 எடுத்துப் போங்களேன் இது.
+
+SPK_1
+11:35
+வந்து பழைய request வாகம் மட்டும் அந்த fields.
+
+SPK_2
+11:36
+எல்லாம் ெடாகலாம் so EO64 இருக்கும் so eo64.
+
+SPK_1
+11:41
+என்ன இன்னா eo64 வந்து old number decimal places 1 to 100 so இது வந்து.
+
+SPK_2
+11:47
+நீங்க எப்படி check பண்ணுங்க eo64 இங்க இருக்கு.
+
+SPK_1
+11:49
+இப்ப இங்க value வந்து 32 இருக்கு இப்ப நா 32 point ஒரு 1,2,3,4,5 இப்படி இந்த values கொடுத்து நா check பண்டுறேன் வைச்சுவாங்கலாம் send கொடுக்கற அதுடன் response நம்ம எப்படி manually check.
+
+SPK_2
+12:01
+பண்ணுங்கன்னா இங்.
+
+SPK_1
+12:13
+இதிலிருந்து இந்த root வரிக்கும் copy.
+
+SPK_2
+12:14
+பண்ணிக்கணும் copy பண்ணிட்டு format பண்ணுறோம் இங்கே ctrl.
+
+SPK_1
+12:28
+C நம்ம requestல என்ன கொடுக்குறோமோ அது நமக்கு responseல வந்துரோம் இது வந்து UW மோடல் என்பது ெலவு UW மோடலோட வர்க்கை என்னன் பாத்தீங்கன்னா நமக்கு வந்து இந்த Decline Quotes கொடுக்கோம் இப்ப இந்த Quote ஏன் வந்து இந்தQuote ஏன் Decline ஆயிருக்கு அப்படின்னு பாத்தீங்கன்னா unacceptable due to claims அதாவது last 5 yearsல வந்தி இவங்க நிறைய claims வந்த போட்டுருக்  இது வந்து இந்த decimal அலவு பண்ணிடுச்சு நமக்கு வந்து coat வந்திருச்சு இந்த மாதிரி.
+
+SPK_2
+13:11
+Checks எல்லாமே நம்மை manual ஆப் பண்ணிக்கலாம் புரிகிறதா இசசு பெரிய புரியுது ஒன்றுமே இல்ல இந்த ready.
+
+SPK_1
+13:25
+Apல நேற்று நான் automation and manual என்று காம்பிச்சேன் so manual is nothing but நீங்க ஒரு ஒரு coat ஆ வந்த ஒரு ஒரு request யுங்க போட்டுட்டு நீங்க வந்து சல changes பண்றீங்க சல changes பண்ணிட்டு இங்க run பண்ணும்மோது உங்களுக்கு response வந்திரும் அந்த response கேட்டாம் மாதிரி நீங்க வந்து இது பண்ணலாம் for example இப்போ.
+
+SPK_2
+13:47
+இந்த requestல வந்துட்டு நீங்கள் எப்படி verify பண்வீங்க அப்படின்னா இப்போ வந்த வேற ஒரு.
+
+SPK_1
+14:02
+So number of bedrooms 3 இருக்கு, இப்போ இதை வந்து நான் ஒரு example 9 என்ன கொடுக்கிறேன் என்று.
+
+SPK_2
+14:07
+வைச்சுக்கொள்ளுங்களே 605 so.
+
+SPK_1
+14:20
+Number of bedrooms நான் 9 என்ன சொல்லிக் கொடுக்கிறேன் so இப்ப இந்த.
+
+SPK_2
+14:22
+Request நான் run பண்ணுகிறேன் என்று வைச்சுக்கொள்ளுங்களே என்ன error throw பண்ணதுன்னு பார்க இங்க போயிட்டு cdata ல இருந்து இது தான் response இந்த response ஐ copy பண்ணிக்குறோம்.
+
+SPK_1
+14:48
+இங்க இங்க கூட format.
+
+SPK_2
+14:49
+பண்ணிக்கலாம் இல அங்கயும் பண்ணுக்கலாம் இதுல போயிட்டு reported.
+
+SPK_1
+15:12
+இப்ப நமக்கு என்ன இரர் வந்திருக்கு பாருங்க, unacceptable due to number of bathrooms and cover unacceptable due to number of bedrooms, அப்புறம் வந்து இந்த claim வந்து 5 years கு மேல இருக்கிறதனால இதெல்லாம் நம்முடைய error.
+
+SPK_1
+15:27
+இந்த மாதிரி user storyலேயே நமக்கு கொடுத்து ருவாங்க.
+
+SPK_1
+15:30
+இந்த conditions கொடுங்க, for example, requestல வந்து, requestல வந்து, நீங்க வந்து இந்த field அம்மாத்துங்க இந்த field உள்ள value மாத்துங்க so that நமக்கு என்ன error decline codes வருதுன்னு பாருங்க அப்படின்னு சொல்லி போடுவாங்க.
+
+SPK_1
+15:47
+அந்த மாதிரி நம்ம user story செய்க்கும்போது நமக்கு வந்து logs வேண்டும் இல்லையா?
+
+SPK_1
+15:52
+Logs இருந்தா தான் நம்மலால வந்து நம்ம வந்து செய்க்கப் பண்ண முடியும்.
+
+SPK_1
+15:56
+அந்த field உடன் values மட்டும் நம்ம மாத்திட்டு just ready API ல போய்ட்டு இந் இதை எல்லாவற்றிற்கும் நமக்கு லாவ்ஸ் இருந்தால்தான் செய்ய முடியாது.
+
+SPK_1
+16:17
+இதை எல்லாமே பார்த்தீங்கள் இப்ப நமக்கு வந்து deployment நடக்குமோது நடக்குமோது ஒரு ஒரு changes எல்லாமே வந்து நமக்கு வந்து front endல தான் deploy பண்ணிருப்பார் so நாம என்ன பண்ணனும் இப்ப ஒரு user story வருது அப்படின்னா நீங்க என்ன பண்ணனும் first ஒரு port எ create பண்ணிக்கணும் அப என்றால் எல்லாமே run ஆகி, deploy successful ஆன பிறகு எல்லா changes மே அப்ப தான் நமக்கு இந்த code ல கிடைக்கும் log ல அதனால நீங்க வந்து புதுசோ ஒரு code create பண்ணிட்டு அதோட logs எடுத்துட்டு user storyல எ்னண்ண field ல verify பண்ண சொல்றாங்க அது கேட்தா அப்படி நமக்கு நீங்க நீங்கள் கேட்கலாம் இல்லாமல் நம்மிடம்தான் லாக் இருக்கிறது நம்ம புதிதாக கிரையேட் பண்ணனோம் அப்படின்னு கேட்கலாம் அதுக்காக சொல்றேன் so each and every deployment க்கப்பற நமக்கு changes எல்லாமே reflect ஆகணும் அப்படின்னா we should need to create a new code அதுக்குப்பற லாக் எடுக்குறோம.
+
+SPK_3
+17:36
+நீங்கள் நினைவில் நீங்கள் அவர்களை நீங்கள்.
+
+SPK_1
+17:41
+நிறுத்துகிறீர்களா?
+
+SPK_1
+17:41
+அப்படியெல்லாம் நீங்கள் அவர்களை நிறுத்துகிறீர்களா?
+
+SPK_1
+17:44
+ஆமாம் அப்படியென்றால் நமக்கு ஒரு கோட்டா செய்வதற்கு நமக்கு நேரம் ெகுவில்லையா?
+
+SPK_1
+17:57
+அதற்குத்தான் நேற்று நான் காண்பித்தேன் இந்த இந்புட் சீட்டுல அந்த ேந்த விளக்கம் இங்க மேப்பா இருக்கும் அந்த விளக்கம் இங்க இருக்றும்.
+
+SPK_3
+18:17
+DOO3 என்று இருந்தது நேற்று.
+
+SPK_3
+18:19
+ஆ, DOO3.
+
+SPK_3
+18:21
+So,.
+
+SPK_1
+18:24
+For example, இப்போ நான் வந்து 0, 1, 2, multiple numbersக்கு நான் check பண்ணவேண்டும்.
+
+SPK_1
+18:28
+So, நான் ஒரு ஒரு quota create பண்ணிட்டு இருக்க முடியாது இல்லையா?
+
+SPK_1
+18:31
+So, அந்த time நான் இங்க feed பண்ணிடுவேன்.
+
+SPK_1
+18:34
+எனக்கு இந்த number of bedroom, for example, இப்போ test case 1 வந்து 0கு check பண்ணும்.
+
+SPK_1
+18:38
+Test case 2 வந்து number of response தான் இந்த sheet ல வந்துறோம் இந்த sheet ல நான் just போய்ட்டு இந்த declining reason code இருக்கு பார்த்தீங்களா இந்த call மட்டும் நான் பார்த்துட்டான் பார்த்துட்டு நான் verify பண்ணிலாம் so bulk நம்ம test பண்ணுமோது automation கு நம்ம input sheet ல வந்துட்டு இப்ப நம்ம ந இங்க இருக்கும் so data source ல நீங்க browse பண்ணிட்டு அந்த sheet ல browse பண்ணிட்டு rest request மட்டும் இப்ப நீங்க correct current ஆ deployment mail வரும் நமக்கு பறகு நா அது வேண்டாம் காட்டுறேன் பரங்க இந்த மாதிரி.
+
+SPK_2
+19:28
+வந்து நமக்கு வரும் so இந்த time கு.
+
+SPK_1
+19:35
+நாங்க பண்ணிருக்கும் deployment இந்த time கு பண தயவுசெய்து அவர்களுக்கு இது ெற்றுக்கொள்ளலாம் என்று கூறுங்கள்.
+
+SPK_2
+20:18
+இந்த.
+
+SPK_1
+20:19
+மாதிரி வரும் this has been deployed to pre-prod pre-prod environmentல தான் நம்ம test பண்ணுவோம் so available from 12 today அப்படின்னு சொல்லிட்டு என்னிக் கோட்டுருக்காங்க 17.6 அப்படின்னா இப்ப நீங்க இந்த user story v1.43 வர்ஷனுக்கு நீங்க test பண்றீங்க அப்படினுமோது இங்க போய்ட்டு இந்த rest request மட்டும் இந்த current date கொடுத்துட்டு அதுக்கப்புறம் XML Data Sync என்ன ஒன்று இருப்போம் இதுல தான் வந்து நம்ம அந்த Column Name சொன்னன இல்லையா?
+
+SPK_1
+20:49
+இந்த Column Name மட்டும் இந்த First Column மட்டும் வெச்சுட்டு இதெல்லாம் Delete பண்ணிட்டு நீங்கள் Upload பண்ணுவீங்க So that அது Run ஆகி உங்களுக்கு வந்த Response இதில வந்திரும் Response வந்து இதில Store ஆயிறம் அதுக்கப்புற.
+
+SPK_3
+21:17
+அப்படியென்றால்.
+
+SPK_1
+21:23
+அவர்களுக்கு வேண்டும் என்று தெரியும்
+
+எந்த date என்ன user story கொடுத்தோம் அந்த user story போட்டு read book வர்ஷன் number போட்டு எவ்வளவு test cases பண்ணிருக்கோம் manual எ்வளவு பண்ணிருக்கோம் automation எவ்வளவு பண்ணிருக்கோம் இப்படின்னு சொல்லிட்டு சும்மா நமம் ஒரு excel ல ஒரு sheet maintain பணிட்டே ஓருங்க so that நா இப்ப வந்து.
+
+SPK_2
+0:30
+ஜீரால உங்களுக்கு அந்த confluence லாம் காம்பிட்டாங்கலா இன்னும்.
+
+SPK_1
+0:36
+ஜீராகுள் போகல இன்னும் ஜீரால வந்து மேனா வந்து நமக்கு வந்து ஜீரா போட்டு நா காம்பிட்டேன் இல்லையா.
+
+SPK_2
+0:44
+இப்படி தான் இருக்கும் இதுல.
+
+SPK_1
+0:53
+போயிட்டு நமக்கு வந்து alliance போம் ஒரு user story வந்து இப்ப backlog லப் பாத்தீங்கன்னா n number of user.
+
+SPK_2
+1:03
+Stories இருக்கும் இது தான் backlog என்ன சொல்லுவோம்.
+
+SPK_1
+1:06
+Backlog ல வந்து பாத்தீங்கன்னா motor related user stories அப்புறம் ohm related user stories azh என்று இருக்கும் பாத்தீங்களா azh நான் alliance ohm azm நான் alliance motor so எல்லா user stories முன்னமுக்கு backlog ல இருக் போட்டில் மூப்பினால் வந்து ரீட் அனைல்ஸிஸ் என்ற ஸ்டேடஸ்லா இருக்கும் ரீட் அனைல்ஸிஸ் நான் காமணா வந்து டெவிலப்பர்ஸும் நம்ம வந்து யூசிய ஸ்டோரியை ஓபன் பண்ணி கோத்துரு பண்ணுவாங்க டெவைலப்பர்ஸும் பார்த்துப்பாங்க இந்.
+
+SPK_2
+1:51
+டெவ்லர்.
+
+SPK_1
+1:56
+இங்க வந்து assign to mean சொல்லி நான் assign பண்ணிப்பேன் எனக்கு நான assign பண்ணிட்ட பிறகு in testல வைச்சுடுவேன் in testல வைச்சுட்டு நான் சொன்ன மாதிரி test data preparation ஆரமைப்போம் test data preparation ஆரமைச்சுட்டு testing எல்லாம் முடிந்த பிறகு என்ன பண்ணுவோம்னா நம்ம வந்து.
+
+SPK_2
+2:11
+Testing முடித்த பிறகு PO review product owner.
+
+SPK_1
+2:15
+Reviewக்கு நம்ம வை அந்த லிக்கை கீழே கொடுத்துக்கொள்ள வேண்டும்.
+
+SPK_2
+2:25
+நான் ஏதாவது வாய்ப்பு செய்து காட்டுகிறேன்.
+
+SPK_3
+2:28
+சஸிப்ரியா நம்மையே செய்யலாம் என்று சொன்னீர்களா?
+
+SPK_3
+2:35
+நம்மைதான் நமக்கு என்ன வேண்டுமோ அதையோ செய்துக்கொள்ளலாம் இல்லை அவர்கள் வந்து நீங்கள் எடுத்துக்கொள்கிறார்கள் என்று சொல்லிக்கொண்டார்களா?
+
+SPK_1
+2:39
+இல்லை இல்லை, நமக்கு வந்து சொல்லியிருப்பாங்க என்ன இந்த user stories நமக்கு வரும் என்று சொல்லிட்டு ஒரு group chat மாதிரி இருக் அப்படி இருக்கும்போது வந்துவிட்டு அவர ஒரு user story அசையை எடுத்துக்கொள்கிறாரும் நான்.
+
+SPK_2
+3:14
+ஒரு user story எடுத்துக்கொள்கிறேன் ஒரே நிச்சயம்.
+
+SPK_1
+3:43
+தனிஷ்.
+
+SPK_2
+3:45
+ஹமைதியா இரு கால்ல இருக்கேன் கால்ல.
+
+SPK_1
+3:57
+இருக்கேன் கால்ல இருக்கேன் கால்ல இருக்கேன் கால்ல இருக்கேன் கால்ல இருக்கேன்.
+
+SPK_3
+4:03
+கால்ல இருக்கேன் கால்ல இருக ்கேன் கால்ல இருக்ீன் கால்ல.
+
+SPK_1
+4:13
+இரிக்கிறேன அவன் பத்திட்டிருக்கான அவன் பத்திட்டிருக்கான அவன் பத்திட்டிருக்கான அவன்.
+
+
+
+
+3) allianz home day 3 Kt
+
+XML Data Sync என்னுடைய Output Sheet வந்து C Data Sync இதை நம்ம ரண் பண்ணி அந்த Files நம்ம இதுல Attach பண்ணிடும் இந்த மாதிரி New Version, Old Version ரெண்டு வர்ஷன்க்கும் நம்ம Test பண்ணீர்க்கோம் அது இரண்டுத்தையும் Attach பண்ணீர்க்கோம் அடுத்து வந்து Sign Off இங்க வந்து Usually நம்ம தான.
+
+SPK_2
+0:23
+அப்படியென்றால்.
+
+SPK_1
+0:28
+இந்த user story நாம் எப்படி verify பண்ணோ அப்படின்னு சொல்லுட்டு ஒரு mail அணுப்பணும் எல்லா developers, testers, deployment team எல்லாருமே இருப்பாங்க இந்த mail நமம் என்ன பான்றுறோம்னா ரெண்டு user story ைச்சேர் டெஸ்ட் பண்ணிருக்கோம் அந்த ரெண்டு user story அï  எல்லாவற்றையும் நாம் போட்டுவிட்டு இந்த scope எல்லாம் பார்த்தீங்கன்னா உங்கள் user storyலேயே இருக்கும் scope of the user story நான் காண்பித்திருக்கிறேன் அல்லவா?
+
+SPK_1
+1:13
+Scope என்று சொல்லி நமக்கு இங்கேயே இருக்கும் இங்க பாருங்க scope என்று சொல்லி இதுதான் scope இந்த scope வந்து copy பண்ணி mailல போட்டுறோம் நாம் இதை எப்படி டேஸ்ட் பண்ணோம் அப்படின்னு சொல்லி எப்படி டேஸ்ட் பண்ணோம் சல டேஸ்டை வந்து ஆடமேஷன் மூலமா பண்ணிருக்கோம் அப்படின்னு சல ்டேஸ்டை வந்து மேன்வலா பண்ணிருக்கோம் ொஜிங் ரெடி ஏபி ஐ டூல் ரெடி   நம்ம வந்து new business கு பண்ணிருக்கும் renewal கு பண்ணிருக்கும் அந்த மாதிரி என்ன என்ன business கு பண்ணிருக்கும்னு சொல்லி போட்டுட்டு defect ஏதாவது இருந்தா defect மெஞ்சம் பண்ணீட்டு நம்ம sign போட்டு நம்ம அனுச்சுடுவோம் இந்த மாதிரி deployment mail அனுப்போம் மேஜரை இந்த details எல்லாம் போட்டு நீங்கள் வந்து user storyல அடைச்சு பண்ண வேண்டும் ரேட் புக்கு அதுக்கப்புறம்.
+
+SPK_2
+2:20
+வந்து test result அதுக்கு அப்புறம் sign up இது புரியுதா உங்களுக்கு?
+
+SPK_2
+2:28
+ஆம் புரியுதா இது புரியா?
+
+SPK_2
+2:30
+ஆம் சரி அச்சிலா அந்த versions என்று நீங்கள் சொன்னீ.
+
+SPK_1
+2:36
+வர்ஷன் வந்து என்ன நான் இப்போ ஒரே மிசோர் ஒரு user story open பண்றீங்க அப்படின்னா இப்ப இந்த changes வந்து எந்த versionல இருக்கு அப்படின்னு சொல்லிட்டு அவங்க பாப்பாங்க இங்கேயே வந்து நமக்கு போட்டுருவாங்க இது தான் version number prv13.17.3 இப்ப இன்னொரு ஒரு changes வருதுனா அது 17.4ல இருக  வெற்றிக்கையாளர்கள் இந்த வெற்றிக்கையாளர்களில் இந்த வெற்றிக்கையாளர்களில் இந்த வெற்றிக்கையாளர்களில் இந்த வெற்றிக்கையாளர்களில் இந்த வெற்றிக்கையாளர்கான கோடு வைத்திருப்பார்கள் அந்த மாதிரி.
+
+SPK_1
+3:24
+நீங்கள் ஜீரா வந்து அஜியல் மதுடலஜியை எப்படி இருக்கும் என்று பார்த்து வைத்துக்கொள்ளுங்கள்.
+
+SPK_1
+3:39
+நம்முடைய வாடிக்கையாளர்கள் நம்முடைய வாடிக்கையாளர்கள் நம்முடைய வாடிக்கையாளர்கள் நம்முடைய வாடிக்கையாள்கள் நம்முடைய வாடிக்கையாளர்கள் நம்முடைய வாடிக்கையாளர்கள் ஆரம்பித்துவிட்டோம் நமும்முறை என்றால் முடித்தவுடன் பி.ஓ.ரிவியோக்கு வைத்து அவர்கள் காசமிக்க வைத்துக்கொள்ள வேண்டும் ெரம்பித்துவிட்டோம் என்றால், அவர்கள் முடிதுவிட்டார்கள் என்றால் வைத்துக்கொள்வார்கள்.
+
+SPK_1
+4:09
+ந இ  நீங்கள் இந்த மூன்று மோடல்களை தெரிந்துகொள்ளுங்கள் நான் சொன்ன மாதிரி பரைஜிங் மோடல் ரேடார் மேன் மோடல் தான் பிரைஜிங் மோடல் என்று சொல்லுவோம் அடுத்து வந்து UW மோடல், அடுத்து வந்து பிரிகாம் மோடல் ேந்த மூன நமக்கு எவ்வளவு பிரிமியம் இருக்கும்போது அவர்களுக்கான பிரிமியம் வைத்து ேருக்கும்போது நமக்கு எவ்வ ளவு பிரிமியம் இிருக்கும்போது நமக்கு 48 நான் 58 எவ்வளவு நான் அதுக்கு ஒரு decline என்று சொல்லும் நம் grade book லேயே 100 decline codes இருக்கும் அது related to user service வரும்போது uw model கு version ஒன்று நம் uw codes reason பிரிமியம் வைத்து இ decline codes ோம்.
+
+SPK_2
+5:29
+Check பண்ணும் so அதை எப்படி check பண்ணும்னா.
+
+SPK_1
+5:34
+Manual ஆவும் check பண்ணும் ready api ல நீங்க ந ஆட்டமிஷன்ல பண்ணுமோது இந்த test data script ரெடி பண்ணிட்டு நம்ம இதில பண்ணுமோம் அடுத்தது வந்துட்டு manual பண்ணுமோது எப்படி பண்ுவோம்னா நம்ம...
+
+SPK_1
+5:52
+நான் காமிச்சாலியா ஒரு athena ல வந்து ஒரு front-endல ப்ரெண்ட்டெண்டுல வந்து ஒரு கோட்டை create பண்ணிட்டு அந்த கோட்ட வேறுதான் டவுட்டு இருக்குங்களா உங்களுக்கு?
+
+SPK_2
+6:31
+அந்த process மட்டும் காட்டிக்கொண்டு இருக்கிறேன் இங்க.
+
+SPK_1
+6:44
+வந்து இருக்கோம் இங்க வந்து precom model, radar main model, radar uw model அப்படின்னு சொல்லிட்டு இங்க 3 projects நமக்க இருக்கோம் இங்க நம்ம அத்தினாலிருந்து இந்த request எடுத்தோம் அல்லவா?
+
+SPK_1
+7:00
+நித்தன் ஞாபகம் இருக்குங்களா?
+
+SPK_1
+7:00
+அந்த log லபையிட்டு inbound, outbound என்று சொல்லி கொடுத்தோம் அல்லவா?
+
+SPK_1
+7:05
+அந்த மாதிரி கொடுத்து இந்த request எடுத்து இங்கே போடவேண்டும் இந்த XML part இíருக்கிறது அல்லவா?
+
+SPK_1
+7:14
+இந்த XML எ நேற்று கூட இங்க ஒன்று கொடுத்தோம் இல்லையா?
+
+SPK_1
+7:22
+கொடுத்து சென்றோம் இங்க வர ரேக்க்கோஸ்ட் எடுத்துட்டு வந்துட்டு இது தான் ரேக்க்கோஸ்ட் இது தான் ரேஸ்பான்ஸ் இந்த சீ டேடால இருக்குறது தான் ரேச்பானும் இதை நீங்க காபி பண்ணி இதை ரேகோஸ்ட் வந்து நம்ம ஒரு ஒரு changes வருமோது நம்ம வந்து ஒரு ரேகோஸ்ட் போயணும்னு மோது நாம அத்தினால போய்ட்டு அத்தினால போய்ட்டு நம்ம வந்து ஒரு court create பண்றோம் அந்த court reference number இருக்கு பார்த்தீங்களா அந்த court reference number வெச்சிக்க்கு இது தான் அந்த court reference number இந்த நீங்கள் இங்க கொடுத்தீங்கன்னா உங்களுக்கு வந்து என்னிக்கும் கிரியாட்பானது கோட் நம்பர் நம்ம எடுத்தோம்மா மேத்து சரி ஓகே இதுதான் கோட் நம்பர்.
+
+SPK_2
+9:15
+இது வந்து பழைய கோட் நம்பரும் நான் நினைக்கிறேன் என்ன வாங்குகிறீர்கள் சரி சரி கோம் கிருஷா வாங்குகிறேன் ஏய் தனேஸ் கேவல்ஸ்டில் எடுத்து மேல எடுத்தாய் மேல எடுத்தாய் ஒரு பொழுந்தாம் மாயில பிடி என்ன இருக்கும் அந்த.
+
+SPK_1
+9:50
+கோட் நம்பரை போட்டு நீங்க outbound message என்ன கொடுத்தீங்கன்னா இங்க உங்களுக்கு result வரும் so இங்க நா காம்ப்பிட்டேன் நீங்களா நேற்று the key name வைச்சு நம்ம எடுக்கணும் logs so நம்ம என்ன பண்ணோனா இங்க logsல போய்ட்டு இந்த பேலோட் சிம்பலை இதில இருந்து இந்த end வரிக்கும் காபி பண்ணவேண்டும் காபி பண்ணி நம்ம நேற்று பேச பண்ணோம் பாத்தீங்கலாம் மூன்று request ஏல்லாமே இதில இருக்காம் எந்த request வைச்சு நம்ம mapping documentல இருக்க ஫ீல்ஸும் இதில இருக்க feelzும் கர்க்கட்டா இருக்கான நம்ம verify மேஜரா இந்த இரண்டு பிராசிஸ் மூலமா நம்ம பண்ணுவோம் அதுக்கப்படர் ஜென் ஏன் லாப்பிலும் பண்ணிக்கோம் என்று சொன்னோம் அல்லவா?
+
+SPK_1
+10:46
+அது வந்து நமக்கு ஸ்கிரிப்ப் கொடுத்துட்டாங்க பிராம்ப்ப் பிரித்துட்டாங்க அந்த பிராம்ப்பை வைத்துவிட்ட மாப்பிங் டக்குமெண்ட் ரெக்க்கோஸ்ட் ஷீட் மாப்பிங் டக்குமெண்ட் ரெக்க்கோஸ்ட் ஷீட் நமக் கொடுத்துட்டாங்க ரெக்கோஸ்ட் ஷிட் நமக் கொடுத்துட்டாங்க ரெக்கோஸ்ட் ஷீட் நமக் கொடுத்துட்டாங்க.
+
+SPK_2
+11:27
+பார்த்தா டாய்ட் இருக்குங்களா இதெல்லாம் இல்ல தான்.
+
+SPK_1
+11:33
+சரி சரி சரி ஓகே so நான் போ முடித்த மாதிரி நான் மெயில் அமைச்சுறுகிறேன் நம்முடைய இது நாளைலந்து உங்கள் கல்யாண்ஸ் மோட்டார் வந்து சஷாங் கொடுக்கார் என்று பாரு அவருக்கிட நீங்கள் follow பண்ணிக்கும் time.
+
+SPK_2
+11:45
+நீங்க.
+
+SPK_1
+11:51
+சரி அப்பா நன்றி.
+
+
+
+
