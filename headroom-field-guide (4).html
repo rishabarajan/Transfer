@@ -1,0 +1,1748 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Headroom : Architecture, SOP, and Tensai Integration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0F1A;
+    --bg-panel:#111827;
+    --bg-raise:#161F31;
+    --line:#243044;
+    --text:#E5E7EB;
+    --muted:#9CA3AF;
+    --dim:#64748B;
+
+    --frontend:#22D3EE;   --frontend-fill:rgba(34,211,238,.13);
+    --backend:#818CF8;    --backend-fill:rgba(129,140,248,.13);
+    --database:#F59E0B;   --database-fill:rgba(245,158,11,.13);
+    --cloud:#38BDF8;      --cloud-fill:rgba(56,189,248,.13);
+    --security:#FB7185;   --security-fill:rgba(251,113,133,.10);
+    --messagebus:#34D399; --messagebus-fill:rgba(52,211,153,.13);
+    --external:#94A3B8;   --external-fill:rgba(148,163,184,.13);
+
+    --a-default:#5B6B84;
+    --a-emphasis:#22D3EE;
+    --a-dashed:#8B9BB4;
+    --region:#F59E0B;
+    --secgroup:#FB7185;
+    --accent:#22D3EE;
+  }
+  [data-theme="light"]{
+    --bg:#F5F7FA;
+    --bg-panel:#FFFFFF;
+    --bg-raise:#EEF2F7;
+    --line:#D4DBE5;
+    --text:#111827;
+    --muted:#4B5563;
+    --dim:#94A3B8;
+
+    --frontend:#0E93AC;   --frontend-fill:rgba(8,145,178,.10);
+    --backend:#4F46E5;    --backend-fill:rgba(79,70,229,.09);
+    --database:#B45309;   --database-fill:rgba(180,83,9,.10);
+    --cloud:#0284C7;      --cloud-fill:rgba(2,132,199,.09);
+    --security:#E11D48;   --security-fill:rgba(225,29,72,.07);
+    --messagebus:#059669; --messagebus-fill:rgba(5,150,105,.09);
+    --external:#475569;   --external-fill:rgba(71,85,105,.09);
+
+    --a-default:#7C8DA6;
+    --a-emphasis:#0E93AC;
+    --a-dashed:#93A3BB;
+    --region:#B45309;
+    --secgroup:#E11D48;
+    --accent:#0E93AC;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:14px;
+    line-height:1.55;
+  }
+  button{ font-family:inherit; }
+  a{ color:var(--accent); }
+  button:focus-visible, [tabindex]:focus-visible, input:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:2px;
+  }
+
+  /* ---------- header ---------- */
+  header.top{
+    border-bottom:1px solid var(--line);
+    padding:18px 20px 14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 24px;
+    align-items:flex-end;
+    justify-content:space-between;
+  }
+  .titles h1{ margin:0; font-size:19px; font-weight:700; letter-spacing:.01em; }
+  .titles .sub{ margin-top:3px; font-size:12px; color:var(--muted); }
+  .toolbar{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tbtn{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    color:var(--text);
+    border-radius:6px;
+    padding:6px 12px;
+    font-size:12px;
+    cursor:pointer;
+  }
+  .tbtn:hover{ border-color:var(--accent); }
+  .tbtn kbd{
+    font-family:inherit;
+    color:var(--dim);
+    margin-left:6px;
+    font-size:11px;
+  }
+
+  /* ---------- chapter rail ---------- */
+  .rail{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+    padding:12px 20px;
+    border-bottom:1px solid var(--line);
+    background:var(--bg-panel);
+  }
+  .rail .lbl{ font-size:11px; color:var(--dim); margin-right:4px; letter-spacing:.06em; }
+  .chapter{
+    background:var(--bg);
+    border:1px solid var(--line);
+    color:var(--text);
+    border-radius:6px;
+    padding:6px 12px;
+    font-size:12px;
+    cursor:pointer;
+  }
+  .chapter .num{ color:var(--dim); margin-right:6px; }
+  .chapter[aria-pressed="true"]{ border-color:var(--accent); color:var(--accent); }
+  .rail .play{ margin-left:auto; display:flex; gap:6px; }
+  .rail .note{
+    flex-basis:100%;
+    font-size:12px;
+    color:var(--muted);
+    min-height:18px;
+  }
+
+  /* ---------- stage layout ---------- */
+  .stagewrap{
+    display:grid;
+    grid-template-columns:1fr 372px;
+    gap:0;
+    align-items:stretch;
+    border-bottom:1px solid var(--line);
+  }
+  .stage{
+    position:relative;
+    overflow:hidden;
+    min-height:560px;
+    cursor:grab;
+    touch-action:none;
+  }
+  .stage.dragging{ cursor:grabbing; }
+  .stage svg{ display:block; width:100%; height:100%; min-height:560px; }
+  .zoomhud{
+    position:absolute;
+    left:12px;
+    bottom:12px;
+    font-size:11px;
+    color:var(--dim);
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:3px 8px;
+    pointer-events:none;
+  }
+
+  aside.panel{
+    border-left:1px solid var(--line);
+    background:var(--bg-panel);
+    padding:18px;
+    overflow-y:auto;
+    max-height:720px;
+  }
+  .panel h2{ margin:0 0 4px; font-size:13px; letter-spacing:.08em; color:var(--dim); font-weight:600; }
+  .panel .ptitle{ font-size:17px; font-weight:700; margin:2px 0 2px; }
+  .kindchip{
+    display:inline-block;
+    font-size:10px;
+    letter-spacing:.08em;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:2px 8px;
+    margin:6px 6px 6px 0;
+    color:var(--muted);
+  }
+  .kindchip i{
+    display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:6px;
+  }
+  .panel .detail{ font-size:12.5px; color:var(--text); margin:10px 0; }
+  .panel .ctx{ font-size:11px; color:var(--muted); }
+  .rel-list{ margin:12px 0 0; padding:0; list-style:none; }
+  .rel-list li{
+    border-top:1px solid var(--line);
+    padding:7px 2px;
+    font-size:11.5px;
+    color:var(--muted);
+    display:flex;
+    gap:8px;
+    cursor:pointer;
+  }
+  .rel-list li:hover{ color:var(--text); }
+  .rel-list .dir{ color:var(--accent); flex:none; }
+  .panel .hint{ font-size:11px; color:var(--dim); margin-top:14px; }
+  .findbox{
+    width:100%;
+    background:var(--bg);
+    border:1px solid var(--line);
+    color:var(--text);
+    border-radius:6px;
+    padding:8px 10px;
+    font-size:13px;
+    font-family:inherit;
+    margin:8px 0 10px;
+  }
+  .findres{ list-style:none; margin:0; padding:0; }
+  .findres li{
+    padding:7px 4px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    cursor:pointer;
+  }
+  .findres li:hover{ color:var(--accent); }
+  .findres .k{ color:var(--dim); font-size:10px; margin-left:8px; }
+  .guide-keys{ list-style:none; margin:10px 0 0; padding:0; font-size:12px; }
+  .guide-keys li{ display:flex; justify-content:space-between; border-top:1px solid var(--line); padding:7px 2px; color:var(--muted); }
+  .guide-keys kbd{
+    font-family:inherit;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 7px;
+    color:var(--text);
+    font-size:11px;
+  }
+
+  /* ---------- SVG semantic classes (Cardinal Rule: no inline colors) ---------- */
+  .c-mask{ fill:var(--bg-panel); stroke:none; }
+  .c-frontend{ fill:var(--frontend-fill); stroke:var(--frontend); }
+  .c-backend{ fill:var(--backend-fill); stroke:var(--backend); }
+  .c-database{ fill:var(--database-fill); stroke:var(--database); }
+  .c-cloud{ fill:var(--cloud-fill); stroke:var(--cloud); }
+  .c-security{ fill:var(--security-fill); stroke:var(--security); }
+  .c-messagebus{ fill:var(--messagebus-fill); stroke:var(--messagebus); }
+  .c-external{ fill:var(--external-fill); stroke:var(--external); }
+
+  .t-primary{ fill:var(--text); }
+  .t-muted{ fill:var(--muted); }
+  .t-dim{ fill:var(--dim); }
+  .t-frontend{ fill:var(--frontend); }
+  .t-backend{ fill:var(--backend); }
+  .t-database{ fill:var(--database); }
+  .t-cloud{ fill:var(--cloud); }
+  .t-external{ fill:var(--external); }
+  .t-region{ fill:var(--region); }
+  .t-secgroup{ fill:var(--secgroup); }
+
+  .a-default{ stroke:var(--a-default); fill:none; }
+  .a-emphasis{ stroke:var(--a-emphasis); fill:none; }
+  .a-dashed{ stroke:var(--a-dashed); fill:none; stroke-dasharray:6 5; }
+  .m-default{ fill:var(--a-default); }
+  .m-emphasis{ fill:var(--a-emphasis); }
+  .m-dashed{ fill:var(--a-dashed); }
+
+  .c-region{ fill:none; stroke:var(--region); stroke-dasharray:8 6; stroke-width:1.2; opacity:.75; }
+  .c-security-group{ fill:none; stroke:var(--secgroup); stroke-dasharray:5 5; stroke-width:1.2; opacity:.8; }
+
+  .edge-label{ paint-order:stroke; stroke:var(--bg); stroke-width:4px; }
+
+  .node{ cursor:pointer; }
+  .node rect{ transition:opacity .18s ease; }
+  .node text{ transition:opacity .18s ease; pointer-events:none; }
+  .edge path{ transition:opacity .18s ease; }
+  .edge text{ transition:opacity .18s ease; }
+
+  /* focus / lens / chapter dimming */
+  .has-sel .node, .has-sel .edge{ opacity:.16; }
+  .has-sel .node.on{ opacity:1; }
+  .has-sel .node.peer{ opacity:.72; }
+  .has-sel .edge.on{ opacity:1; }
+  .node.beat > rect:last-of-type{ stroke-width:3; }
+  .node:hover > rect:last-of-type{ stroke-width:2.5; }
+
+  .legend-row{ cursor:pointer; }
+  .legend-row:hover text{ fill:var(--text); }
+
+  @media (max-width:980px){
+    .stagewrap{ grid-template-columns:1fr; }
+    aside.panel{ border-left:none; border-top:1px solid var(--line); max-height:none; }
+    .stage{ min-height:440px; }
+    .stage svg{ min-height:440px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; }
+  }
+
+  /* ---------- explainer section ---------- */
+  section.topics{ padding:28px 20px 8px; max-width:1240px; margin:0 auto; }
+  section.topics h2{ font-size:16px; margin:0 0 4px; }
+  section.topics .lede{ color:var(--muted); font-size:13px; max-width:78ch; margin:4px 0 18px; }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:14px;
+  }
+  .card{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 18px;
+  }
+  .card h3{ margin:0 0 8px; font-size:13.5px; }
+  .card h3 .tag{
+    display:inline-block;
+    font-size:9.5px;
+    letter-spacing:.08em;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 7px;
+    margin-left:8px;
+    color:var(--dim);
+    vertical-align:2px;
+  }
+  .card p{ margin:7px 0; font-size:12.5px; color:var(--muted); }
+  .card p b, .card p code{ color:var(--text); }
+  .card code{ font-size:11.5px; background:var(--bg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+  .card .tile{ font-size:11px; color:var(--dim); border-top:1px solid var(--line); margin-top:10px; padding-top:8px; }
+
+  .numbers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin:16px 0 6px;
+  }
+  table.sav{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    font-size:12px;
+  }
+  table.sav th{ text-align:left; color:var(--dim); font-weight:600; padding:8px 12px; border-bottom:1px solid var(--line); font-size:11px; letter-spacing:.05em; }
+  table.sav td{ padding:7px 12px; border-bottom:1px solid var(--line); color:var(--muted); }
+  table.sav td:last-child{ color:var(--text); }
+  table.sav tr:last-child td{ border-bottom:none; }
+  .ccrbox{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px 18px;
+  }
+  .ccrbox h3{ margin:0 0 8px; font-size:13px; }
+  .ccrbox pre{
+    margin:6px 0 8px;
+    font-size:12px;
+    line-height:1.8;
+    color:var(--muted);
+    overflow-x:auto;
+  }
+  .ccrbox pre b{ color:var(--text); }
+  .ccrbox p{ font-size:12px; color:var(--dim); margin:6px 0 0; }
+  @media (max-width:860px){ .numbers{ grid-template-columns:1fr; } }
+
+  footer.foot{
+    border-top:1px solid var(--line);
+    margin-top:26px;
+    padding:18px 20px 30px;
+    font-size:11.5px;
+    color:var(--dim);
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 30px;
+    justify-content:space-between;
+  }
+
+  /* ---------- main tabs ---------- */
+  nav.maintabs{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    padding:12px 20px;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    position:sticky;
+    top:0;
+    z-index:30;
+  }
+  .maintab{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    color:var(--muted);
+    border-radius:6px;
+    padding:9px 16px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .maintab .num{ color:var(--dim); margin-right:8px; font-weight:400; }
+  .maintab[aria-selected="true"]{ color:var(--accent); border-color:var(--accent); }
+  .mainpane{ display:none; }
+  .mainpane.active{ display:block; }
+
+  .archtools{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    padding:12px 20px 0;
+  }
+
+  /* ---------- SOP styles ---------- */
+  .sopwrap{ max-width:1240px; margin:0 auto; padding:26px 20px 10px; }
+  .sopwrap h2{ font-size:16px; margin:26px 0 6px; }
+  .sopwrap h2:first-child{ margin-top:0; }
+  .sopwrap .lede{ color:var(--muted); font-size:13px; max-width:80ch; margin:4px 0 14px; }
+  .sopwrap p{ font-size:12.5px; color:var(--muted); max-width:80ch; }
+  .sopwrap p b, .sopwrap li b{ color:var(--text); }
+
+  ol.steps{ list-style:none; margin:14px 0; padding:0; max-width:860px; counter-reset:st; }
+  ol.steps > li{
+    counter-increment:st;
+    position:relative;
+    padding:0 0 20px 52px;
+    border-left:1px solid var(--line);
+    margin-left:16px;
+  }
+  ol.steps > li:last-child{ border-left-color:transparent; }
+  ol.steps > li::before{
+    content:counter(st, decimal-leading-zero);
+    position:absolute;
+    left:-17px; top:-2px;
+    width:34px; height:34px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--bg-panel);
+    border:1px solid var(--accent);
+    border-radius:6px;
+    color:var(--accent);
+    font-size:12px;
+    font-weight:700;
+  }
+  ol.steps h4{ margin:4px 0 6px; font-size:13.5px; color:var(--text); }
+  ol.steps p{ margin:6px 0; font-size:12.5px; }
+
+  .cmd{
+    display:flex;
+    align-items:stretch;
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--bg);
+    margin:10px 0;
+    max-width:860px;
+  }
+  [data-theme="light"] .cmd{ background:#0B0F1A; }
+  .cmd pre{
+    margin:0;
+    padding:11px 14px;
+    font-size:12.5px;
+    line-height:1.6;
+    color:#E5E7EB;
+    overflow-x:auto;
+    flex:1;
+    white-space:pre;
+  }
+  .cmd .copy{
+    border:none;
+    border-left:1px solid var(--line);
+    background:var(--bg-panel);
+    color:var(--accent);
+    font-size:11px;
+    font-weight:700;
+    padding:0 14px;
+    cursor:pointer;
+    min-width:68px;
+  }
+  [data-theme="light"] .cmd .copy{ background:#161F31; }
+  .cmd .copy.done{ color:#34D399; }
+
+  .agentrow{ display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 14px; }
+  .agentbtn{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    color:var(--muted);
+    border-radius:6px;
+    padding:7px 13px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .agentbtn[aria-selected="true"]{ color:var(--accent); border-color:var(--accent); }
+  .agentpane{ display:none; }
+  .agentpane.active{ display:block; }
+
+  table.ref{
+    width:100%;
+    max-width:960px;
+    border-collapse:collapse;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    font-size:12px;
+    margin:12px 0;
+  }
+  table.ref th{ text-align:left; color:var(--dim); font-weight:600; padding:8px 12px; border-bottom:1px solid var(--line); font-size:10.5px; letter-spacing:.06em; }
+  table.ref td{ padding:7px 12px; border-bottom:1px solid var(--line); color:var(--muted); vertical-align:top; }
+  table.ref tr:last-child td{ border-bottom:none; }
+  table.ref td.mono, .sopwrap code{ font-family:inherit; color:var(--text); font-size:11.5px; }
+  .sopwrap code, .expwrap code{ background:var(--bg-raise); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+
+  .checklist{ max-width:860px; background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:6px 16px; }
+  .checklist label{
+    display:flex; gap:12px; align-items:flex-start;
+    padding:10px 2px;
+    border-bottom:1px solid var(--line);
+    cursor:pointer;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  .checklist label:last-of-type{ border-bottom:none; }
+  .checklist input{ width:16px; height:16px; margin-top:1px; accent-color:var(--accent); flex:none; }
+  .checklist input:checked + span{ text-decoration:line-through; color:var(--dim); }
+  .checkmeta{ font-size:11px; color:var(--accent); padding:8px 2px 10px; }
+
+  details.trb{
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--bg-panel);
+    margin:10px 0;
+    max-width:960px;
+  }
+  details.trb summary{
+    cursor:pointer;
+    list-style:none;
+    padding:12px 16px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--text);
+  }
+  details.trb summary::-webkit-details-marker{ display:none; }
+  details.trb summary::before{ content:"! "; color:var(--security); }
+  details.trb[open] summary{ border-bottom:1px solid var(--line); }
+  details.trb .body{ padding:12px 16px 14px; }
+  details.trb .body p{ margin:6px 0; }
+
+  /* ---------- example tab ---------- */
+  .expwrap{ max-width:1240px; margin:0 auto; padding:26px 20px 10px; }
+  .expwrap h2{ font-size:16px; margin:26px 0 6px; }
+  .expwrap h2:first-child{ margin-top:0; }
+  .expwrap .lede{ color:var(--muted); font-size:13px; max-width:82ch; margin:4px 0 14px; }
+  .expwrap p{ font-size:12.5px; color:var(--muted); max-width:82ch; }
+  .expwrap p b{ color:var(--text); }
+  ul.std{ margin:10px 0; padding-left:20px; max-width:82ch; }
+  ul.std li{ font-size:12.5px; color:var(--muted); margin:7px 0; }
+  ul.std li b{ color:var(--text); }
+
+  .sim{
+    display:grid;
+    grid-template-columns:minmax(300px, 420px) 1fr;
+    gap:16px;
+    align-items:start;
+    margin:16px 0;
+  }
+  @media (max-width:920px){ .sim{ grid-template-columns:1fr; } }
+  .simpanel{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 18px;
+  }
+  .simpanel .stepno{ font-size:10.5px; letter-spacing:.08em; color:var(--dim); }
+  .simpanel h3{ margin:4px 0 8px; font-size:14.5px; color:var(--text); }
+  .simpanel .txt{ font-size:12.5px; color:var(--muted); min-height:120px; }
+  .simpanel .txt b{ color:var(--text); }
+  .simctl{ display:flex; gap:8px; margin-top:12px; }
+
+  table.ledger{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    font-size:12px;
+  }
+  table.ledger th{ text-align:left; color:var(--dim); font-weight:600; padding:8px 12px; border-bottom:1px solid var(--line); font-size:10.5px; letter-spacing:.06em; }
+  table.ledger th.r, table.ledger td.r{ text-align:right; }
+  table.ledger td{ padding:8px 12px; border-bottom:1px solid var(--line); color:var(--muted); transition:background .18s ease, color .18s ease; }
+  table.ledger tr.hl td{ background:var(--bg-raise); color:var(--text); }
+  table.ledger tr.tot td{ border-top:1px solid var(--accent); color:var(--text); font-weight:700; }
+  table.ledger td .note{ display:block; font-size:10.5px; color:var(--dim); }
+  .bars{ margin:14px 0 4px; }
+  .bars .brow{ display:grid; grid-template-columns:120px 1fr 90px; gap:10px; align-items:center; margin:8px 0; font-size:11px; color:var(--muted); }
+  .bars .track{ height:14px; background:var(--bg-raise); border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  .bars .fill{ height:100%; background:var(--a-default); }
+  .bars .fill.after{ background:var(--accent); }
+  .bars .r{ text-align:right; color:var(--text); }
+  .disclose{ font-size:11px; color:var(--dim); max-width:82ch; margin:10px 0 0; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="titles">
+    <h1>Headroom Field Guide</h1>
+    <div class="sub">Architecture, standard operating procedure, and the Tensai integration pattern. Based on Headroom v0.37.0. Hexaware AI Platform Engineering.</div>
+  </div>
+  <div class="toolbar">
+    <button class="tbtn" id="btn-theme">Theme<kbd>T</kbd></button>
+  </div>
+</header>
+
+<nav class="maintabs" role="tablist" aria-label="Sections">
+  <button class="maintab" role="tab" data-pane="pane-arch" aria-selected="true"><span class="num">01</span>Architecture</button>
+  <button class="maintab" role="tab" data-pane="pane-sop" aria-selected="false"><span class="num">02</span>Engineering SOP</button>
+  <button class="maintab" role="tab" data-pane="pane-example" aria-selected="false"><span class="num">03</span>Tensai integration + example</button>
+</nav>
+
+<section class="mainpane active" id="pane-arch" role="tabpanel">
+<div class="archtools" role="toolbar" aria-label="Diagram controls">
+  <button class="tbtn" id="btn-guide">Guide<kbd>?</kbd></button>
+  <button class="tbtn" id="btn-find">Find<kbd>/</kbd></button>
+  <button class="tbtn" id="btn-zin">Zoom<kbd>+</kbd></button>
+  <button class="tbtn" id="btn-zout">Zoom<kbd>-</kbd></button>
+  <button class="tbtn" id="btn-zreset">Reset<kbd>0</kbd></button>
+</div>
+<div class="rail" role="group" aria-label="Guided chapters">
+  <span class="lbl">CHAPTERS</span>
+  <button class="chapter" data-view="request-path" aria-pressed="false"><span class="num">01</span>Request path</button>
+  <button class="chapter" data-view="cache-story" aria-pressed="false"><span class="num">02</span>The two caches</button>
+  <button class="chapter" data-view="token-economics" aria-pressed="false"><span class="num">03</span>Token economics</button>
+  <div class="play">
+    <button class="tbtn" id="btn-prev" aria-label="Previous beat">&#8249;</button>
+    <button class="tbtn" id="btn-play">Play<kbd>P</kbd></button>
+    <button class="tbtn" id="btn-next" aria-label="Next beat">&#8250;</button>
+    <button class="tbtn" id="btn-clear">Show all<kbd>Esc</kbd></button>
+  </div>
+  <div class="note" id="rail-note">Click a component for its Semantic Passport, or play a chapter to walk the flow beat by beat.</div>
+</div>
+
+<div class="stagewrap">
+  <div class="stage" id="stage-box">
+    <svg id="diagram" viewBox="0 0 1200 860" role="img" aria-labelledby="svg-title svg-desc">
+      <title id="svg-title">Headroom runtime architecture</title>
+      <desc id="svg-desc">A coding agent sends requests through the local Headroom pipeline, where CacheAligner protects the provider prefix cache, ContentRouter detects content types, Rust compressors and an ONNX text model shrink each block, originals are stored in the local CCR SQLite cache, and the compressed request is forwarded to the LLM provider whose response returns unchanged.</desc>
+      <defs>
+        <marker id="arrow-default" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" class="m-default"/>
+        </marker>
+        <marker id="arrow-emphasis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" class="m-emphasis"/>
+        </marker>
+        <marker id="arrow-dashed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" class="m-dashed"/>
+        </marker>
+      </defs>
+
+      <g id="world">
+
+        <!-- boundaries (behind everything) -->
+        <g id="boundaries">
+          <rect x="220" y="300" width="640" height="434" rx="10" class="c-region"/>
+          <text x="232" y="318" class="t-region" font-size="9" letter-spacing="1">YOUR MACHINE, LOCAL TRUST BOUNDARY</text>
+          <rect x="530" y="600" width="250" height="114" rx="8" class="c-security-group"/>
+          <text x="540" y="618" class="t-secgroup" font-size="8" letter-spacing="1">ORIGINALS NEVER LEAVE THIS STORE</text>
+        </g>
+
+        <!-- edges (before components, per z-order rule) -->
+        <g id="edges">
+          <g class="edge" data-edge-key="e1" data-edge-from="agent" data-edge-to="proxy">
+            <path d="M190,362 H250" class="a-emphasis" stroke-width="2" marker-end="url(#arrow-emphasis)"/>
+          </g>
+          <g class="edge" data-edge-key="e2" data-edge-from="proxy" data-edge-to="aligner">
+            <path d="M400,362 H470" class="a-emphasis" stroke-width="2" marker-end="url(#arrow-emphasis)"/>
+          </g>
+          <g class="edge" data-edge-key="e3" data-edge-from="aligner" data-edge-to="router">
+            <path d="M620,362 H690" class="a-emphasis" stroke-width="2" marker-end="url(#arrow-emphasis)"/>
+          </g>
+          <g class="edge" data-edge-key="e4" data-edge-from="router" data-edge-to="provider" data-edge-label="compressed request">
+            <path d="M840,362 H960" class="a-emphasis" stroke-width="2" marker-end="url(#arrow-emphasis)"/>
+            <text x="900" y="414" class="t-muted edge-label" font-size="8" text-anchor="middle">compressed request</text>
+            <text x="900" y="427" class="t-dim edge-label" font-size="8" text-anchor="middle">+ retrieval tool</text>
+          </g>
+          <g class="edge" data-edge-key="e5" data-edge-from="router" data-edge-to="rust">
+            <path d="M765,394 V480" class="a-default" stroke-width="1.5" marker-end="url(#arrow-default)"/>
+          </g>
+          <g class="edge" data-edge-key="e6" data-edge-from="router" data-edge-to="ml" data-edge-label="text fallback">
+            <path d="M710,394 V437 H505 V480" class="a-dashed" stroke-width="1.5" marker-end="url(#arrow-dashed)"/>
+            <text x="607" y="430" class="t-dim edge-label" font-size="8" text-anchor="middle">text fallback</text>
+          </g>
+          <g class="edge" data-edge-key="e7" data-edge-from="rust" data-edge-to="ccr" data-edge-label="originals">
+            <path d="M735,544 V630" class="a-default" stroke-width="1.5" marker-end="url(#arrow-default)"/>
+            <text x="727" y="592" class="t-dim edge-label" font-size="8" text-anchor="end">originals</text>
+          </g>
+          <g class="edge" data-edge-key="e8" data-edge-from="ml" data-edge-to="ccr">
+            <path d="M505,544 V587 H620 V630" class="a-default" stroke-width="1.5" marker-end="url(#arrow-default)"/>
+          </g>
+          <g class="edge" data-edge-key="e9" data-edge-from="proxy" data-edge-to="dash">
+            <path d="M325,394 V480" class="a-default" stroke-width="1.5" marker-end="url(#arrow-default)"/>
+          </g>
+          <g class="edge" data-edge-key="e10" data-edge-from="provider" data-edge-to="ccr" data-edge-label="headroom_retrieve(hash)">
+            <path d="M1045,394 V662 H760" class="a-dashed" stroke-width="1.5" marker-end="url(#arrow-dashed)"/>
+            <text x="905" y="652" class="t-dim edge-label" font-size="8" text-anchor="middle">headroom_retrieve(hash)</text>
+          </g>
+          <g class="edge" data-edge-key="e11" data-edge-from="aligner" data-edge-to="prefixcache" data-edge-label="history stays byte-identical">
+            <path d="M545,330 V180 H930" class="a-dashed" stroke-width="1.5" marker-end="url(#arrow-dashed)"/>
+            <text x="737" y="170" class="t-dim edge-label" font-size="8" text-anchor="middle">history stays byte-identical</text>
+          </g>
+          <g class="edge" data-edge-key="e12" data-edge-from="provider" data-edge-to="prefixcache">
+            <path d="M1045,330 V210" class="a-default" stroke-width="1.5" marker-end="url(#arrow-default)"/>
+          </g>
+          <g class="edge" data-edge-key="e13" data-edge-from="provider" data-edge-to="agent" data-edge-label="response returns unchanged">
+            <path d="M1090,394 V760 H110 V394" class="a-dashed" stroke-width="1.5" marker-end="url(#arrow-dashed)"/>
+            <text x="620" y="752" class="t-dim edge-label" font-size="8" text-anchor="middle">response returns unchanged, output tokens untouched</text>
+          </g>
+        </g>
+
+        <!-- components (two-rect pattern) -->
+        <g id="nodes">
+          <g class="node" data-node-id="agent" data-node-kind="external" tabindex="0" role="button" aria-label="Coding Agent, external">
+            <title>Coding Agent : Claude Code / Cursor / Codex</title>
+            <rect x="30" y="330" width="160" height="64" rx="6" class="c-mask"/>
+            <rect x="30" y="330" width="160" height="64" rx="6" class="c-external" stroke-width="1.5"/>
+            <text x="110" y="358" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Coding Agent</text>
+            <text x="110" y="376" class="t-muted" font-size="9" text-anchor="middle">Claude Code / Cursor / Codex</text>
+          </g>
+          <g class="node" data-node-id="proxy" data-node-kind="backend" tabindex="0" role="button" aria-label="Headroom Proxy, service">
+            <title>Headroom Proxy : wrap / proxy / SDK / MCP</title>
+            <rect x="250" y="330" width="150" height="64" rx="6" class="c-mask"/>
+            <rect x="250" y="330" width="150" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
+            <text x="325" y="358" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Headroom Proxy</text>
+            <text x="325" y="376" class="t-muted" font-size="9" text-anchor="middle">wrap / proxy / SDK / MCP</text>
+          </g>
+          <g class="node" data-node-id="aligner" data-node-kind="backend" tabindex="0" role="button" aria-label="CacheAligner, service">
+            <title>CacheAligner : volatile prefix detect</title>
+            <rect x="470" y="330" width="150" height="64" rx="6" class="c-mask"/>
+            <rect x="470" y="330" width="150" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
+            <text x="545" y="358" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">CacheAligner</text>
+            <text x="545" y="376" class="t-muted" font-size="9" text-anchor="middle">volatile prefix detect</text>
+          </g>
+          <g class="node" data-node-id="router" data-node-kind="backend" tabindex="0" role="button" aria-label="ContentRouter, service">
+            <title>ContentRouter : type detect, Rust core</title>
+            <rect x="690" y="330" width="150" height="64" rx="6" class="c-mask"/>
+            <rect x="690" y="330" width="150" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
+            <text x="765" y="358" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">ContentRouter</text>
+            <text x="765" y="376" class="t-muted" font-size="9" text-anchor="middle">type detect, Rust core</text>
+          </g>
+          <g class="node" data-node-id="provider" data-node-kind="cloud" tabindex="0" role="button" aria-label="LLM Provider, managed cloud">
+            <title>LLM Provider : Anthropic / OpenAI / Google / Bedrock</title>
+            <rect x="960" y="330" width="170" height="64" rx="6" class="c-mask"/>
+            <rect x="960" y="330" width="170" height="64" rx="6" class="c-cloud" stroke-width="1.5"/>
+            <text x="1045" y="358" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">LLM Provider</text>
+            <text x="1045" y="376" class="t-muted" font-size="9" text-anchor="middle">Anthropic / OpenAI / more</text>
+          </g>
+          <g class="node" data-node-id="prefixcache" data-node-kind="database" tabindex="0" role="button" aria-label="Prefix Cache, data store">
+            <title>Prefix Cache : provider side</title>
+            <rect x="930" y="150" width="150" height="60" rx="6" class="c-mask"/>
+            <rect x="930" y="150" width="150" height="60" rx="6" class="c-database" stroke-width="1.5"/>
+            <text x="1005" y="176" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Prefix Cache</text>
+            <text x="1005" y="193" class="t-muted" font-size="9" text-anchor="middle">provider side</text>
+          </g>
+          <g class="node" data-node-id="ml" data-node-kind="backend" tabindex="0" role="button" aria-label="Kompress text model, service">
+            <title>Kompress-v2-base : ONNX text fallback</title>
+            <rect x="430" y="480" width="150" height="64" rx="6" class="c-mask"/>
+            <rect x="430" y="480" width="150" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
+            <text x="505" y="508" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Kompress-v2-base</text>
+            <text x="505" y="526" class="t-muted" font-size="9" text-anchor="middle">ONNX text fallback</text>
+          </g>
+          <g class="node" data-node-id="rust" data-node-kind="backend" tabindex="0" role="button" aria-label="Rust compressors, service">
+            <title>Rust Compressors : SmartCrusher, Search, Log, Diff</title>
+            <rect x="650" y="480" width="170" height="64" rx="6" class="c-mask"/>
+            <rect x="650" y="480" width="170" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
+            <text x="735" y="508" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Rust Compressors</text>
+            <text x="735" y="526" class="t-muted" font-size="9" text-anchor="middle">Smart / Search / Log / Diff</text>
+          </g>
+          <g class="node" data-node-id="dash" data-node-kind="frontend" tabindex="0" role="button" aria-label="Dashboard, UI">
+            <title>Dashboard : 127.0.0.1:8787/dashboard</title>
+            <rect x="250" y="480" width="150" height="64" rx="6" class="c-mask"/>
+            <rect x="250" y="480" width="150" height="64" rx="6" class="c-frontend" stroke-width="1.5"/>
+            <text x="325" y="508" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Dashboard</text>
+            <text x="325" y="526" class="t-muted" font-size="9" text-anchor="middle">:8787/dashboard</text>
+          </g>
+          <g class="node" data-node-id="ccr" data-node-kind="database" tabindex="0" role="button" aria-label="CCR store, data store">
+            <title>CCR Store : SQLite, hash-indexed, reversible</title>
+            <rect x="560" y="630" width="200" height="64" rx="6" class="c-mask"/>
+            <rect x="560" y="630" width="200" height="64" rx="6" class="c-database" stroke-width="1.5"/>
+            <text x="660" y="658" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">CCR Store</text>
+            <text x="660" y="676" class="t-muted" font-size="9" text-anchor="middle">SQLite, hash-indexed</text>
+          </g>
+        </g>
+
+        <!-- legend (outside all boundaries) -->
+        <g id="legend" font-size="8">
+          <g class="legend-row" data-kind="external" tabindex="0" role="button">
+            <rect x="30" y="796" width="14" height="14" rx="3" class="c-mask"/>
+            <rect x="30" y="796" width="14" height="14" rx="3" class="c-external" stroke-width="1.2"/>
+            <text x="50" y="806" class="t-muted" id="lg-external">External</text>
+          </g>
+          <g class="legend-row" data-kind="backend" tabindex="0" role="button">
+            <rect x="140" y="796" width="14" height="14" rx="3" class="c-mask"/>
+            <rect x="140" y="796" width="14" height="14" rx="3" class="c-backend" stroke-width="1.2"/>
+            <text x="160" y="806" class="t-muted" id="lg-backend">Service</text>
+          </g>
+          <g class="legend-row" data-kind="database" tabindex="0" role="button">
+            <rect x="250" y="796" width="14" height="14" rx="3" class="c-mask"/>
+            <rect x="250" y="796" width="14" height="14" rx="3" class="c-database" stroke-width="1.2"/>
+            <text x="270" y="806" class="t-muted" id="lg-database">Data store</text>
+          </g>
+          <g class="legend-row" data-kind="frontend" tabindex="0" role="button">
+            <rect x="380" y="796" width="14" height="14" rx="3" class="c-mask"/>
+            <rect x="380" y="796" width="14" height="14" rx="3" class="c-frontend" stroke-width="1.2"/>
+            <text x="400" y="806" class="t-muted" id="lg-frontend">UI</text>
+          </g>
+          <g class="legend-row" data-kind="cloud" tabindex="0" role="button">
+            <rect x="470" y="796" width="14" height="14" rx="3" class="c-mask"/>
+            <rect x="470" y="796" width="14" height="14" rx="3" class="c-cloud" stroke-width="1.2"/>
+            <text x="490" y="806" class="t-muted" id="lg-cloud">Provider</text>
+          </g>
+          <g>
+            <path d="M600,803 H650" class="a-emphasis" stroke-width="2" marker-end="url(#arrow-emphasis)"/>
+            <text x="660" y="806" class="t-dim">main path</text>
+          </g>
+          <g>
+            <path d="M760,803 H810" class="a-default" stroke-width="1.5" marker-end="url(#arrow-default)"/>
+            <text x="820" y="806" class="t-dim">supporting</text>
+          </g>
+          <g>
+            <path d="M930,803 H980" class="a-dashed" stroke-width="1.5" marker-end="url(#arrow-dashed)"/>
+            <text x="990" y="806" class="t-dim">async / reversible</text>
+          </g>
+        </g>
+
+      </g>
+    </svg>
+    <div class="zoomhud" id="zoomhud">100%</div>
+  </div>
+
+  <aside class="panel" id="side-panel" aria-live="polite">
+    <!-- filled by JS -->
+  </aside>
+</div>
+
+<section class="topics">
+  <h2>Every topic, explained</h2>
+  <p class="lede">The diagram shows where each mechanism lives. These cards explain what each one does to your bill. Click any card's linked component to see it in the map.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Input tokens <span class="tag">WHAT SHRINKS</span></h3>
+      <p>Everything sent <b>to</b> the model is input tokens: your prompt, the conversation history, and, in agent sessions, every file read, command output, search result, log dump, and RAG chunk. You pay per token, so long sessions with heavy tool output add up quickly.</p>
+      <p>This is the only side Headroom compresses. The <b>ContentRouter</b> detects each block's type and hands it to exactly one specialised compressor. What is never rewritten: your prompt text, system prompts, source code (unless AST compression is explicitly enabled), and short blocks below the minimum-token threshold, where compressing would cost more than it saves.</p>
+      <div class="tile">Documented result: about 20% saved on an overall coding session; 70-95% on JSON, search, and log payloads.</div>
+    </div>
+
+    <div class="card">
+      <h3>Output tokens <span class="tag">NEVER TOUCHED</span></h3>
+      <p>Output tokens are what the model generates back. Headroom returns every model response <b>exactly as generated</b>; nothing on the reply path is rewritten. That is the dashed return edge along the bottom of the map.</p>
+      <p>This is a deliberate design boundary: all savings come from shrinking what goes up, never from altering what comes down. It is also why accuracy benchmarks (GSM8K, TruthfulQA, SQuAD, tool-calling) show no meaningful quality drop: the model answers from preserved information, and can retrieve the untouched original whenever it needs it.</p>
+      <div class="tile">Design guarantee: fails open. If any transform errors, content passes through unchanged and the request still goes through.</div>
+    </div>
+
+    <div class="card">
+      <h3>Provider prefix cache <span class="tag">CACHE 1 OF 2</span></h3>
+      <p>Providers discount repeated request prefixes, but only when the prefix is <b>byte for byte identical</b> between turns. A naive compressor that rewrote old history every turn would silently destroy those cache hits and could cost more than it saved.</p>
+      <p><b>CacheAligner</b> exists to prevent exactly that: in the default cache mode only the newest turn is compressed, earlier turns are forwarded byte for byte, history is never dropped or reordered, and system prompts are kept intact.</p>
+      <div class="tile">Dashboard tile: Prefix cache impact, how much the provider's cache is saving you on repeated prefixes.</div>
+    </div>
+
+    <div class="card">
+      <h3>CCR local cache <span class="tag">CACHE 2 OF 2</span></h3>
+      <p>Compress, Cache, Retrieve. Before any block is compressed, its full original is stored in a <b>hash-indexed local SQLite cache</b>, and a retrieval tool is exposed to the model. If the model ever needs the untouched data, it calls <code>headroom_retrieve("abc123")</code> and gets the original back.</p>
+      <p>This is what makes aggressive compression safe: the model sees a small version, and the full version is always one retrieval away. CCR is on by default, and originals never leave your machine.</p>
+      <div class="tile">Documented example: 1000 items compress to 15; the original 1000 stay retrievable.</div>
+    </div>
+
+    <div class="card">
+      <h3>Tool schema trimming <span class="tag">OFTEN THE BIGGEST WIN</span></h3>
+      <p>Agents like Claude Code send every tool definition eagerly on each request, which is pure input-token overhead. Headroom compacts that schema, and <code>headroom wrap claude</code> also sets <code>ENABLE_TOOL_SEARCH=true</code> so tools load on demand natively.</p>
+      <p>On Claude Code this is frequently the <b>largest single chunk</b> of savings, which is why the dashboard separates it from content compression.</p>
+      <div class="tile">Dashboard tile: Tool search savings. Common confusion: a session can show 29% total while content compression reads 2%; both are correct, the 2% is one component. Trust the total.</div>
+    </div>
+
+    <div class="card">
+      <h3>The compressor bank <span class="tag">ONE BLOCK, ONE COMPRESSOR</span></h3>
+      <p>Fast native Rust handles the structured formats: SmartCrusher for JSON tool outputs (70-90%), SearchCompressor for grep results (80-95%), LogCompressor for build and test logs (85-95%), plus Diff (40-80%), HTML (70-90%), and Tabular (60-90%) compressors. Code compression (40-70%) is strictly opt-in.</p>
+      <p>Plain text falls back to <b>Kompress-v2-base</b>, a small ML model trained on agentic traces, run through ONNX Runtime. It downloads once on first use, which is why early requests show only 2-3% savings until it finishes loading.</p>
+      <div class="tile">Savings scale with how repetitive the payload is; dense prose compresses little to none.</div>
+    </div>
+  </div>
+
+  <div class="numbers">
+    <table class="sav">
+      <thead><tr><th>CONTENT TYPE</th><th>TYPICAL REDUCTION</th></tr></thead>
+      <tbody>
+        <tr><td>Coding agents, overall session</td><td>~20%</td></tr>
+        <tr><td>JSON tool outputs</td><td>70-90%</td></tr>
+        <tr><td>Search / grep results</td><td>80-95%</td></tr>
+        <tr><td>Build / test logs</td><td>85-95%</td></tr>
+        <tr><td>Diffs</td><td>40-80%</td></tr>
+        <tr><td>Prose / already dense text</td><td>Little to none</td></tr>
+      </tbody>
+    </table>
+    <div class="ccrbox">
+      <h3>Reversibility, in one trace</h3>
+      <pre>Compress:  1000 items  ->  <b>15 items</b>     (original stored)
+Cache:     hash-indexed local SQLite store
+Retrieve:  model calls <b>headroom_retrieve("abc123")</b>
+           -> gets the original 1000 items back</pre>
+      <p>Figures from the Headroom v0.37.0 documentation. Reproduce this map with the real Archify toolchain: install with <code>npx skills add tt-a1i/archify -g</code>, then run <code>node bin/archify.mjs deliver architecture headroom.architecture.json headroom.html --quality showcase --json</code> against the typed JSON IR shipped alongside this file.</p>
+    </div>
+  </div>
+</section>
+</section>
+
+
+<section class="mainpane" id="pane-sop" role="tabpanel">
+<div class="sopwrap">
+  <h2>Standard operating procedure</h2>
+  <p class="lede">Scope: every engineer running Claude Code, Cursor, or another coding agent on local hardware. Part A once per machine, Part B for your agent, Part C every working session, Part D to verify. Every wrap is undone with <code>headroom unwrap &lt;agent&gt;</code>; nothing is permanent, and the worst failure mode is simply no savings.</p>
+
+  <h2>Part A, install once per machine</h2>
+  <ol class="steps">
+    <li>
+      <h4>Install with Python 3.13 pinned</h4>
+      <div class="cmd"><pre>uv tool install --python 3.13 "headroom-ai[all]"</pre><button class="copy" type="button">Copy</button></div>
+      <p>Or with pip: <code>pip install "headroom-ai[all]"</code>. Why 3.13: the dashboard's dollar figure uses a pricing library that will not install on Python 3.14+. Token savings still track on 3.14, but the dollar figure stays $0.00.</p>
+    </li>
+    <li>
+      <h4>Verify the install</h4>
+      <div class="cmd"><pre>headroom --version</pre><button class="copy" type="button">Copy</button></div>
+    </li>
+    <li>
+      <h4>Run the health check</h4>
+      <div class="cmd"><pre>headroom doctor</pre><button class="copy" type="button">Copy</button></div>
+      <p>If the command is not found, see Troubleshooting below; it is almost always a PATH issue.</p>
+    </li>
+  </ol>
+
+  <h2>Part B, wire up your agent</h2>
+  <div class="agentrow" role="tablist" aria-label="Agent setup">
+    <button class="agentbtn" role="tab" data-agent="a-claude" aria-selected="true">Claude Code (CLI)</button>
+    <button class="agentbtn" role="tab" data-agent="a-vscode" aria-selected="false">Claude Code in VS Code</button>
+    <button class="agentbtn" role="tab" data-agent="a-cursor" aria-selected="false">Cursor</button>
+    <button class="agentbtn" role="tab" data-agent="a-other" aria-selected="false">Other agents</button>
+    <button class="agentbtn" role="tab" data-agent="a-lib" aria-selected="false">As a library</button>
+  </div>
+
+  <div class="agentpane active" id="a-claude" role="tabpanel">
+    <ol class="steps">
+      <li>
+        <h4>From your project folder, run the wrap instead of claude</h4>
+        <div class="cmd"><pre>headroom wrap claude</pre><button class="copy" type="button">Copy</button></div>
+        <p>Starts a local proxy, installs Serena for semantic code navigation, and launches Claude Code routed through Headroom. Auth and model are preserved automatically. Flags: <code>--code-memory none</code> to skip Serena, <code>--1m</code> for 1M context.</p>
+      </li>
+      <li>
+        <h4>Keep the terminal open while you work</h4>
+        <p>That terminal is the proxy. Closing it means plain Claude Code: no harm, just no savings.</p>
+      </li>
+      <li>
+        <h4>To undo</h4>
+        <div class="cmd"><pre>headroom unwrap claude</pre><button class="copy" type="button">Copy</button></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="agentpane" id="a-vscode" role="tabpanel">
+    <ol class="steps">
+      <li>
+        <h4>Install the proxy if not already installed</h4>
+        <div class="cmd"><pre>pip install "headroom-ai[proxy]"</pre><button class="copy" type="button">Copy</button></div>
+        <p>The full <code>[all]</code> install from Part A also covers this.</p>
+      </li>
+      <li>
+        <h4>Wrap the extension from your project folder</h4>
+        <div class="cmd"><pre>headroom wrap vscode-claude</pre><button class="copy" type="button">Copy</button></div>
+        <p>Patches the official Claude Code extension's settings to route through Headroom.</p>
+      </li>
+      <li>
+        <h4>Reload the VS Code window once</h4>
+        <p>Command Palette (Ctrl/Cmd+Shift+P), then "Developer: Reload Window." Leave the wrapper terminal running; it is the proxy.</p>
+      </li>
+      <li>
+        <h4>To undo</h4>
+        <div class="cmd"><pre>headroom unwrap vscode-claude</pre><button class="copy" type="button">Copy</button></div>
+        <p>Related: <code>headroom wrap vscode</code> covers GitHub Copilot inside VS Code, keeping the model picker authoritative.</p>
+      </li>
+    </ol>
+  </div>
+
+  <div class="agentpane" id="a-cursor" role="tabpanel">
+    <p><b>Cursor is manual setup:</b> Headroom prints a base URL and you paste it into Cursor's settings. Cursor does not auto-configure the way Claude Code does.</p>
+    <ol class="steps">
+      <li>
+        <h4>Start the wrapper or proxy</h4>
+        <div class="cmd"><pre>headroom wrap cursor</pre><button class="copy" type="button">Copy</button></div>
+        <p>Or <code>headroom proxy --port 8787</code>. It prints a local base URL, e.g. <code>http://127.0.0.1:8787</code>.</p>
+      </li>
+      <li>
+        <h4>Point Cursor at the printed URL</h4>
+        <p>Settings, then Models (the API / OpenAI base URL section). Set the base URL to the printed address; keep your normal API key and model. Use the exact URL and port printed, since 8787 may be taken.</p>
+      </li>
+      <li>
+        <h4>Keep the proxy terminal running while you use Cursor</h4>
+        <p>Traffic now flows through Headroom.</p>
+      </li>
+    </ol>
+  </div>
+
+  <div class="agentpane" id="a-other" role="tabpanel">
+    <p>Most agents use the one-command pattern <code>headroom wrap &lt;agent&gt;</code>, undone with <code>headroom unwrap &lt;agent&gt;</code>.</p>
+    <table class="ref">
+      <thead><tr><th>AGENT</th><th>COMMAND</th><th>NOTES</th></tr></thead>
+      <tbody>
+        <tr><td>Codex</td><td class="mono">headroom wrap codex</td><td>Shares memory with Claude</td></tr>
+        <tr><td>Grok CLI</td><td class="mono">headroom wrap grok</td><td>Routes via Grok base URL</td></tr>
+        <tr><td>Aider</td><td class="mono">headroom wrap aider</td><td>Starts proxy + launches</td></tr>
+        <tr><td>Copilot CLI</td><td class="mono">headroom wrap copilot</td><td>Starts proxy + launches</td></tr>
+        <tr><td>VS Code Copilot</td><td class="mono">headroom wrap vscode</td><td>Keeps selected model</td></tr>
+        <tr><td>OpenCode</td><td class="mono">headroom wrap opencode</td><td>Injects config + launches</td></tr>
+        <tr><td>Cline</td><td class="mono">headroom wrap cline</td><td>Starts proxy + injects config</td></tr>
+        <tr><td>Continue</td><td class="mono">headroom wrap continue</td><td>Starts proxy + injects config</td></tr>
+        <tr><td>Goose</td><td class="mono">headroom wrap goose</td><td>Starts proxy + launches</td></tr>
+        <tr><td>OpenHands</td><td class="mono">headroom wrap openhands</td><td>Starts proxy + launches</td></tr>
+        <tr><td>Kimi CLI</td><td class="mono">headroom wrap kimi</td><td>Log in once (OAuth)</td></tr>
+      </tbody>
+    </table>
+    <p>Any unlisted OpenAI-compatible client: <code>headroom proxy --port 8787</code> and point its base URL at it. MCP-native clients: <code>headroom mcp install</code>.</p>
+  </div>
+
+  <div class="agentpane" id="a-lib" role="tabpanel">
+    <p>Building your own app or agent? Call Headroom inline.</p>
+    <div class="cmd"><pre>from headroom import compress
+from openai import OpenAI
+
+messages = [{"role": "user", "content": "Analyze these results"}]
+result = compress(messages, model="gpt-4o")
+
+client = OpenAI()
+resp = client.chat.completions.create(
+    model="gpt-4o", messages=result.messages)
+print(result.tokens_saved, result.compression_ratio)</pre><button class="copy" type="button">Copy</button></div>
+    <div class="cmd"><pre>import { compress } from 'headroom-ai';
+const result = await compress(messages, { model });</pre><button class="copy" type="button">Copy</button></div>
+    <p>The npm <code>headroom-ai</code> package is the TypeScript SDK only; the <code>headroom</code> CLI ships only in the PyPI package. Framework hooks: <code>withHeadroom()</code> for the Anthropic and OpenAI SDKs, <code>headroomMiddleware()</code> for the Vercel AI SDK, <code>HeadroomChatModel</code> for LangChain, <code>HeadroomCallback</code> for LiteLLM, <code>HeadroomAgnoModel</code> for Agno.</p>
+  </div>
+
+  <h2>Part C, every session</h2>
+  <div class="checklist" id="session-checklist">
+    <label><input type="checkbox"><span>Open a terminal in the project folder.</span></label>
+    <label><input type="checkbox"><span>Launch through the wrap (for Claude Code: <code>headroom wrap claude</code>), not the bare agent command.</span></label>
+    <label><input type="checkbox"><span>Keep the wrapper terminal open for the whole session; it is the proxy.</span></label>
+    <label><input type="checkbox"><span>After a few requests, open the dashboard and confirm Tokens Saved is moving.</span></label>
+    <label><input type="checkbox"><span>At any point, run <code>headroom savings</code> for a summary against your own traffic.</span></label>
+    <div class="checkmeta" id="check-progress">0 of 5 done</div>
+  </div>
+  <p style="font-size:11px; color:var(--dim);">Checklist state lives on this page only; it resets on reload.</p>
+
+  <h2>Part D, verify the savings</h2>
+  <p>Open <code>http://127.0.0.1:8787/dashboard</code> (the URL is printed when the proxy starts) or run <code>headroom dashboard</code>. Use the agent for a few requests first; an idle proxy shows nothing.</p>
+  <table class="ref">
+    <thead><tr><th>TILE</th><th>HOW TO READ IT</th></tr></thead>
+    <tbody>
+      <tr><td><b>Tokens Saved (total %)</b></td><td>The real headline number: tool-schema trimming plus content compression combined.</td></tr>
+      <tr><td><b>Proxy / content compression %</b></td><td>Only the file, log, and output slice. Often a few percent on a coding session; not your total.</td></tr>
+      <tr><td><b>Tool search savings</b></td><td>Tokens saved by not sending every tool definition eagerly. Frequently the largest single chunk on Claude Code.</td></tr>
+      <tr><td><b>Prefix cache impact</b></td><td>What the provider's cache saves on repeated prefixes.</td></tr>
+      <tr><td><b>$ saved</b></td><td>Populated on Python 3.13 and below only; stays $0.00 on 3.14+.</td></tr>
+    </tbody>
+  </table>
+  <p><b>Common confusion:</b> a session can show 29% total while content compression reads about 2%. Both are correct; the 2% is one component. Trust the total. First-run numbers are lower while the text model downloads in the background.</p>
+
+  <h2>Troubleshooting</h2>
+  <details class="trb">
+    <summary>'headroom' is not recognized / command not found</summary>
+    <div class="body">
+      <p>The install landed in a Scripts folder not on your PATH (common with pip <code>--user</code> on Windows). Confirm via the full path, then add the folder to PATH:</p>
+      <div class="cmd"><pre># Windows: add the printed Scripts dir to PATH, then reopen the terminal
+setx PATH "%PATH%;C:\Users\&lt;you&gt;\AppData\Roaming\Python\Python3XX\Scripts"
+
+# uv installs:
+uv tool update-shell</pre><button class="copy" type="button">Copy</button></div>
+      <p><b>Already-open terminals do not see PATH changes.</b> Always close and reopen, PowerShell especially.</p>
+    </div>
+  </details>
+  <details class="trb">
+    <summary>Early requests only show about 2-3% savings</summary>
+    <div class="body"><p>Normal on first run: the text-compression model downloads in the background, and content compression is limited until it loads. Later requests in the same session improve automatically.</p></div>
+  </details>
+  <details class="trb">
+    <summary>Dashboard $ figure is $0.00</summary>
+    <div class="body">
+      <p>You are on Python 3.14+. Token savings still track. For the dollar figure, reinstall pinned to 3.13 and restart the proxy:</p>
+      <div class="cmd"><pre>pipx reinstall headroom-ai --python python3.13</pre><button class="copy" type="button">Copy</button></div>
+    </div>
+  </details>
+  <details class="trb">
+    <summary>'Claude Code is sending all tool definitions eagerly' warning</summary>
+    <div class="body"><p>Harmless; Headroom compensates by compacting the schema. To silence it, set <code>ENABLE_TOOL_SEARCH=true</code> before launching, or just use <code>headroom wrap claude</code>, which sets it automatically.</p></div>
+  </details>
+  <details class="trb">
+    <summary>Corporate network / SSL errors on install</summary>
+    <div class="body">
+      <p>A <code>CERTIFICATE_VERIFY_FAILED</code> error usually means SSL inspection. Install Rust first to avoid a build-time download, or use a prebuilt wheel:</p>
+      <div class="cmd"><pre>pip install --only-binary headroom-ai headroom-ai</pre><button class="copy" type="button">Copy</button></div>
+    </div>
+  </details>
+
+  <h2>Quick command reference</h2>
+  <table class="ref">
+    <thead><tr><th>TASK</th><th>COMMAND</th></tr></thead>
+    <tbody>
+      <tr><td>Install (uv, recommended)</td><td class="mono">uv tool install --python 3.13 "headroom-ai[all]"</td></tr>
+      <tr><td>Install (pip)</td><td class="mono">pip install "headroom-ai[all]"</td></tr>
+      <tr><td>Verify install</td><td class="mono">headroom --version</td></tr>
+      <tr><td>Health check</td><td class="mono">headroom doctor</td></tr>
+      <tr><td>Wrap Claude Code (CLI)</td><td class="mono">headroom wrap claude</td></tr>
+      <tr><td>Wrap Claude Code (VS Code)</td><td class="mono">headroom wrap vscode-claude</td></tr>
+      <tr><td>Wrap Cursor</td><td class="mono">headroom wrap cursor</td></tr>
+      <tr><td>Wrap Codex / Aider / others</td><td class="mono">headroom wrap &lt;agent&gt;</td></tr>
+      <tr><td>Plain proxy (any client)</td><td class="mono">headroom proxy --port 8787</td></tr>
+      <tr><td>Install MCP tools</td><td class="mono">headroom mcp install</td></tr>
+      <tr><td>Open dashboard</td><td class="mono">headroom dashboard</td></tr>
+      <tr><td>Savings summary</td><td class="mono">headroom savings</td></tr>
+      <tr><td>Update</td><td class="mono">headroom update</td></tr>
+      <tr><td>Undo a wrap</td><td class="mono">headroom unwrap &lt;agent&gt;</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+
+
+<section class="mainpane" id="pane-example" role="tabpanel">
+<div class="expwrap">
+  <h2>How the Tensai team integrates Headroom</h2>
+  <p class="lede">The adopted standard for Tensai AI Platform Engineering, drawn directly from the SOP tab. It changes nothing about how engineers work; it changes only how their agent traffic reaches the provider.</p>
+  <ul class="std">
+    <li><b>Wrap mode on engineer workstations.</b> Claude Code sessions (CLI and the VS Code extension) launch through <code>headroom wrap claude</code> or <code>headroom wrap vscode-claude</code> instead of the bare command. Cursor users point the base URL at the printed local proxy. Auth, model choice, and workflow stay untouched.</li>
+    <li><b>Python 3.13 pinned at install.</b> One version pin keeps the dashboard's dollar figure alive; on 3.14+ token savings still track but the dollar tile reads $0.00 and makes reporting harder.</li>
+    <li><b>Everything stays on the workstation.</b> Compression, the CCR originals cache, and the dashboard all run locally. No prompts, code, or file contents are sent anywhere else to be compressed, which matters for client codebases like Wickes and Carlyle work.</li>
+    <li><b>Verification is part of the session, not an afterthought.</b> After a few requests, the engineer confirms the dashboard's Tokens Saved total is moving, and reads the total rather than the content-compression slice. Per-engineer baselines come from <code>headroom savings</code> against real traffic; the team does not quote projected numbers.</li>
+    <li><b>Rollback is one command.</b> <code>headroom unwrap &lt;agent&gt;</code> restores original settings. Because Headroom fails open, the worst outcome at any point is uncompressed traffic, never a broken agent.</li>
+  </ul>
+
+  <h2>One request, step by step</h2>
+  <p class="lede">A worked trace of a single tool-heavy turn through the pipeline. Step through it; each stage lights up the ledger rows it touches.</p>
+
+  <div class="sim">
+    <div class="simpanel">
+      <div class="stepno" id="sim-stepno">STEP 1 OF 7</div>
+      <h3 id="sim-title">The agent works</h3>
+      <div class="txt" id="sim-text"></div>
+      <div class="simctl">
+        <button class="tbtn" id="sim-prev">Back</button>
+        <button class="tbtn" id="sim-next">Next</button>
+      </div>
+    </div>
+    <div>
+      <table class="ledger">
+        <thead><tr><th>REQUEST CONTENT</th><th class="r">TOKENS IN</th><th class="r">TOKENS SENT</th><th>WHY</th></tr></thead>
+        <tbody>
+          <tr id="r-hist"><td>Conversation history</td><td class="r">18,000</td><td class="r">18,000</td><td>Forwarded byte for byte<span class="note">prefix cache preserved</span></td></tr>
+          <tr id="r-sys"><td>System prompt + tool definitions</td><td class="r">2,400</td><td class="r">2,400</td><td>Kept intact by default<span class="note">schema trimming tracked separately on the dashboard</span></td></tr>
+          <tr id="r-prompt"><td>Engineer's prompt</td><td class="r">300</td><td class="r">300</td><td>Prompt text is never rewritten</td></tr>
+          <tr id="r-json"><td>JSON tool output</td><td class="r">6,000</td><td class="r">1,200</td><td>SmartCrusher<span class="note">documented range 70-90%</span></td></tr>
+          <tr id="r-grep"><td>Search / grep results</td><td class="r">3,000</td><td class="r">360</td><td>SearchCompressor<span class="note">documented range 80-95%</span></td></tr>
+          <tr id="r-log"><td>Test / build log</td><td class="r">5,000</td><td class="r">500</td><td>LogCompressor<span class="note">documented range 85-95%</span></td></tr>
+          <tr id="r-total" class="tot"><td>Input tokens, this turn</td><td class="r">34,700</td><td class="r">22,760</td><td>About a third fewer on this turn</td></tr>
+        </tbody>
+      </table>
+      <div class="bars">
+        <div class="brow"><span>Without Headroom</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="r">34,700</span></div>
+        <div class="brow"><span>With Headroom</span><div class="track"><div class="fill after" style="width:65.6%"></div></div><span class="r">22,760</span></div>
+      </div>
+      <p class="disclose">Illustrative trace. Token counts are invented for the example; the per-block reductions use midpoints of the ranges documented for Headroom v0.37.0, and real payloads vary. The documented whole-session average for coding agents is about 20%, since many turns carry little compressible payload. Output tokens are unaffected in all cases. Capture your own baseline with headroom savings.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<footer class="foot">
+  <span>Hexaware AI Platform Engineering. Prepared by Reshmika K S, reviewed by Sundar Muthuraman.</span>
+  <span>Diagram authored to the Archify skill design system (tt-a1i/archify, MIT). September 2026.</span>
+</footer>
+
+<script>
+(function(){
+  var NODES = {
+    agent: {
+      label:"Coding Agent", kind:"external", sub:"Claude Code / Cursor / Codex / Aider and others", ctx:"Outside Headroom, unchanged by it",
+      detail:"The consumer. Every file read, command run, and search the agent performs becomes input tokens sent to the model, billed per token. Headroom changes nothing about the agent itself: your login, selected model, and workflow stay exactly the same. Requests reach Headroom via agent wrap (one command), a plain local proxy, a library call, or MCP tools."
+    },
+    proxy: {
+      label:"Headroom Proxy", kind:"backend", sub:"wrap / proxy / SDK / MCP, default port 8787", ctx:"Your machine, local trust boundary",
+      detail:"The entry point. All four run modes feed this same pipeline: agent wrap starts it and configures the agent automatically, plain proxy exposes a base URL any OpenAI or Anthropic compatible client can point at, the library exposes compress() in Python and TypeScript, and the MCP server exposes compress, retrieve, and stats as tools. Everything runs locally; no prompts, code, or file contents are sent anywhere else to be compressed. Fails open: every transform is independent and safe to skip, so an error means pass-through, never a broken agent."
+    },
+    aligner: {
+      label:"CacheAligner", kind:"backend", sub:"volatile prefix detection", ctx:"Your machine, local trust boundary",
+      detail:"Pipeline step one, and the guardian of the provider prefix cache. In the default cache mode only the newest turn is compressed; every earlier turn is forwarded byte for byte so the provider's prefix cache is never invalidated. History is never dropped or reordered, and system prompts are kept intact by default. Without this step, compression could destroy cache discounts worth more than the compression saved."
+    },
+    router: {
+      label:"ContentRouter", kind:"backend", sub:"content type detection, native Rust core", ctx:"Your machine, local trust boundary",
+      detail:"Pipeline step two. Inspects each content block and figures out what it is: a JSON tool result, a log dump, a search result, source code, plain prose. Each block is then handed to exactly one specialised compressor tuned for that type. Blocks below the minimum-token threshold are left alone, since compressing them would cost more than it saves."
+    },
+    rust: {
+      label:"Rust Compressors", kind:"backend", sub:"SmartCrusher, Search, Log, Diff, HTML, Tabular", ctx:"Your machine, local trust boundary",
+      detail:"The structured-format workhorses, running in a fast native Rust core. Documented ranges: SmartCrusher on JSON tool outputs 70-90%, SearchCompressor 80-95%, LogCompressor 85-95%, DiffCompressor 40-80%, HTMLExtractor 70-90%, TabularCompressor 60-90%. CodeAwareCompressor (40-70%) exists but is strictly opt-in; source code passes through unchanged unless you explicitly enable it."
+    },
+    ml: {
+      label:"Kompress-v2-base", kind:"backend", sub:"small text model on ONNX Runtime", ctx:"Your machine, local trust boundary",
+      detail:"The fallback for plain text and anything the router cannot classify, saving 30-60% on text. A small model trained on agentic traces, it runs through ONNX Runtime and downloads once on first use. That download is why early requests in a fresh install show only 2-3% savings; later requests in the same session improve automatically once it loads."
+    },
+    ccr: {
+      label:"CCR Store", kind:"database", sub:"hash-indexed local SQLite", ctx:"Security scope: originals never leave this store",
+      detail:"Compress, Cache, Retrieve. The full original of every compressed block is stored here before the small version is sent upstream, and a retrieval tool is exposed to the model. If the model needs the untouched data, it calls headroom_retrieve with the block's hash and gets the original back: 1000 items compress to 15, the 1000 stay retrievable. On by default. This reversibility is what makes aggressive compression safe."
+    },
+    dash: {
+      label:"Dashboard", kind:"frontend", sub:"127.0.0.1:8787/dashboard, or headroom dashboard", ctx:"Your machine, local trust boundary",
+      detail:"Where you verify the savings. Tokens Saved total is the headline number, combining tool-schema trimming and content compression. Content compression alone is often small on a coding session; Tool search savings is frequently the largest single chunk on Claude Code; Prefix cache impact shows what the provider's cache is saving. The dollar figure needs Python 3.13 or below. An idle proxy shows nothing; use the agent for a few requests first."
+    },
+    prefixcache: {
+      label:"Prefix Cache", kind:"database", sub:"provider-side prompt caching", ctx:"Provider infrastructure",
+      detail:"The provider's own discount mechanism for repeated request prefixes. It only pays off when the prefix is byte for byte identical between turns, which is precisely the invariant CacheAligner protects by compressing only the newest turn. Two caches, two jobs: this one saves money on repeated history, the local CCR store makes compression reversible."
+    },
+    provider: {
+      label:"LLM Provider", kind:"cloud", sub:"Anthropic, OpenAI, Google, Bedrock", ctx:"Upstream, outside your machine",
+      detail:"Receives the compressed request plus the headroom_retrieve tool, and answers exactly as it would have. Its response returns to the agent completely unchanged: output tokens are never rewritten. Accuracy benchmarks (GSM8K, TruthfulQA, SQuAD, tool-calling) show no meaningful drop in answer quality at these compression levels."
+    }
+  };
+
+  var KINDNAME = { external:"External", backend:"Service", database:"Data store", frontend:"UI", cloud:"Managed provider" };
+
+  var VIEWS = {
+    "request-path": {
+      label:"Request path",
+      focus:["agent","proxy","aligner","router","rust","provider"],
+      note:"Follow one request: the agent's prompts and tool output are intercepted locally, aligned for cache safety, routed by content type, compressed, and forwarded upstream."
+    },
+    "cache-story": {
+      label:"The two caches",
+      focus:["aligner","prefixcache","ccr","provider"],
+      note:"Two caches, two jobs: CacheAligner keeps history byte-identical so the provider prefix cache keeps paying, while the local CCR store keeps originals retrievable so compression stays reversible."
+    },
+    "token-economics": {
+      label:"Token economics",
+      focus:["agent","router","provider","dash"],
+      note:"Input tokens shrink before they leave your machine, output tokens return untouched, and the dashboard decomposes the savings so you can trust the total."
+    }
+  };
+
+  var svg = document.getElementById('diagram');
+  var stage = document.getElementById('stage-box');
+  var world = document.getElementById('world');
+  var panel = document.getElementById('side-panel');
+  var note = document.getElementById('rail-note');
+  var nodeEls = {};
+  document.querySelectorAll('.node').forEach(function(n){ nodeEls[n.getAttribute('data-node-id')] = n; });
+  var edgeEls = Array.prototype.slice.call(document.querySelectorAll('.edge'));
+
+  /* adjacency */
+  var adj = {};
+  Object.keys(NODES).forEach(function(id){ adj[id] = []; });
+  edgeEls.forEach(function(e){
+    var f = e.getAttribute('data-edge-from'), t = e.getAttribute('data-edge-to');
+    adj[f].push({ el:e, from:f, to:t, dir:'out', label:e.getAttribute('data-edge-label') || '' });
+    adj[t].push({ el:e, from:f, to:t, dir:'in', label:e.getAttribute('data-edge-label') || '' });
+  });
+
+  /* legend counts */
+  var counts = {};
+  Object.keys(NODES).forEach(function(id){
+    var k = NODES[id].kind;
+    counts[k] = (counts[k] || 0) + 1;
+  });
+  Object.keys(counts).forEach(function(k){
+    var t = document.getElementById('lg-' + k);
+    if (t) t.textContent = t.textContent + ' (' + counts[k] + ')';
+  });
+
+  /* ---------- selection state machine ---------- */
+  var state = { mode:'none', focusId:null, viewId:null, beat:-1, lensKind:null, playing:false, timer:null };
+
+  function clearVisual(){
+    svg.classList.remove('has-sel');
+    Object.keys(nodeEls).forEach(function(id){
+      nodeEls[id].classList.remove('on','peer','beat');
+    });
+    edgeEls.forEach(function(e){ e.classList.remove('on'); });
+    document.querySelectorAll('.chapter').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+  }
+  function stopPlay(){
+    state.playing = false;
+    if (state.timer){ clearTimeout(state.timer); state.timer = null; }
+    document.getElementById('btn-play').firstChild.nodeValue = 'Play';
+  }
+  function clearAll(pushHash){
+    stopPlay();
+    clearVisual();
+    state = { mode:'none', focusId:null, viewId:null, beat:-1, lensKind:null, playing:false, timer:null };
+    note.textContent = 'Click a component for its Semantic Passport, or play a chapter to walk the flow beat by beat.';
+    renderHome();
+    if (pushHash !== false) setHash('');
+  }
+
+  function setHash(h){
+    try { history.replaceState(null, '', h ? '#' + h : location.pathname + location.search); } catch(e){}
+  }
+
+  /* ---------- panel renderers ---------- */
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  function renderHome(){
+    panel.innerHTML =
+      '<h2>SYSTEM MAP</h2>' +
+      '<div class="ptitle">Headroom, at a glance</div>' +
+      '<p class="detail">A context compression layer that runs entirely on your machine, between your coding agent and the LLM provider. It shrinks the repetitive input tokens (tool outputs, file reads, logs, search results) before they reach the model, protects the provider prefix cache, caches every original locally for reversible retrieval, and returns model responses untouched.</p>' +
+      '<p class="detail">Documented results: about 20% saved on an overall coding session, 70-95% on JSON, search, and log payloads, with no meaningful quality drop on GSM8K, TruthfulQA, SQuAD, or tool-calling benchmarks.</p>' +
+      '<p class="hint">Click any component. Hover previews its one-hop connections. Press ? for all controls, / to find a node, T for theme.</p>';
+  }
+
+  function renderPassport(id){
+    var n = NODES[id];
+    var rels = adj[id];
+    var relHtml = rels.map(function(r, i){
+      var other = r.dir === 'out' ? r.to : r.from;
+      var arrow = r.dir === 'out' ? '&#8594;' : '&#8592;';
+      return '<li data-goto="' + other + '"><span class="dir">' + arrow + '</span><span>' +
+        esc(NODES[other].label) + (r.label ? ' <span class="k">' + esc(r.label) + '</span>' : '') + '</span></li>';
+    }).join('');
+    panel.innerHTML =
+      '<h2>SEMANTIC PASSPORT</h2>' +
+      '<div class="ptitle">' + esc(n.label) + '</div>' +
+      '<span class="kindchip"><i style="background:var(--' + n.kind + ')"></i>' + esc(KINDNAME[n.kind]) + '</span>' +
+      '<span class="kindchip">id: ' + id + '</span>' +
+      '<div class="ctx">' + esc(n.ctx) + ' &middot; ' + esc(n.sub) + '</div>' +
+      '<p class="detail">' + esc(n.detail) + '</p>' +
+      '<h2 style="margin-top:14px">CONNECTIONS (' + rels.length + ')</h2>' +
+      '<ul class="rel-list">' + relHtml + '</ul>' +
+      '<p class="hint">Escape clears focus. Link: #focus=' + id + '</p>';
+    panel.querySelectorAll('[data-goto]').forEach(function(li){
+      li.addEventListener('click', function(){ focusNode(li.getAttribute('data-goto')); });
+    });
+  }
+
+  function renderView(vid){
+    var v = VIEWS[vid];
+    var beats = v.focus.map(function(id, i){
+      var num = (i + 1 < 10 ? '0' : '') + (i + 1);
+      var cur = (state.beat === i) ? ' style="color:var(--accent)"' : '';
+      return '<li data-beat="' + i + '"' + cur + '><span class="dir">' + num + '</span><span>' + esc(NODES[id].label) + '</span></li>';
+    }).join('');
+    var beatDetail = '';
+    if (state.beat >= 0){
+      var bid = v.focus[state.beat];
+      beatDetail = '<h2 style="margin-top:14px">BEAT ' + (state.beat + 1) + ' / ' + v.focus.length + ' : ' + esc(NODES[bid].label) + '</h2>' +
+        '<p class="detail">' + esc(NODES[bid].detail) + '</p>';
+    }
+    panel.innerHTML =
+      '<h2>CHAPTER</h2>' +
+      '<div class="ptitle">' + esc(v.label) + '</div>' +
+      '<p class="detail">' + esc(v.note) + '</p>' +
+      '<h2 style="margin-top:14px">BEATS</h2>' +
+      '<ul class="rel-list">' + beats + '</ul>' +
+      beatDetail +
+      '<p class="hint">P plays once through, [ and ] step, Escape shows all. Link: #view=' + vid + '</p>';
+    panel.querySelectorAll('[data-beat]').forEach(function(li){
+      li.addEventListener('click', function(){
+        stopPlay();
+        setBeat(parseInt(li.getAttribute('data-beat'), 10));
+      });
+    });
+  }
+
+  function renderFinder(){
+    panel.innerHTML =
+      '<h2>NODE FINDER</h2>' +
+      '<input class="findbox" id="findbox" type="text" placeholder="Search by name, kind, or detail..." autocomplete="off"/>' +
+      '<ul class="findres" id="findres"></ul>' +
+      '<p class="hint">Enter focuses the first result. Escape closes.</p>';
+    var box = document.getElementById('findbox');
+    var res = document.getElementById('findres');
+    function refresh(){
+      var q = box.value.toLowerCase();
+      var hits = Object.keys(NODES).filter(function(id){
+        var n = NODES[id];
+        return !q || (n.label + ' ' + n.kind + ' ' + n.sub + ' ' + n.detail).toLowerCase().indexOf(q) >= 0;
+      });
+      res.innerHTML = hits.map(function(id){
+        return '<li data-id="' + id + '">' + esc(NODES[id].label) + '<span class="k">' + esc(KINDNAME[NODES[id].kind]) + '</span></li>';
+      }).join('') || '<li>No match.</li>';
+      res.querySelectorAll('[data-id]').forEach(function(li){
+        li.addEventListener('click', function(){ focusNode(li.getAttribute('data-id')); });
+      });
+    }
+    box.addEventListener('input', refresh);
+    box.addEventListener('keydown', function(ev){
+      if (ev.key === 'Enter'){
+        var first = res.querySelector('[data-id]');
+        if (first) focusNode(first.getAttribute('data-id'));
+      }
+      ev.stopPropagation();
+    });
+    refresh();
+    box.focus();
+  }
+
+  function renderGuide(){
+    panel.innerHTML =
+      '<h2>DIAGRAM GUIDE</h2>' +
+      '<div class="ptitle">' + Object.keys(NODES).length + ' components, ' + edgeEls.length + ' relationships, ' + Object.keys(VIEWS).length + ' chapters</div>' +
+      '<p class="detail">Everything here derives from the authored topology: focus is one hop, chapters walk authored node lists, and the legend counts real kinds. Nothing is invented at runtime.</p>' +
+      '<ul class="guide-keys">' +
+      '<li><span>Find a node</span><kbd>/</kbd></li>' +
+      '<li><span>Focus a node</span><kbd>click / Enter</kbd></li>' +
+      '<li><span>Play chapter once</span><kbd>P</kbd></li>' +
+      '<li><span>Previous / next beat</span><kbd>[ ]</kbd></li>' +
+      '<li><span>Theme</span><kbd>T</kbd></li>' +
+      '<li><span>Zoom in / out / reset</span><kbd>+ - 0</kbd></li>' +
+      '<li><span>Clear / close</span><kbd>Esc</kbd></li>' +
+      '</ul>' +
+      '<p class="hint">Legend rows are clickable: they highlight every node of that kind and its touching relationships.</p>';
+  }
+
+  /* ---------- focus ---------- */
+  function focusNode(id){
+    stopPlay();
+    clearVisual();
+    state = { mode:'focus', focusId:id, viewId:null, beat:-1, lensKind:null, playing:false, timer:null };
+    svg.classList.add('has-sel');
+    nodeEls[id].classList.add('on');
+    adj[id].forEach(function(r){
+      r.el.classList.add('on');
+      var other = r.dir === 'out' ? r.to : r.from;
+      nodeEls[other].classList.add('peer');
+    });
+    renderPassport(id);
+    note.textContent = 'Focused: ' + NODES[id].label + '. One-hop relationships highlighted.';
+    setHash('focus=' + id);
+  }
+
+  /* ---------- lens (legend) ---------- */
+  function lensKind(kind){
+    if (state.mode === 'lens' && state.lensKind === kind){ clearAll(); return; }
+    stopPlay();
+    clearVisual();
+    state = { mode:'lens', focusId:null, viewId:null, beat:-1, lensKind:kind, playing:false, timer:null };
+    svg.classList.add('has-sel');
+    var ids = Object.keys(NODES).filter(function(id){ return NODES[id].kind === kind; });
+    ids.forEach(function(id){ nodeEls[id].classList.add('on'); });
+    edgeEls.forEach(function(e){
+      var f = e.getAttribute('data-edge-from'), t = e.getAttribute('data-edge-to');
+      if (ids.indexOf(f) >= 0 || ids.indexOf(t) >= 0){
+        e.classList.add('on');
+        nodeEls[f].classList.add('peer');
+        nodeEls[t].classList.add('peer');
+      }
+    });
+    ids.forEach(function(id){ nodeEls[id].classList.remove('peer'); nodeEls[id].classList.add('on'); });
+    note.textContent = 'Lens: ' + KINDNAME[kind] + ' (' + ids.length + ') with touching relationships. Click the legend row again to clear.';
+    panel.innerHTML = '<h2>SEMANTIC LENS</h2><div class="ptitle">' + KINDNAME[kind] + ' (' + ids.length + ')</div>' +
+      '<p class="detail">' + ids.map(function(id){ return NODES[id].label; }).join(', ') + '. Touching relationships stay strong while unrelated topology recedes.</p>' +
+      '<p class="hint">Escape clears the lens.</p>';
+  }
+
+  /* ---------- chapters ---------- */
+  function activateView(vid, autoplay){
+    stopPlay();
+    clearVisual();
+    state = { mode:'view', focusId:null, viewId:vid, beat:-1, lensKind:null, playing:false, timer:null };
+    var v = VIEWS[vid];
+    svg.classList.add('has-sel');
+    v.focus.forEach(function(id){ nodeEls[id].classList.add('on'); });
+    edgeEls.forEach(function(e){
+      var f = e.getAttribute('data-edge-from'), t = e.getAttribute('data-edge-to');
+      if (v.focus.indexOf(f) >= 0 && v.focus.indexOf(t) >= 0) e.classList.add('on');
+    });
+    document.querySelectorAll('.chapter').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-view') === vid ? 'true' : 'false');
+    });
+    note.textContent = v.note;
+    renderView(vid);
+    setHash('view=' + vid);
+    if (autoplay) play();
+  }
+
+  function setBeat(i){
+    if (state.mode !== 'view') return;
+    var v = VIEWS[state.viewId];
+    if (i < 0) i = 0;
+    if (i >= v.focus.length) i = v.focus.length - 1;
+    state.beat = i;
+    Object.keys(nodeEls).forEach(function(id){ nodeEls[id].classList.remove('beat'); });
+    nodeEls[v.focus[i]].classList.add('beat');
+    renderView(state.viewId);
+  }
+
+  function play(){
+    if (state.mode !== 'view'){ activateView('request-path', false); }
+    if (state.playing){ stopPlay(); renderView(state.viewId); return; }
+    state.playing = true;
+    document.getElementById('btn-play').firstChild.nodeValue = 'Pause';
+    var v = VIEWS[state.viewId];
+    if (state.beat >= v.focus.length - 1) state.beat = -1;
+    function step(){
+      if (!state.playing) return;
+      if (state.beat >= v.focus.length - 1){ stopPlay(); renderView(state.viewId); return; }
+      setBeat(state.beat + 1);
+      if (state.beat >= v.focus.length - 1){ stopPlay(); renderView(state.viewId); return; }
+      state.timer = setTimeout(step, 1700);
+    }
+    step();
+  }
+
+  /* ---------- pan / zoom ---------- */
+  var vt = { s:1, x:0, y:0 };
+  var hud = document.getElementById('zoomhud');
+  function applyVt(){
+    world.setAttribute('transform', 'translate(' + vt.x + ',' + vt.y + ') scale(' + vt.s + ')');
+    hud.textContent = Math.round(vt.s * 100) + '%';
+  }
+  function svgPoint(ev){
+    var pt = svg.createSVGPoint();
+    pt.x = ev.clientX; pt.y = ev.clientY;
+    return pt.matrixTransform(svg.getScreenCTM().inverse());
+  }
+  function zoomAt(factor, cx, cy){
+    var ns = Math.min(4, Math.max(.4, vt.s * factor));
+    var k = ns / vt.s;
+    vt.x = cx - k * (cx - vt.x);
+    vt.y = cy - k * (cy - vt.y);
+    vt.s = ns;
+    applyVt();
+  }
+  stage.addEventListener('wheel', function(ev){
+    ev.preventDefault();
+    var p = svgPoint(ev);
+    zoomAt(ev.deltaY < 0 ? 1.12 : 1/1.12, p.x, p.y);
+  }, { passive:false });
+  var drag = null;
+  stage.addEventListener('pointerdown', function(ev){
+    if (ev.target.closest('.node') || ev.target.closest('.legend-row')) return;
+    drag = { x:ev.clientX, y:ev.clientY, vx:vt.x, vy:vt.y };
+    stage.classList.add('dragging');
+    stage.setPointerCapture(ev.pointerId);
+  });
+  stage.addEventListener('pointermove', function(ev){
+    if (!drag) return;
+    var scale = 1200 / stage.clientWidth;
+    vt.x = drag.vx + (ev.clientX - drag.x) * scale;
+    vt.y = drag.vy + (ev.clientY - drag.y) * scale;
+    applyVt();
+  });
+  ['pointerup','pointercancel'].forEach(function(t){
+    stage.addEventListener(t, function(){ drag = null; stage.classList.remove('dragging'); });
+  });
+  function zreset(){ vt = { s:1, x:0, y:0 }; applyVt(); }
+
+  /* ---------- theme ---------- */
+  function toggleTheme(){
+    var h = document.documentElement;
+    h.setAttribute('data-theme', h.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  }
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  } catch(e){}
+
+  /* ---------- wiring ---------- */
+  Object.keys(nodeEls).forEach(function(id){
+    var el = nodeEls[id];
+    el.addEventListener('click', function(ev){ ev.stopPropagation(); focusNode(id); });
+    el.addEventListener('keydown', function(ev){
+      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); focusNode(id); }
+    });
+    /* intent trace lite: hover previews one-hop without committing */
+    el.addEventListener('pointerenter', function(){
+      if (state.mode !== 'none') return;
+      svg.classList.add('has-sel');
+      el.classList.add('on');
+      adj[id].forEach(function(r){
+        r.el.classList.add('on');
+        nodeEls[r.dir === 'out' ? r.to : r.from].classList.add('peer');
+      });
+    });
+    el.addEventListener('pointerleave', function(){
+      if (state.mode !== 'none') return;
+      clearVisual();
+    });
+  });
+
+  document.querySelectorAll('.legend-row').forEach(function(row){
+    var k = row.getAttribute('data-kind');
+    row.addEventListener('click', function(ev){ ev.stopPropagation(); lensKind(k); });
+    row.addEventListener('keydown', function(ev){
+      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); lensKind(k); }
+    });
+  });
+
+  document.querySelectorAll('.chapter').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (state.mode === 'view' && state.viewId === b.getAttribute('data-view')){ clearAll(); }
+      else activateView(b.getAttribute('data-view'), false);
+    });
+  });
+
+  document.getElementById('btn-play').addEventListener('click', play);
+  document.getElementById('btn-prev').addEventListener('click', function(){ stopPlay(); setBeat(state.beat - 1); });
+  document.getElementById('btn-next').addEventListener('click', function(){ stopPlay(); if (state.mode !== 'view') activateView('request-path', false); setBeat(state.beat + 1); });
+  document.getElementById('btn-clear').addEventListener('click', function(){ clearAll(); });
+  document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+  document.getElementById('btn-zin').addEventListener('click', function(){ zoomAt(1.2, 600, 430); });
+  document.getElementById('btn-zout').addEventListener('click', function(){ zoomAt(1/1.2, 600, 430); });
+  document.getElementById('btn-zreset').addEventListener('click', zreset);
+  document.getElementById('btn-find').addEventListener('click', renderFinder);
+  document.getElementById('btn-guide').addEventListener('click', renderGuide);
+
+  document.addEventListener('keydown', function(ev){
+    if (ev.target.tagName === 'INPUT') return;
+    if (!document.getElementById('pane-arch').classList.contains('active')){ if (ev.key === 't' || ev.key === 'T') toggleTheme(); return; }
+    switch(ev.key){
+      case '?': renderGuide(); break;
+      case '/': ev.preventDefault(); renderFinder(); break;
+      case 't': case 'T': toggleTheme(); break;
+      case 'p': case 'P': play(); break;
+      case '[': stopPlay(); setBeat(state.beat - 1); break;
+      case ']': stopPlay(); if (state.mode !== 'view') activateView('request-path', false); setBeat(state.beat + 1); break;
+      case '+': case '=': zoomAt(1.2, 600, 430); break;
+      case '-': zoomAt(1/1.2, 600, 430); break;
+      case '0': zreset(); break;
+      case 'Escape': clearAll(); break;
+    }
+  });
+
+  /* deep links: #focus=<id> and #view=<id> */
+  (function restore(){
+    var h = location.hash.replace('#','');
+    var m;
+    if ((m = h.match(/^focus=([a-z]+)$/)) && NODES[m[1]]){ focusNode(m[1]); return; }
+    if ((m = h.match(/^view=([a-z-]+)$/)) && VIEWS[m[1]]){ activateView(m[1], false); return; }
+    renderHome();
+  })();
+  applyVt();
+})();
+</script>
+<script>
+
+(function(){
+  /* main tabs */
+  var tabs = document.querySelectorAll('.maintab');
+  var panes = document.querySelectorAll('.mainpane');
+  tabs.forEach(function(b){
+    b.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.setAttribute('aria-selected','false'); });
+      panes.forEach(function(p){ p.classList.remove('active'); });
+      b.setAttribute('aria-selected','true');
+      document.getElementById(b.getAttribute('data-pane')).classList.add('active');
+      window.scrollTo({ top:0, behavior:'auto' });
+    });
+  });
+
+  /* copy buttons */
+  document.querySelectorAll('.cmd .copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.parentElement.querySelector('pre').innerText;
+      function ok(){
+        btn.textContent = 'Copied';
+        btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1500);
+      }
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch(e){}
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(ok).catch(fallback);
+      } else fallback();
+    });
+  });
+
+  /* agent sub-tabs */
+  var abtns = document.querySelectorAll('.agentbtn');
+  var apanes = document.querySelectorAll('.agentpane');
+  abtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      abtns.forEach(function(x){ x.setAttribute('aria-selected','false'); });
+      apanes.forEach(function(p){ p.classList.remove('active'); });
+      b.setAttribute('aria-selected','true');
+      document.getElementById(b.getAttribute('data-agent')).classList.add('active');
+    });
+  });
+
+  /* checklist */
+  var list = document.getElementById('session-checklist');
+  if (list){
+    var boxes = list.querySelectorAll('input[type="checkbox"]');
+    var prog = document.getElementById('check-progress');
+    function up(){
+      var d = 0; boxes.forEach(function(b){ if (b.checked) d++; });
+      prog.textContent = d + ' of ' + boxes.length + ' done' + (d === boxes.length ? ', session ready.' : '');
+    }
+    boxes.forEach(function(b){ b.addEventListener('change', up); });
+  }
+
+  /* worked example stepper */
+  var STEPS = [
+    { t:'The agent works', rows:['r-prompt','r-json','r-grep','r-log'],
+      x:'An engineer on the Tensai Agentic Ops reasoning service asks a wrapped Claude Code session to debug a failing retrieval evaluation. The agent reads a config file, greps the codebase, and runs the test suite. The newest turn now carries <b>14,300 tokens</b>, most of it repetitive tool output the engineer will never read again.' },
+    { t:'Intercept', rows:[],
+      x:'Because the session was started with <b>headroom wrap claude</b>, the request hits the local proxy on 127.0.0.1 instead of going straight to the provider. Nothing has left the machine: compression happens locally, and the engineer\u0027s login and selected model are untouched.' },
+    { t:'CacheAligner', rows:['r-hist','r-sys'],
+      x:'Step one protects the provider prefix cache. The <b>18,000-token conversation history</b> and the system prompt are forwarded <b>byte for byte</b>, never dropped or reordered, so the provider keeps discounting the repeated prefix. Only the newest turn moves on for compression.' },
+    { t:'ContentRouter', rows:['r-json','r-grep','r-log'],
+      x:'The native Rust core inspects each block of the newest turn and detects its type: one JSON tool result, one set of search results, one test log. The engineer\u0027s 300-token prompt is prompt text, which Headroom never rewrites, so it passes through untouched. Each detected block is handed to exactly one compressor.' },
+    { t:'Compress', rows:['r-json','r-grep','r-log'],
+      x:'SmartCrusher takes the JSON from <b>6,000 to 1,200</b> tokens, SearchCompressor takes the grep results from <b>3,000 to 360</b>, LogCompressor takes the test log from <b>5,000 to 500</b>. These use the midpoints of the documented ranges (70-90%, 80-95%, 85-95%); real payloads land somewhere inside them.' },
+    { t:'CCR store', rows:['r-json','r-grep','r-log'],
+      x:'Before anything shrank, the full originals were written to the hash-indexed local <b>SQLite CCR store</b>, and the headroom_retrieve tool rides along with the request. If the model decides it needs the complete 5,000-token log after all, it retrieves the untouched original on demand. Compression stays reversible.' },
+    { t:'Forward and return', rows:['r-total'],
+      x:'On this tool-heavy turn, <b>22,760 tokens</b> go upstream instead of 34,700, roughly a third fewer input tokens. The provider\u0027s response returns to Claude Code <b>exactly as generated</b>; output tokens are never rewritten. The dashboard\u0027s Tokens Saved total records the win. Across a whole session the documented average is about 20%, because many turns carry little compressible payload.' }
+  ];
+  var idx = 0;
+  var stepno = document.getElementById('sim-stepno');
+  var title = document.getElementById('sim-title');
+  var txt = document.getElementById('sim-text');
+  var prevB = document.getElementById('sim-prev');
+  var nextB = document.getElementById('sim-next');
+  function renderStep(){
+    var s = STEPS[idx];
+    stepno.textContent = 'STEP ' + (idx + 1) + ' OF ' + STEPS.length;
+    title.textContent = s.t;
+    txt.innerHTML = s.x;
+    document.querySelectorAll('table.ledger tr').forEach(function(tr){ tr.classList.remove('hl'); });
+    s.rows.forEach(function(id){
+      var tr = document.getElementById(id);
+      if (tr) tr.classList.add('hl');
+    });
+    prevB.disabled = (idx === 0);
+    nextB.textContent = (idx === STEPS.length - 1) ? 'Restart' : 'Next';
+  }
+  if (stepno){
+    prevB.addEventListener('click', function(){ if (idx > 0){ idx--; renderStep(); } });
+    nextB.addEventListener('click', function(){ idx = (idx === STEPS.length - 1) ? 0 : idx + 1; renderStep(); });
+    renderStep();
+  }
+})();
+
+</script>
+
+</body>
+</html>
